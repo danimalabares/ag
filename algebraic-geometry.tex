@@ -188,12 +188,66 @@
 \begin{document}
 {\Huge algebraic geometry}
 %\tableofcontents
-\begin{exercise}[2.14]
+\section{chapter 1}
+
+\begin{exercise}[1.1, My first algebraic variety]
+	\begin{enumerate}[label*=(\alph*)]\leavevmode
+		\item Let $Y$ be the plane curve $y=x^2$ (ie., $Y$ is the zero set of the polynomial $f=y-x^2$). Show that $A(Y)$ is isomorphic to a polynomial ring in one variable over $k$.
+		\item Let $Z$ be the plane curve $xy=1$. Show that $A(Z)$ is not isomorphic to a polynomial ring in one variable over $k$.
+		\item[*(c)] Let $f$ be any irreducible quadratic polynomial in $k[x,y]$, and let $W$ be the conic defined by $f$. Show that $A(W)$ is isomorphic to $A(Y)$ or $A(Z)$. Which one is it when?
+	\end{enumerate}
+\end{exercise}
+\begin{proof}\leavevmode
+	\begin{enumerate}[label=(\alph*)]
+		\item Consider the map
+		\begin{align*}
+			k[x,y]&\to k[x]\\
+			1&\mapsto1\\
+			x&\mapsto x\\
+			y&\mapsto x^2
+		\end{align*}
+		Notice that $y-x^2\in k[x,y]$ is mapped to $0$, so the kernel of this map is $(y-x^2)$. It is also surjective, so we have $A(Y)=k[x,y]/(y-x^2)\cong k[x]$.
+		\item In constructing a map like in the former exercise, we may fix $1$ and $x$, and we should map $y$ to $1/x$. However, $1/x$ is not an element of $k[x]$ so we really have an isomorphism $k[x,y]/(xy-1)\cong k[x,\frac{1}{x}]\not\cong k[x]$.
+	\end{enumerate}
+\end{proof}
+\begin{exercise}[2.14, The Segre Embedding]
 	Let $\psi:\P^r\times\P^s\to\P^N$ be the map defined by sending the order pair $(a_0,\ldots,a_r)\times(b_0,\ldots,b_s)$ to $(\ldots,a_ib_j,\ldots)$ in lexicographic order, where $N=rs+r+s$. Note that $\psi$ is well-defined and injective. It is called the \textbf{\textit{Segre embedding}}. Show that the image of $\psi$ is a subvariety of $\P^N$. [\textit{Hint}: Let the homogeneous coordinates of $\P^N$ be $\{z_{ij}:i=0,\ldots,r,j=0,\ldots,s\}$ and let $\af$ be the kernel of the homomorphism $k[\{z_{ij}\}]\to k[x_0,\ldots,x_r,y_0,\ldots,y_s]$ which sends $z_{ij}$ to $x_iy_j$. Then show that $\img\psi=Z(\af)$.
 \end{exercise}
 \begin{proof}[Solution]
-	content...
+	First let's make sure the dimension $N$ is correct. The easy way is found in \href{https://en.wikipedia.org/wiki/Segre_embedding}{wiki}: $N=(r+1)(s+1)-1$ which is the number of possible choices of pairs of things taking one out $r+1$, another out of $s+1$, and then remember there is only one zero index so take one away.
+	
+	To see that $\psi$ is injective we follow \href{https://math.stackexchange.com/questions/3683364/segre-map-is-an-embedding}{StackExchange}: 
+	{\color{azure}Let $z=[z_{00}:z_{01}:\ldots:z_{ij}:\ldots:z_{rs}]$ be an element of the image of $\psi$ and let $(a,b)\in\P^r\times\P^s$ be such that $\psi(a,b)=z$. WLOG we can assume $a_0=b_0=z_{00}=1$. Then $b_j=z_{0j}$ for all $0\leq j\leq s$ and $a_i=z_{i0}$ so $a,b$ are uniquely determined and this map is bijective onto the image.
+	
+	Actually, what we have done is constructed an inverse morphism of the Segre map. According to StackExchange, this makes it into an embedding.}
+	
+	To show that $\img\psi$ is a subvariety of $\P^N$ we need to find a set of homogeneous polynomials in $k[z_{ij}]$/
+	
+	Following the hint, as before let $z\in\img\psi$ and $f$ any polynomial in the kernel of $k[\{z_{ij}\}]\to k[x_0,\ldots,x_r,y_0,\ldots,y_s]$. We must show that $f(z)=0$. Well it doesn't make much sense because if $f=\sum a_{ij}z_{ij}$ is in the kernel of that map, then its image $\sum a_{ij}x_iy_j$ is the zero polynomial, so obviously $f(z)=\sum a_{ij}z_{ij}=\sum a_{ij}x_iy_j=0$. So this is confusing.
+	
+	So what are the equations of $\img\psi$? A polynomial $f(z_{00},\ldots,z_{rs})$ will vanish on $\img\psi$ if somehow it vanishes 
 \end{proof}
+\begin{exercise}[2.15, The Quadric Surface in $\P^3$.]
+	Consider the surface $Q$ (a \textbf{\textit{surface}} is a variety of dimension 2) in $\P^3$ defined by the equation $xy-wz=0$.
+	\begin{enumerate}
+		\item Show that $Q$ is equal to the Segre embedding of $\P^1\times\P^1$ in $\P^3$, for suitable choice of coordinates.
+		\item Show that $Q$ contains two families of lines (a \textbf{\textit{line}} is a linear variety of dimension 1), $\{L_t\},\{M_t\}$ each parametrized by $t\in\P^1$, with the properties that if $L_t\neq L_u$ then $L_t\cap L_u=\varnothing$ and if $M_t\neq M_u$, $M_t\cap M_u=\varnothing$, and for all $t,u$, $L_t\cap M_u$ is a point.
+		\item Show that $Q$ contains other curves besides these lines, and deduce that the Zariski topology on $Q$ is not homeomorphic via $\psi$ to the product topology on $\P^1\times \P^1$ where each $\P^1$ has its Zariski topology.
+	\end{enumerate}
+\end{exercise}
+\begin{proof}[Solution]\leavevmode
+	\begin{enumerate}
+		\item It turns out that the image of the Segre embedding $\psi:\P^1\times\P^1\to\P^3$ equals is the algebraic variety given by the zeroes of the polynomial $f=z_{00}z_{11}-z_{10}z_{01}\in k[z_{00},z_{01},z_{10},z_{11}]$. One contention is easy: if $(x,y)=([x_0,x_1],[y_0,y_1])\in\img\psi$, then clearly $f(\psi(x,y))=x_0y_0x_1y_1-x_0y_1x_1y_0$ is zero because these are numbers in the field $k$.
+		
+		Now for the other contention pick $z=[z_{00},z_{01},z_{10},z_{11}]\in V(f)$ and let's find an element $(x,y)\in\P^1\times\P^1$ such that $\psi(x,y)=z$. $z\in V(f)$ means that $z_{00}z_{11}=z_{10}z_{01}$. If $z_{00}\neq0$, then we can define $([z_{00},z_{11}],[z_{01},z_{10}])$ {\color{magenta}what?}
+		%so there is always one of $z_{00}$ or $z_{11}$ and one of $z_{10}$ or $z_{01}$ that are not zero.
+		
+		Maybe for the other contention try to define the inverse map $\img\psi\to\P^1\times\P^1$ by $z=[z_{00},z_{01},z_{10},z_{11}]\mapsto([z_{00},z_{01}],[z_{00},z_{10}])$ when $z_{00}\neq0$ and $([z_{11},z_{01}],[z_{11},z_{10}])$ when $z_{11}\neq0$. Is this defining a global map?
+		
+		\item The lines correspond to fixing one entry and running over the other one in the Segre embedding $(x,y)\to z$. 
+	\end{enumerate}
+\end{proof}
+
 \begin{exercise}[H-3.16, Products of Quasi-Projective Varieties]
 	Use the Segre embedding (Ex. 2.14) to identify $\P^n\times\P^m$ with its image and hence give it a structure of projective variety. Now for any two quasi-projective varieties $X\subseteq\P^n$ and $Y\subseteq\P^m$ consider $X\times Y\subseteq\P^n\times\P^m$.
 	\begin{enumerate}[label*=(\alph*)]
