@@ -1,241 +1,34 @@
-\documentclass{article}
-
-\usepackage[style=authortitle-terse,backref,backend=bibtex]{biblatex}
-\addbibresource{bibliography.bib}
-
-\setcounter{secnumdepth}{0}
-\usepackage{sectsty}
-\sectionfont{\fontsize{13}{20}\selectfont}
-
-\usepackage[left=4cm, right=4cm]{geometry}
-\usepackage{palatino,eulervm,dutchcal,xcolor}%fonts
-\usepackage{graphicx,subcaption,float}
-\usepackage{enumitem,parskip,multicol}
-\usepackage{amsthm,thmtools,xcolor,amssymb,amsmath}
-\usepackage{tikz,tikz-cd}
-\usetikzlibrary{%
-	matrix,%
-	calc,%
-	arrows,%
-	shapes,
-	decorations.markings,backgrounds,calc,intersections}
-\usepackage[bookmarks,bookmarksopen,bookmarksdepth=3]{hyperref}
-\hypersetup{%colores
-	colorlinks=true,
-	urlcolor=blue,
-	linkcolor=magenta,
-	citecolor=blue,
-	filecolor=blue,
-	urlbordercolor=white,
-	linkbordercolor=white,
-	citebordercolor=white,
-	filebordercolor=white}
-	\usepackage{cleveref}
-
-\definecolor{blue-violet}{rgb}{0.54, 0.17, 0.89}
-\definecolor{azure}{rgb}{0.0, 0.5, 1.0}
-\definecolor{green(ncs)}{rgb}{0.0, 0.62, 0.42}
-\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
-\definecolor{limegreen}{rgb}{0.2, 0.8, 0.2}
-\definecolor{palatinateblue}{rgb}{0.15, 0.23, 0.89}
-\definecolor{trueblue}{rgb}{0.0, 0.45, 0.81}
-\definecolor{goldenyellow}{rgb}{1.0, 0.87, 0.0}
-\definecolor{fashionfuchsia}{rgb}{0.96, 0.0, 0.63}
-\definecolor{brightcerulean}{rgb}{0.11, 0.67, 0.84}
-\definecolor{jonquil}{rgb}{0.98, 0.85, 0.37}
-\definecolor{lavendermagenta}{rgb}{0.93, 0.51, 0.93}
-\definecolor{peru}{rgb}{0.8, 0.52, 0.25}
-\definecolor{persimmon}{rgb}{0.93, 0.35, 0.0}
-\definecolor{persianred}{rgb}{0.8, 0.2, 0.2}
-\definecolor{persianblue}{rgb}{0.11, 0.22, 0.73}
-\definecolor{persiangreen}{rgb}{0.0, 0.65, 0.58}
-\definecolor{persianyellow}{rgb}{0.9, 0.89, 0.0}
-
-\declaretheoremstyle[headfont=\color{trueblue}\normalfont\bfseries,]{colored1}
-\declaretheoremstyle[headfont=\color{forestgreen}\normalfont\bfseries,]{colored2}
-\declaretheoremstyle[headfont=\color{peru}\normalfont\bfseries,]{colored3}
-\declaretheoremstyle[headfont=\color{persiangreen}\normalfont\bfseries,]{colored4}
-\declaretheoremstyle[headfont=\color{brightcerulean}\normalfont\bfseries,]{colored5}
-\declaretheoremstyle[headfont=\color{lavendermagenta}\normalfont\bfseries,]{colored6}
-\declaretheoremstyle[headfont=\color{blue-violet}\normalfont\bfseries,]{colored7}
-\declaretheoremstyle[headfont=\color{green(ncs)}\normalfont\bfseries,]{colored8}
-\declaretheoremstyle[headfont=\color{peru}\normalfont\bfseries,]{colored9}
-\declaretheoremstyle[headfont=\color{persiangreen}\normalfont\bfseries,]{colored10}
-\declaretheoremstyle[headfont=\color{green(ncs)}\normalfont\bfseries,]{colored11}
-
-\declaretheorem[style=colored1,name=Theorem]{thm}
-\declaretheorem[style=colored2,numberlike=thm,name=proposition]{prop}
-\declaretheorem[style=colored3,numberlike=thm,name=lemma]{lemma}
-\declaretheorem[style=colored4,numberlike=thm,name=corollary]{coro}
-\declaretheorem[style=colored5,numbered=no,name=example]{example}
-\declaretheorem[style=colored5,numbered=no,name=examples]{examples}
-\declaretheorem[style=colored7,numbered=no,name=exercise]{exercise}
-\declaretheorem[style=colored11,numbered=no,name=remark]{remark}
-\declaretheorem[style=colored8,numbered=no,name=claim]{claim}
-\declaretheorem[style=colored9,numbered=no,name=definition]{defn}
-\declaretheorem[style=colored10,numbered=no,name=question]{question}
-\declaretheorem[style=colored11,numbered=no,name=conjecture]{conjecture}
-
-\makeatletter%Instead of bigwedge
-\newcommand{\extp}{\@ifnextchar^\@extp{\@extp^{\,}}}
-\def\@extp^#1{\mathop{\bigwedge\nolimits^{\!#1}}}
-\makeatother
-
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\D}{\mathbb{D}}
-\renewcommand{\P}{\mathbb{P}}
-
-\newcommand{\Ac}{\mathcal{A}}
-\newcommand{\Bc}{\mathcal{B}}
-\newcommand{\Cc}{\mathcal{C}}
-\newcommand{\Dc}{\mathcal{D}}
-\newcommand{\Ec}{\mathcal{E}}
-\newcommand{\Fc}{\mathcal{F}}
-\newcommand{\Gc}{\mathcal{G}}
-\newcommand{\Hc}{\mathcal{H}}
-\newcommand{\Ic}{\mathcal{I}}
-\newcommand{\Jc}{\mathcal{J}}
-\newcommand{\Kc}{\mathcal{K}}
-\newcommand{\Lc}{\mathcal{L}}
-\newcommand{\Mc}{\mathcal{M}}
-\newcommand{\Nc}{\mathcal{N}}
-\newcommand{\Oc}{\mathcal{O}}
-\newcommand{\Pc}{\mathcal{P}}
-\newcommand{\Qc}{\mathcal{Q}}
-\newcommand{\Rc}{\mathcal{R}}
-\newcommand{\Sc}{\mathcal{S}}
-\newcommand{\Tc}{\mathcal{T}}
-\newcommand{\Uc}{\mathcal{U}}
-\newcommand{\Vc}{\mathcal{V}}
-\newcommand{\Wc}{\mathcal{W}}
-\newcommand{\Xc}{\mathcal{X}}
-\newcommand{\Yc}{\mathcal{Y}}
-\newcommand{\Zc}{\mathcal{Z}}
-
-\newcommand{\af}{\mathfrak{a}}
-\renewcommand{\bf}{\mathfrak{b}}
-\newcommand{\cf}{\mathfrak{c}}
-\newcommand{\df}{\mathfrak{d}}
-\newcommand{\mf}{\mathfrak{m}}
-\newcommand{\If}{\mathfrak{I}}
-\newcommand{\Cinf}{C^\infty}
-
-\DeclareMathOperator{\img}{img}
-\DeclareMathOperator{\Arg}{Arg}
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\Id}{Id}
-\DeclareMathOperator{\Td}{Td}
-\DeclareMathOperator{\td}{td}
-\DeclareMathOperator{\Alt}{Alt}
-\DeclareMathOperator{\Spec}{Spec}
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\Int}{Int}
-\DeclareMathOperator{\Bl}{Bl}
-\DeclareMathOperator{\Proj}{Proj}
-\DeclareMathOperator{\Ob}{Ob}
-\DeclareMathOperator{\Mor}{Mor}
-\DeclareMathOperator{\Top}{Top}
-\DeclareMathOperator{\CGWH}{CGWH}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Map}{Map}
-\DeclareMathOperator{\Tot}{Tot}
-\DeclareMathOperator{\Vect}{Vect}
-\DeclareMathOperator{\VectBund}{VectBund}
-\DeclareMathOperator{\Open}{Open}
-\DeclareMathOperator{\Ring}{Ring}
-\DeclareMathOperator{\Set}{Set}
-\DeclareMathOperator{\Sets}{Sets}
-\DeclareMathOperator{\Ab}{Ab}
-\DeclareMathOperator{\op}{op}
-\DeclareMathOperator{\Groups}{Groups}
-\DeclareMathOperator{\eq}{eq}
-\DeclareMathOperator{\Fun}{Fun}
-\DeclareMathOperator{\Coh}{Coh}
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\an}{an}
-\DeclareMathOperator{\alg}{alg}
-\DeclareMathOperator{\Pic}{Pic}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\SO}{SO}
-\DeclareMathOperator{\U}{U}
-\DeclareMathOperator{\SU}{SU}
-\DeclareMathOperator{\Sp}{Sp}
-\DeclareMathOperator{\M}{M}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\PGL}{PGL}
-\DeclareMathOperator{\PSL}{PSL}
-\DeclareMathOperator{\Car}{Car}
-\DeclareMathOperator{\Prin}{Prin}
-\DeclareMathOperator{\Div}{Div}
-\DeclareMathOperator{\ord}{ord}
-\DeclareMathOperator{\kod}{kod}
-\DeclareMathOperator{\trdeg}{trdeg}
-\DeclareMathOperator{\Mfld}{Mfld}
-\DeclareMathOperator{\ch}{ch}
-\DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\Ric}{Ric}
-\DeclareMathOperator{\Vol}{Vol}
-\DeclareMathOperator{\Area}{Area}
-\renewcommand{\O}{\operatorname{O}}
+\input{/Users/daniel/github/config/preamble.sty}
 
 \begin{document}
-{\Huge algebraic geometry}
-%\tableofcontents
-\section{some notes}%
-\label{sec:some notes}
-\begin{defn}[Scheme] Let $A$ be a ring.
-	\begin{enumerate}
-		\item $\operatorname{Spec}(A)$ is the set of all prime ideals of $A$.
-		\item $V(\mathfrak{a})\subset \operatorname{Spec}A$ is the set of all prime ideals which contain $\mathfrak{a}$.
-		\item The topology of $\operatorname{Spec}(A)$ is given by taking $V(\mathfrak{a})$ to be closed subsets.
-		\item The sheaf of rings $\mathcal{O}$ on $\operatorname{Spec}(A)$ is given by:
-			\begin{itemize}
-				\item For an open set $U\subset \operatorname{Spec}A$ define $\Oc(U)$ to be the set of functions $s:U\to \prod_{p\in U} A_{\mathfrak{p}}$ where $A_{\mathfrak{p}}$ is the localization of $A$ at $\mathfrak{p}$ (the ring whose elements are fractions with numerators in $A$ and denominators in $A\backslash \mathfrak{p}$) such that $s(\mathfrak{p})\in A_{\mathfrak{p}}$ for each $\mathfrak{p}$, and such that $s$ is locally a quotient of elements of $A$. This means that if $\mathfrak{p}\in U$, there is a neighbouthook $V$ of $\mathfrak{p}$ contained in $U$ and elements $a,f\in A$ such that for each $\mathfrak{q}\in V$, $f\not\in \mathfrak{q}$ and $s\left( \mathfrak{q} \right)=a /f$.
 
-					{\color{cyan}What? I've been trying to write this one paragraph for basically all day (I'm setting up Vim and although fun it's taking some time) and I just don't understand it. Reall what is a regular function: a function $\phi:U\to k$ such that locally $\phi=f /g$ for some polynomials $f,g\in k[x_1,\ldots,x_n]$. And the correspondence $U\mapsto \{\text{regular functions on } U\}$ looks like a sheaf. So the new regular functions are funny functions whose codomain is $\prod_{p\in U}A_{\mathfrak{p}}$ but they are also quotients of elements of the ring (when the ring is the ring of polynomials then elements of the ring are polynomials right).}
-
-					{\color{azure}So the point is that its not so obvious why this should be the sheaf of the Spec:after all, it looks like a crazy way to make a geometric object out of a ring and its ideals…}
-			\end{itemize}
-		\item The \textit{\textbf{spectrum}} of $A$ is the pair consisting of $\operatorname{Spec}A$ together with the sheaf $\mathcal{O}$.
-		\item A \textit{\textbf{locally ringed space}} $\left( X,\mathcal{O}_{X} \right) $ consists of a topological space $X$, a sheaf of rings $\mathcal{O}_{X}$ on $X$ such that at every point $P\in X$ the stalk $\mathcal{O}_{X,P}$ is a local ring.
-		\item A \textit{\textbf{morphism of locally ringed spaces}}  is a morphism  $\left( f,f^{\#} \right) $ such that for every point $P\in X$ the \textit{\textbf{induced map}} of local rings $f^{\#}_{p}:\mathcal{O}_{Y,f(P)}\to \mathcal{O}_{X,P}$ is a \textit{\textbf{local homomorphism of local rings}}. This involves taking direct limits (because it involves the stalks). \textit{\textbf{Local homomorphism of local rings}} is an homomorphism $\varphi:A\to B$ between the local rings $A$ and $B$ with maximal ideals $\mathfrak{m}_A$ and $\mathfrak{m}_B$ such that $\varphi^{-1}(\mathfrak{m}_B=\mathfrak{m}_A$.
-
-		\item An \textit{\textbf{affine scheme}} is a locally ringed space $(X,\mathcal{O}_X)$ isomorphic as a locally ringed space to the spectrum of some ring.
-		\item A \textit{\textbf{scheme}} is a locally ringed space $\left( X,\mathcal{O}_X \right) $ in which every point has an open neighbourhood $U$ such that the topolgical space $U$ together with the restricted sheaf $\mathcal{O}_X|_U$ is an affine scheme.
-	\end{enumerate}
-\end{defn}
-Then comes the analogue definition for projective schemes:
-\begin{defn}[Proj]Let $S$ be a graded ring.
-	\begin{enumerate}
-		\item A \textit{\textbf{graded sing}} $S$ is a ring with a decomposition  $S=\bigoplus_{d\geq 0}S_d  $ into a direct sum of abelian groups $S_d$ such that for any $d,e\geq 0$, $S_d\cdot S_e\subseteq S_{d+e}$.
+\begin{minipage}{\textwidth}
+	\begin{minipage}{1\textwidth}
+		Geometry of Algebraic Varieties \hfill Daniel González Casanova Azuela
 		
-			An element of $S$  can be written uniquely as a finite sum of homogeneous elements.
-		\item An ideal $\mathfrak{A}\subseteq S$  is an \textit{\textbf{homogeneous ideal}} if $\mathfrak{a}=\bigoplus_{d\geq_0}(\mathfrak{a}\cap S_d)  $. An ideal is homogeneous if and only if it can be generated by homogeneous elements. The sum product, intersection and radical of homogeneous ideals are homogeneous.
-		\item $\operatorname{Proj}S$ to be the set of all homogeneous prime ideals which do not contain all of $S_+$.
-		\item If $\mathfrak{a}$ is a homogeneous ideal of $S$, we define $V(\mathfrak{a}=\{\mathfrak{p}\in \operatorname{Proj}S|p\supseteq\mathfrak{a}\} $
+		{\small\hfill\href{https://github.com/danimalabares/ag}{github.com/danimalabares/ag}}
+	\end{minipage}
+\end{minipage}\vspace{.2cm}\hrule
 
-	\end{enumerate}
-	
-\end{defn}
+\vspace{10pt}
 
+{\Huge Exercises in algebraic geometry}
 
+If not explicity stated, exercises are from Hartshorne.
 
-\section{chapter 1}
+\tableofcontents
 
-\begin{exercise}[1.1, My first algebraic variety]
+\section{Chapter I}
+
+\addcontentsline{toc}{subsection}{Exercise 1.1}
+\begin{manualexercise}{1.1}[My first algebraic variety]
 	\begin{enumerate}[label*=(\alph*)]\leavevmode
 		\item Let $Y$ be the plane curve $y=x^2$ (ie., $Y$ is the zero set of the polynomial $f=y-x^2$). Show that $A(Y)$ is isomorphic to a polynomial ring in one variable over $k$.
 		\item Let $Z$ be the plane curve $xy=1$. Show that $A(Z)$ is not isomorphic to a polynomial ring in one variable over $k$.
 		\item[*(c)] Let $f$ be any irreducible quadratic polynomial in $k[x,y]$, and let $W$ be the conic defined by $f$. Show that $A(W)$ is isomorphic to $A(Y)$ or $A(Z)$. Which one is it when?
 	\end{enumerate}
-\end{exercise}
+\end{manualexercise}
+
 \begin{proof}\leavevmode
 	\begin{enumerate}[label=(\alph*)]
 		\item Consider the map
@@ -249,68 +42,219 @@ Then comes the analogue definition for projective schemes:
 		\item In constructing a map like in the former exercise, we may fix $1$ and $x$, and we should map $y$ to $1/x$. However, $1/x$ is not an element of $k[x]$ so we really have an isomorphism $k[x,y]/(xy-1)\cong k[x,\frac{1}{x}]\not\cong k[x]$.
 	\end{enumerate}
 \end{proof}
-\begin{exercise}[2.14, The Segre Embedding]
-	Let $\psi:\P^r\times\P^s\to\P^N$ be the map defined by sending the order pair $(a_0,\ldots,a_r)\times(b_0,\ldots,b_s)$ to $(\ldots,a_ib_j,\ldots)$ in lexicographic order, where $N=rs+r+s$. Note that $\psi$ is well-defined and injective. It is called the \textbf{\textit{Segre embedding}}. Show that the image of $\psi$ is a subvariety of $\P^N$. [\textit{Hint}: Let the homogeneous coordinates of $\P^N$ be $\{z_{ij}:i=0,\ldots,r,j=0,\ldots,s\}$ and let $\af$ be the kernel of the homomorphism $k[\{z_{ij}\}]\to k[x_0,\ldots,x_r,y_0,\ldots,y_s]$ which sends $z_{ij}$ to $x_iy_j$. Then show that $\img\psi=Z(\af)$.
-\end{exercise}
+
+\addcontentsline{toc}{subsection}{Exercise 2.14}
+\begin{manualexercise}{2.14}[The Segre Embedding]
+	Let $\psi:\mathbb{P}^r\times\mathbb{P}^s\to\mathbb{P}^N$ be the map defined by sending the order pair $(a_0,\ldots,a_r)\times(b_0,\ldots,b_s)$ to $(\ldots,a_ib_j,\ldots)$ in lexicographic order, where $N=rs+r+s$. Note that $\psi$ is well-defined and injective. It is called the \textbf{\textit{Segre embedding}}. Show that the image of $\psi$ is a subvariety of $\mathbb{P}^N$. [\textit{Hint}: Let the homogeneous coordinates of $\mathbb{P}^N$ be $\{z_{ij}:i=0,\ldots,r,j=0,\ldots,s\}$ and let $\mathfrak{a}$ be the kernel of the homomorphism $k[\{z_{ij}\}]\to k[x_0,\ldots,x_r,y_0,\ldots,y_s]$ which sends $z_{ij}$ to $x_iy_j$. Then show that $\operatorname{img}\psi=Z(\mathfrak{a})$.
+\end{manualexercise}
+
 \begin{proof}[Solution]
 	First let's make sure the dimension $N$ is correct. The easy way is found in \href{https://en.wikipedia.org/wiki/Segre_embedding}{wiki}: $N=(r+1)(s+1)-1$ which is the number of possible choices of pairs of things taking one out $r+1$, another out of $s+1$, and then remember there is only one zero index so take one away.
 	
 	To see that $\psi$ is injective we follow \href{https://math.stackexchange.com/questions/3683364/segre-map-is-an-embedding}{StackExchange}: 
-	{\color{azure}Let $z=[z_{00}:z_{01}:\ldots:z_{ij}:\ldots:z_{rs}]$ be an element of the image of $\psi$ and let $(a,b)\in\P^r\times\P^s$ be such that $\psi(a,b)=z$. WLOG we can assume $a_0=b_0=z_{00}=1$. Then $b_j=z_{0j}$ for all $0\leq j\leq s$ and $a_i=z_{i0}$ so $a,b$ are uniquely determined and this map is bijective onto the image.
+	{\color{azure}Let $z=[z_{00}:z_{01}:\ldots:z_{ij}:\ldots:z_{rs}]$ be an element of the image of $\psi$ and let $(a,b)\in\mathbb{P}^r\times\mathbb{P}^s$ be such that $\psi(a,b)=z$. WLOG we can assume $a_0=b_0=z_{00}=1$. Then $b_j=z_{0j}$ for all $0\leq j\leq s$ and $a_i=z_{i0}$ so $a,b$ are uniquely determined and this map is bijective onto the image.
 	
 	Actually, what we have done is constructed an inverse morphism of the Segre map. According to StackExchange, this makes it into an embedding.}
 	
-	To show that $\img\psi$ is a subvariety of $\P^N$ we need to find a set of homogeneous polynomials in $k[z_{ij}]$/
+	To show that $\operatorname{img}\psi$ is a subvariety of $\mathbb{P}^N$ we need to find a set of homogeneous polynomials in $k[z_{ij}]$/
 	
-	Following the hint, as before let $z\in\img\psi$ and $f$ any polynomial in the kernel of $k[\{z_{ij}\}]\to k[x_0,\ldots,x_r,y_0,\ldots,y_s]$. We must show that $f(z)=0$. Well it doesn't make much sense because if $f=\sum a_{ij}z_{ij}$ is in the kernel of that map, then its image $\sum a_{ij}x_iy_j$ is the zero polynomial, so obviously $f(z)=\sum a_{ij}z_{ij}=\sum a_{ij}x_iy_j=0$. So this is confusing.
+	Following the hint, as before let $z\in\operatorname{img}\psi$ and $f$ any polynomial in the kernel of \[k[\{z_{ij}\}]\to k[x_0,\ldots,x_r,y_0,\ldots,y_s]\]. We must show that $f(z)=0$. Well it doesn't make much sense because if $f=\sum a_{ij}z_{ij}$ is in the kernel of that map, then its image $\sum a_{ij}x_iy_j$ is the zero polynomial, so obviously $f(z)=\sum a_{ij}z_{ij}=\sum a_{ij}x_iy_j=0$. So this is confusing.
 	
-	So what are the equations of $\img\psi$? A polynomial $f(z_{00},\ldots,z_{rs})$ will vanish on $\img\psi$ if somehow it vanishes 
+	So what are the equations of $\operatorname{img}\psi$? A polynomial $f(z_{00},\ldots,z_{rs})$ will vanish on $\operatorname{img}\psi$ if somehow it vanishes 
 \end{proof}
-\begin{exercise}[2.15, The Quadric Surface in $\P^3$.]
-	Consider the surface $Q$ (a \textbf{\textit{surface}} is a variety of dimension 2) in $\P^3$ defined by the equation $xy-wz=0$.
+
+\addcontentsline{toc}{subsection}{Exercise 2.15}
+\begin{manualexercise}{2.15}[The Quadric Surface in $\mathbb{P}^3$]
+	Consider the surface $Q$ (a \textbf{\textit{surface}} is a variety of dimension 2) in $\mathbb{P}^3$ defined by the equation $xy-wz=0$.
 	\begin{enumerate}
-		\item Show that $Q$ is equal to the Segre embedding of $\P^1\times\P^1$ in $\P^3$, for suitable choice of coordinates.
-		\item Show that $Q$ contains two families of lines (a \textbf{\textit{line}} is a linear variety of dimension 1), $\{L_t\},\{M_t\}$ each parametrized by $t\in\P^1$, with the properties that if $L_t\neq L_u$ then $L_t\cap L_u=\varnothing$ and if $M_t\neq M_u$, $M_t\cap M_u=\varnothing$, and for all $t,u$, $L_t\cap M_u$ is a point.
-		\item Show that $Q$ contains other curves besides these lines, and deduce that the Zariski topology on $Q$ is not homeomorphic via $\psi$ to the product topology on $\P^1\times \P^1$ where each $\P^1$ has its Zariski topology.
+		\item Show that $Q$ is equal to the Segre embedding of $\mathbb{P}^1\times\mathbb{P}^1$ in $\mathbb{P}^3$, for suitable choice of coordinates.
+		\item Show that $Q$ contains two families of lines (a \textbf{\textit{line}} is a linear variety of dimension 1), $\{L_t\},\{M_t\}$ each parametrized by $t\in\mathbb{P}^1$, with the properties that if $L_t\neq L_u$ then $L_t\cap L_u=\varnothing$ and if $M_t\neq M_u$, $M_t\cap M_u=\varnothing$, and for all $t,u$, $L_t\cap M_u$ is a point.
+		\item Show that $Q$ contains other curves besides these lines, and deduce that the Zariski topology on $Q$ is not homeomorphic via $\psi$ to the product topology on $\mathbb{P}^1\times \mathbb{P}^1$ where each $\mathbb{P}^1$ has its Zariski topology.
 	\end{enumerate}
-\end{exercise}
+\end{manualexercise}
+
 \begin{proof}[Solution]\leavevmode
 	\begin{enumerate}
-		\item It turns out that the image of the Segre embedding $\psi:\P^1\times\P^1\to\P^3$ equals is the algebraic variety given by the zeroes of the polynomial $f=z_{00}z_{11}-z_{10}z_{01}\in k[z_{00},z_{01},z_{10},z_{11}]$. One contention is easy: if $(x,y)=([x_0,x_1],[y_0,y_1])\in\img\psi$, then clearly $f(\psi(x,y))=x_0y_0x_1y_1-x_0y_1x_1y_0$ is zero because these are numbers in the field $k$.
+		\item It turns out that the image of the Segre embedding $\psi:\mathbb{P}^1\times\mathbb{P}^1\to\mathbb{P}^3$ equals is the algebraic variety given by the zeroes of the polynomial $f=z_{00}z_{11}-z_{10}z_{01}\in k[z_{00},z_{01},z_{10},z_{11}]$. One contention is easy: if $(x,y)=([x_0,x_1],[y_0,y_1])\in\operatorname{img}\psi$, then clearly $f(\psi(x,y))=x_0y_0x_1y_1-x_0y_1x_1y_0$ is zero because these are numbers in the field $k$.
 		
-		Now for the other contention pick $z=[z_{00},z_{01},z_{10},z_{11}]\in V(f)$ and let's find an element $(x,y)\in\P^1\times\P^1$ such that $\psi(x,y)=z$. $z\in V(f)$ means that $z_{00}z_{11}=z_{10}z_{01}$. If $z_{00}\neq0$, then we can define $([z_{00},z_{11}],[z_{01},z_{10}])$ {\color{magenta}what?}
+		Now for the other contention pick $z=[z_{00},z_{01},z_{10},z_{11}]\in V(f)$ and let's find an element $(x,y)\in\mathbb{P}^1\times\mathbb{P}^1$ such that $\psi(x,y)=z$. $z\in V(f)$ means that $z_{00}z_{11}=z_{10}z_{01}$. If $z_{00}\neq0$, then we can define $([z_{00},z_{11}],[z_{01},z_{10}])$ {\color{magenta}what?}
 		%so there is always one of $z_{00}$ or $z_{11}$ and one of $z_{10}$ or $z_{01}$ that are not zero.
 		
-		Maybe for the other contention try to define the inverse map $\img\psi\to\P^1\times\P^1$ by $z=[z_{00},z_{01},z_{10},z_{11}]\mapsto([z_{00},z_{01}],[z_{00},z_{10}])$ when $z_{00}\neq0$ and $([z_{11},z_{01}],[z_{11},z_{10}])$ when $z_{11}\neq0$. Is this defining a global map?
+		Maybe for the other contention try to define the inverse map $\operatorname{img}\psi\to\mathbb{P}^1\times\mathbb{P}^1$ by $z=[z_{00},z_{01},z_{10},z_{11}]\mapsto([z_{00},z_{01}],[z_{00},z_{10}])$ when $z_{00}\neq0$ and $([z_{11},z_{01}],[z_{11},z_{10}])$ when $z_{11}\neq0$. Is this defining a global map?
 		
 		\item The lines correspond to fixing one entry and running over the other one in the Segre embedding $(x,y)\to z$. 
 	\end{enumerate}
 \end{proof}
 
-\begin{exercise}[H-3.16, Products of Quasi-Projective Varieties]
-	Use the Segre embedding (Ex. 2.14) to identify $\P^n\times\P^m$ with its image and hence give it a structure of projective variety. Now for any two quasi-projective varieties $X\subseteq\P^n$ and $Y\subseteq\P^m$ consider $X\times Y\subseteq\P^n\times\P^m$.
+\addcontentsline{toc}{subsection}{Exercise 3.16}
+\begin{manualexercise}{3.16}[Products of Quasi-Projective Varieties]
+	Use the Segre embedding (Ex. 2.14) to identify $\mathbb{P}^n\times\mathbb{P}^m$ with its image and hence give it a structure of projective variety. Now for any two quasi-projective varieties $X\subseteq\mathbb{P}^n$ and $Y\subseteq\mathbb{P}^m$ consider $X\times Y\subseteq\mathbb{P}^n\times\mathbb{P}^m$.
 	\begin{enumerate}[label*=(\alph*)]
 		\item Show that $X\times Y$ is a quasi-projective variety.
 		\item If $X,Y$ are both projective, show that $X\times Y$ is projective.
 		\item Show that $X\times Y$ is a product in the category of varieties.
 	\end{enumerate}
-\end{exercise}
+\end{manualexercise}
+
 \begin{proof}[Solution]
 	content...
 \end{proof}
-\begin{exercise}[Class]
-	How to blow un a point $P$ on a smooth complex surface?
-\end{exercise}
-\begin{proof}[Solution]
-	content...
-\end{proof}
-\begin{exercise}[Class]
-	How to blow un a point $P$ on a smooth complex surface?
-\end{exercise}
-\begin{proof}[Solution]
-	content...
-\end{proof}
-%\clearpage
-%\addcontentsline{toc}{section}{References}
-%\printbibliography
+
+\section{[Ot] Chapter I: Varieties}
+
+A friend from Cabo Frio just recommended me to have a look at \href{https://www.uio.no/studier/emner/matnat/math/MAT4215/data/masteragbook.pdf}{Ottem\&Ellinsburg, Introduction to Schemes}. Here are some exercises I liked from Chapter 1: Varieties.
+
+\addcontentsline{toc}{subsection}{Exercise 1.5.12}
+\begin{manualexercise}{1.5.12}[The diagonal]
+	Let $X$ be an affine variety and consider the map
+	\begin{align*}
+		\Delta: X &\longrightarrow X\times X \\
+		x &\longmapsto (x,x)
+	\end{align*}
+	\begin{enumerate}[label=\alph*.]
+		\item Show that $\Delta$ is a polynomial map.
+		\item Let $X=\mathbb{A}^{n}(k)$…
+		\item …gives an isomorphism $X\to \Delta(X)$. Hint…
+	\end{enumerate}
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 1.5.15}
+\begin{manualexercise}{1.5.15}
+{\color{magenta}Some Lie groups that are algebraic sets}
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 1.5.28}
+\begin{manualexercise}{1.5.28}
+	Show that the image of the map
+	\begin{align*}
+		\phi: \mathbb{A}^{1}(k) &\longrightarrow \mathbb{A}^{3}(k) \\
+		t &\longmapsto (t^{2},t^{3},t^{6})
+	\end{align*}
+	is given by $V(x^{3}-y^{2},z-x^{3})$. Show that $\phi$ is bijective. Is $\phi$ an isomorphism of affine varieties.
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 1.5.29}
+\begin{manualexercise}{1.5.29}
+	Show that the image of the map
+	\begin{align*}
+		\phi: \mathbb{A}^{1}(k) &\longrightarrow \mathbb{A}^{3}(k) \\
+		t &\longmapsto (t^{3},t^{4},t^{5})
+	\end{align*}
+	is given by $V(x^{4}-y^{3},z^{3}-x^{5},y^{5}-z^{4})$. Show that $\phi$ is bijective. Is $\phi$ an isomorphism of affine varieties.
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 1.5.31}
+\begin{manualexercise}{1.5.31}
+	Show that the image of the map
+	\begin{align*}
+		\phi: \mathbb{P}^{1}(k) &\longrightarrow \mathbb{P}^{2}(k) \\
+		(x_0:x_1( &\longmapsto (x_0^{2},x_0x_1,x_1^{2})
+	\end{align*}
+	is given by $V(y_1^{2}-y_0y_2)$. Show that $\phi$ is an isomorphism of projective varieties. Deduce that any projective conic is isomorphic to $\mathbb{P}^{1}(k)$.
+\end{manualexercise}
+
+\section{Chapter IV}
+
+\addcontentsline{toc}{subsection}{Exercise 1.2}
+\begin{manualexercise}{1.2}[I like this one]
+	Again let $X$ be a curve, and let $P_1,\ldots,P_r$ be points. Then there is a rational  function $f\in K(X)$ having poles (of some order) at each of the $P_i$ and regular  elsewhere.  
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 1.7}
+\begin{manualexercise}{1.7}[no one]
+	A curve $X$ is called \textit{\textbf{hyperelliptic}}…
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 1.8}
+\begin{manualexercise}{1.8}[Alex]
+	Very useful to know, I think this is done in that book by Bosch of modules,
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 1.9}
+\begin{manualexercise}{1.9}[Victor]
+	Riemann-Roch for singular curves.
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 2.3(h)}
+\begin{manualexercise}{2.3(h)}
+	28 bitangents. Remind Sergey.
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 2.5}
+\begin{manualexercise}{2.5}
+	Prove the theorem of Hurwitz that a curve $X$ of genus $g\geq 2$ over a field of characteristic 0 has at most $84(g-1)$.
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 3.1}
+\begin{manualexercise}{3.1}
+	If X is a curve of genus 2, show that a divisor D is very ample $\iff \operatorname{deg} D \geq 5$.  This strengthens (3,3.4).
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 3.12}
+\begin{manualexercise}{3.12}
+	For each value of $d = 2,3,4,5$ and $r$ satisfying $0\leq r\leq \frac{1}{2}(d-1)(d-2)$, show  that there exists an irreducible plane curve of degree d with r nodes and no other  singularities.
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 4.10}
+\begin{manualexercise}{4.10}
+	If $X$ is an elliptic curve (Sergey: for abelian varieties is also true), show that there is an exact sequence… Picard groups.
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 5.3}
+\begin{manualexercise}{5.3}
+	Moduli of Curves of Genus 4. The hyperelliptic curves of genus 4 form an irreducible family of dimension 7. The nonhyperelliptic ones form an irreducible  family of dimension 9. The subset of those having only one $g_3^{1}$ is an irreducible  family of dimension 8. [Hint: Use (5.2.2) to count how many complete intersections $Q\cap F_3$ there are.]  
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 6.2}
+\begin{manualexercise}{6.2}
+	A rational curve of degree 5 in $\mathbb{P}^{3}$ is always contained in a cubic surface, but there  are such curves which are not contained in any quadric surface.  
+\end{manualexercise}
+
+\section{Chapter V}
+
+\addcontentsline{toc}{subsection}{Exercise 1.8}
+\begin{manualexercise}{1.8}
+	Divisor cohomology, neron severi
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 2.8}
+\begin{manualexercise}{2.8}
+	Locally free sheaves.
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 3.5}
+\begin{manualexercise}{3.5}
+	5 points in the field, hyperelliptic curve, point at infinity is singular.
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 4.6}
+\begin{manualexercise}{4.5}
+	
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 4.16}
+\begin{manualexercise}{4.16}
+	27 lines on Fermat cubic
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 5.1}
+\begin{manualexercise}{5.1}
+	
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 5.4}
+\begin{manualexercise}{5.4}
+	
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 5.5}
+\begin{manualexercise}{5.5}
+	
+\end{manualexercise}
+
+\addcontentsline{toc}{subsection}{Exercise 6.2}
+\begin{manualexercise}{6.2}[Arthur]
+	Beautiful exercise.
+\end{manualexercise}
+
 \end{document}
