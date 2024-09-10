@@ -290,6 +290,7 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 	That $\varphi$ is continuous and bicontinuous follows from the same reasons as the previous question.
 
 	To finish we check that the induced map on coordinates rings is not an isomorphism, since its inverse must be of the form $t\mapsto t^{\frac{1}{p}}$, which is not polynomial.
+
 \end{enumerate}
 \end{proof}
 
@@ -337,6 +338,172 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 		\item 
 	\end{enumerate}
 \end{proof}
+
+\addcontentsline{toc}{subsection}{5.4}
+\begin{manualexercise}{5.4}[Intersection mulitplicity]
+	If $X,Y\subseteq \mathbb{A}^{2} $
+\end{manualexercise}
+
+\subsection{Analitically isomorphic singularities}
+Two curves $C_1,C_2$ with points $P \in C_1$ and $Q\in C_2$, and $\mathcal{O}_P\supset\mathfrak{m}_P$, $\mathcal{O}_Q\supset\mathfrak{m}_Q$. And
+\[C:f=0,\qquad f[x,y]/(f), \quad \mathfrak{m}=(x,y).\]
+We define
+\[\hat{\mathcal{O}}_p=\lim_{\longleftarrow} \mathcal{O}_P/\mathfrak{m}^n_P\cong k[ [x,y]]/(y)\]
+
+\begin{defn}
+	\textit{\textbf{Analitical isomorphism}} is a $k$-isomorphism with $\hat{\mathcal{O}}_P\cong \hat{\mathcal{O}}_Q$.
+\end{defn}
+
+\addcontentsline{toc}{subsection}{Exercise \#}
+\begin{manualexercise}{?}
+	\begin{enumerate}[label=\alph*.]
+		\item An. isomorphic $\implies \mu_{C_1}(D)=\mu_{C_2}(Q)$.
+\[f(x,y)=f_r(x,y)+f_{r+1}(x,y)+\ldots+f_n(x,y).\]
+\[\mu(p)=r\]
+
+\item Let $f=f_r+f_{r+1}+\ldots\in k[[x,y]]$. Suppose that $f_r=g_s h_t\in k[x,y]$ have no linear factors in common (which means they are coprime). Then there exist $g,h\in k[ [ x,y] ]$ such that
+	\[f=gh,\quad g=g_s,\quad h=h_t+\ldots\]
+
+	\item Let $f=f_r+f_{r+1}+\ldots\in k[x,y]$. If
+		\[f_r=L_1\cdot L_2\cdot …\cdot L_r\]
+		then $P=(0,0)$ is an ordinary $r$-fold. Show that any 2-folds are analitically isomorphic.
+
+		\item Consider the curve $C:f=0,\quad \mu=2$. It is an ordinary 2-fold. Show that
+			\[\hat{\mathcal{O}}_P\cong \frac{k[ [ x] ]}{(y^2-x^r)}\]
+	\end{enumerate}
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+	\begin{enumerate}[label=\alph*.]
+		\item
+
+		\item Suppose they exist and are $g=\sum_{i}g_i$, $h=\sum_{j}h_j$ so that
+			\[f=gh=\sum_{d=r}^\infty\sum_{i+j=d}g_ih_j\]
+			which means that
+			\[f_{r+d}=\sum_{i+j=d}g_ih_j=g_sh_{t+d}+g_{s+d}h_t+\sum_{?}g_ih_j\]
+			and
+			\[f_{r+1}=g_s h_{t+1}+g_{s+1}h_t\]
+			Notice that since $g$ and $h$ don't share linear factors, we may fix the second variable and the resulting polynomials generate $k[t]$, ie.
+			\[(g_s(t,1),h_t(t,1))=k[t]\]
+			Further computations show that the next term is well defined.
+
+		\item Consider the completion at the origin, $\hat{\mathcal{O}}_P\cong k[[x,y]]/(f)$. We shall try to show that in fact
+			\[k[[x,y]]/(f)\overset{\cong }{\longrightarrow}k[ [x,y]]/(f_r)\]
+			so consider the map
+			\begin{align*}
+				x\mapsto x+A(x,y)\qquad \qquad y\mapsto y+B(x,y)
+			\end{align*}
+			so that
+			\[f(x+A(x,y),y+B(x,y))=f_r(x,y).\]
+			Using a projective transformation, that makes the tangents be (?), we see that
+			\[\hat{\mathcal{O}}_P\cong k[ [x,y]]/(xy)\]
+
+			\begin{claim}[Not true]
+		 Any $k$-isomorphism 
+		 \[\varphi:\frac{k[ [x,y]]}{(f)}\longrightarrow\frac{k [ [ x,y] ] }{(y)}\]
+		 have the form
+		 \[x\mapsto x+A(x,y)\quad \quad y\mapsto y+B(x,y)\quad  \text{when } \mu\geq 2\]
+
+		 \item Suppose that
+			 \[f(x,y)=y^2A(y)\qquad A(0)\neq 0,\qquad f(x,y)=(y^2+a(x)y+b(x))\cdot u(x,y)\]
+			 recall that
+			 \begin{thm}[Weierstrass preparation theorem]\leavevmode
+				 Let $A$ be a local ring, $k[ [x]]$,  $\mathfrak{m}=(x)$, and $f\in A[ [ y ] ]$. Then
+			 \[f=(y^n+k_{r-1}y^{n-1}+\ldots+b_0)\cdot u(y)\]
+			 for $u\in A[ [ y] ]^\times $ and $b_i\in\mathfrak{m}$
+			 \end{thm}
+			 \begin{align*}
+			 	f(x,y)& =(y^2+c(x))u(x,y)\\
+				\hat{\mathcal{O}}_P&\cong \frac{k[ [x,y]]}{(y^2+c(x))}\\
+				c(x)& =x^rV(x),\quad \text{where } V\in k[ [ x]]^\times \\
+				V(x)& =1+x+\ldots\\
+				\sqrt[r]{1+x} =1+c_1x+\ldots\\
+				V(x)& =W(x)^r\\
+				x^rV(a)& =(xW)^r\\
+				y^2&-x^r.
+			\end{align*}
+	\end{claim}
+
+	\end{enumerate}
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 7.2}
+
+\begin{defn}
+	Let $M$ be a finitely generated graded $S$-module, where $S=k[x_0,\ldots,x_m]$. A \textit{\textbf{Hilbert function}} is
+	\begin{align*}
+		\varphi: \mathbb{Z} &\longrightarrow M \\
+		t &\longmapsto \dim_k(M_t)
+	\end{align*}
+\end{defn}
+
+\begin{thm}
+	There exists a unique polynomial $P_M\in\mathbb{Q}[t]$ such that for all $t\gg 0$, $P_M(t)=\varphi_M(t)$.
+\end{thm}
+
+\begin{manualexercise}{7.2}
+	Let $Y$ be a variety of dimension $r$ in $\mathbb{P}^n$, with Hilbert polynomial $P_Y$. We define the \textit{\textbf{arithmetic genus}} of $Y$ to be
+	\[P_Y(t):=P_{S[Y]}(t)\]
+	\[=(-1)^r(P_Y(0)-1)\]
+	\begin{enumerate}[label=\alph*.]
+		\item  $Y=\mathbb{P}^n$.
+		\item $Y\subset \mathbb{P}^n$ plane curve of degree $d$.
+		\item $ Y\subset \mathbb{P}^n$ hypersurface of degree $d$.
+		\item $Y_a,Y_b\subset \mathbb{P}^3$ of degrees $a$ and $b$, $Y =Y_a\cap Y_b$ complete intersection.
+		\item $Y^r\subset \mathbb{P}^n$, $Z^s\subset \mathbb{P}^m$ : $Y\times Z\subset \mathbb{P}^N$. Here
+			\[P_{Y\times Z}(t)=P_Y(t)P_Z(t)\]
+	\end{enumerate}
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+	\begin{enumerate}[label=\alph*.]
+		\item $S[Y]=k[x_0,\ldots,x_n]$, 
+		\[\dim (k[x_0,\ldots,x_n]_t)=\binom{n+t}{n}=\frac{(n+1)(n+t-1)\ldots(t+1)}{n!}=\frac{t^n}{n!}+\ldots\]
+			so that
+			\[P_Y(0)_1\implies P_a(\mathbb{P}^n)=0.\]
+	
+			\item Now
+				\[P_a(Y)=\frac{(d-1)(d-2)}{2}\]
+				which follows from c so let's do c.
+
+			\item Suppose $Y=Z(f)$. Then
+			\[(f)\hookrightarrow k[x_0,\ldots,x_n]\to k[Y]\]
+			\begin{align*}
+				(f)& =\{f\varphi:\varphi\in k[x_0,\ldots,x_n]\} \\
+				(f)_t&=\binom{n+t-d}{n}\\
+			P_Y(t)&=\binom{n+t}{n}-\binom{n+t-d}{n}\\
+			P_a(Y)&=(-1)^n\binom{n-d}{n}\\
+			&=(-1)^n\frac{(n-d)(n-d-1)\ldots(1-d)}{n!}\\
+			&=\frac{(d-1)\ldots(d-n)}{n!}\\
+			& =\binom{d-1}{n}
+			\end{align*}
+
+			\item Let's first write the formula and then we discuss it
+				\begin{align*}P(t)&=\binom{3+t}{t}-\binom{3+t-a}{t}-\binom{3+t-b}{t}+\binom{3+t-a-b}{3}\\
+					&=(ab)t+P_Y(0)
+					\end{align*}
+					\begin{align*}
+						P_Y(0)&=1-f(a)-f(b)+f(a+b)\\
+						P_a(Y)&=f(a)+f(b)-f(a+b)
+					\end{align*}
+					Considering multiplication by $f_b$ as map
+					\[\frac{k[\mathbb{P}^3]}{(f_a)}\overset{f_b}{\longrightarrow}\frac{k[\mathbb{P}^3]}{(f_a)}\]
+					so we get
+					\[\begin{tikzcd}
+						0\arrow[r]&\frac{k[\mathbb{P}^3]}{(f_a)}\arrow[r]&\frac{k[\mathbb{P}^3]}{(f_a)}\arrow[r]&\frac{k[\mathbb{P}^3]}{(f_a,f_b)}\arrow[r]&0
+					\end{tikzcd}\]
+					but we need to consider the map $[-b]$ to stop the grading from moving up from one arrow to another. Then we get
+					\[P_Y=P_{Y_a}(t)-P_{Y_a}(t-b)\]
+					so
+					\[P_A-P_B+P_C=0.\]
+
+	\item O problema est\'a em ver se
+		\[K[Y\times Z]_d\overset{?}{\cong}k[Y]_d \otimes_k k[Z]_d\]
+	Da\'i o Hilbert polynomial \'e o produto dos Hilbert polynomials e t\'a.
+	\end{enumerate}
+
+\end{proof}
+
 
 \section{[Ot] Chapter I: Varieties}
 
