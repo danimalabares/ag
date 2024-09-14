@@ -102,6 +102,99 @@ If not explicity stated, exercises are from Hartshorne.
 	\end{enumerate}
 \end{proof}
 
+\addcontentsline{toc}{subsection}{Exercise 1.8}
+\begin{manualexercise}{1.8}
+	Let $Y$ be an affine variety of dimension $r$ in $\mathbb{A}^n$. Let $H$ be a hypersurface in $\mathbb{A}^n$ and assume that $ Y\not\subseteq H$. Then every irreducible component of $Y\cap H$ has dimension $r-1$.
+
+	So: intersection of variety of dimension $r$ and hypersurface is variety dimensin $r-1$.
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+	Suppose $H=\mathbb{V}(f)$ and $Y=\mathbb{V}(\mathfrak{q})$. Then $Y\cap H=\mathbb{V}(\mathfrak{q}+(f))$. Pick an irreducible component in $Y\cap H$ which is associated to a prime ideal $\mathfrak{p}$. Then we have that $\mathfrak{q}+(f)\subseteq \mathfrak{p}$. Passing to the quotient, we have that $(f)/\mathfrak{q}\subseteq \mathfrak{p}/\mathfrak{q}$. Now we use the result that
+
+	\begin{thm}[Krull's Hauptidealsatz]
+		Let $A$ be a noetherian ring. For an element $x\in A$ that is not a unit nor a zero divisor,
+		\[(x)\subseteq \mathfrak{p},\]
+		where $\mathfrak{p}$ is a minimal ideal, then $\mathfrak{p}$ has height 1.
+	\end{thm}
+and since $(f)/\mathfrak{q}$ is principal in the quotient, ie. $(f)/\mathfrak{q}=(f+\operatorname{mod}\mathfrak{q})$.
+\end{proof}
+
+\subsection{Carlos, September 13}
+
+$k$ n\~ao neces. algebricamente fechado, $\bar{k}$ algebraic closure, $V$ variedade afim, $V\subseteq \mathbb{A}^n=k^n$, $k[V]=k[c_1,\ldots,x_n]/I(V)$. $P\in V$, $\mathfrak{m}_p=\{g\in k[V]:g(p)=0\}$ \'e um ideal maximal.
+
+Para $g\in k[V]$,
+\[\operatorname{ord}_P(g)=\operatorname{sup}\{d\in\mathbb{Z}_{\geq 0}:g\in\mathfrak{m}_p^d\}.\]
+Uma \textit{\textbf{curva}} \'e uma variedade projetiva suave de dimens\~ao 1. \textit{\textbf{Curvas el\'ipticas}}:
+\[\begin{tikzcd}
+	E:x^2=x^3+ax+b\arrow[d,"\text{projetiza\c c\~ao}" ]\\
+	zy^2=x^3+axz^2+bz^3
+\end{tikzcd}\]
+
+\begin{exercise}
+	Seja $E/k$ uma curva eliptica suave:
+	\begin{align*}
+		y^2&=x^3+ax+b\\
+		&=(x-e_1)(x-e_2)(x-e_3)
+	\end{align*}
+	com $e_1,e_2,e_3\in\bar{k}$. Considere
+	\[f_1=(x-e_1),\quad f_2=(x-e_2),\quad f_3=(x-e_3)\]
+	\[p_1=(e_1,0),\quad p_2=(e_2,0),\quad p_3=(e_3,0)\]
+	O que \'e
+	\[\operatorname{ord}_{f_i}p_i=?\]
+\end{exercise}
+
+\begin{proof}[Solution] Lembre que $p$ \'e um ponto suave se e somente se $\dim \mathfrak{m}_p/\mathfrak{m}_p^\alpha=\dim V$.
+	\begin{enumerate}[label=\textbf{Step \arabic*}]
+		\item Considere a projetiza\c c\~ao de $E$ :
+			\[y^2z=(x-e_1z)(x-e_2z)(x-e_3z).\]
+			Da\'i,
+			\[p_1=[e_1:0:1],\quad p_2=[e_2:0:1],\quad p_3=[e_3:0:1]\]
+			
+	\end{enumerate}
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 2.13}
+\begin{manualexercise}{2.13}
+	Let $Y$ be the image of the 2-uple embedding of $\mathbb{P}^2$ in $\mathbb{P}^{5}$. This is the \textit{\textbf{Vernoses surface}}. If $Z\subseteq Y$ is a closed curve (a \textit{\textbf{curve}} is a variety of dimension 1), show that there exists a hypersurface $V\subseteq \mathbb{P}^5$ such that $V \cap Y=Z$.
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+	\begin{align*}
+		\rho_2: \mathbb{P}^2 &\overset{\text{Veronese} }{\longrightarrow}\mathbb{P}^5\\
+		[x_0:x_1:x_2]&\longmapsto [x_0^2:x_1^2:x_2^2:x_0x_1:x_1x_2:x_0x_2]
+	\end{align*}
+	And $Y:=\rho_2(\mathbb{P}^2)$. Notice that $Y=\mathbb{V}(\ker \theta)$ where
+	\begin{align*}
+		\theta: k[y_0,\ldots,y_5 &\longrightarrow k[x_0,\ldots,x_2] \\
+		y_i &\longmapsto M_i=\text{$i$-th monomial of degree $d$ in $x_0,\ldots,x_n$}\\ \\
+		y_0&\longmapsto x_0^2\\
+		y_1&\longmapsto x_1^2\\
+		y_2&\longmapsto x_2^2\\
+		y_3&\longmapsto x_0x_1\\
+		y_4&\longmapsto x_0x_2\\
+		y_5&\longmapsto x_1x_2
+	\end{align*}
+ it is not immediate that kernel of this map is $Y$, but it is true.
+
+ By exercise 2.8 there exists a homogeneous polynomial (which is irreducible) such that $V(f)=\rho^{-1}_2(Z)$. Recall that $Z$ is a curve in $Y$ so $\rho^{-1}(Z)$ is (probably) a curve in $\mathbb{P}^2$.
+
+ So, we have
+ \[Z=\rho_2(V(f))=\rho_2(V(f^2)),\]
+ which follows from the fact that $\theta$ is surjective over the set of polynomials of even degree. How to prove this? It sufficies to prove for monomials. This is a combinatorial problem. Consider
+ \[x_0^{a_0}x_1^{a_1}x_2^{a_2}\longmapsto(a_0,a_1,a_2)\in\mathbb{Z}^3\]
+ Anyway… this means that there exists $g\in k[x_0,x_1,x_2]$ such that $f^2=\theta(g)$. And then
+ \[Z=Y\cap V(g)\]
+ which means that being the Veronese image of a zero of $f$ is the same as being a zero of $g$. (Some more thought on how $\theta$ is working?)
+\end{proof}
+
+\paragraph{Explanation} The Veronese map image is actually the symmetric matrices of rank 1:
+\begin{align*}
+	v&\longmapsto v^{\mathbf{T}}\cdot v\\
+	\begin{pmatrix} v_0\\v_1\\v_2 \end{pmatrix} \begin{pmatrix} v_0&v_1&v_2 \end{pmatrix} & =\begin{pmatrix} v_0v_0&v_0v_1\\v_1v_0&v_1v_1 \end{pmatrix} 
+\end{align*}
+
 \addcontentsline{toc}{subsection}{Exercise 2.14}
 \begin{manualexercise}{2.14}[The Segre Embedding]
 	Let $\psi:\mathbb{P}^r\times\mathbb{P}^s\to\mathbb{P}^N$ be the map defined by sending the order pair $(a_0,\ldots,a_r)\times(b_0,\ldots,b_s)$ to $(\ldots,a_ib_j,\ldots)$ in lexicographic order, where $N=rs+r+s$. Note that $\psi$ is well-defined and injective. It is called the \textbf{\textit{Segre embedding}}. Show that the image of $\psi$ is a subvariety of $\mathbb{P}^N$. [\textit{Hint}: Let the homogeneous coordinates of $\mathbb{P}^N$ be $\{z_{ij}:i=0,\ldots,r,j=0,\ldots,s\}$ and let $\mathfrak{a}$ be the kernel of the homomorphism $k[\{z_{ij}\}]\to k[x_0,\ldots,x_r,y_0,\ldots,y_s]$ which sends $z_{ij}$ to $x_iy_j$. Then show that $\operatorname{img}\psi=Z(\mathfrak{a})$.
@@ -557,6 +650,75 @@ A friend from Cabo Frio just recommended me to have a look at \href{https://www.
 	\end{align*}
 	is given by $V(y_1^{2}-y_0y_2)$. Show that $\phi$ is an isomorphism of projective varieties. Deduce that any projective conic is isomorphic to $\mathbb{P}^{1}(k)$.
 \end{manualexercise}
+
+\section{Chapter III}
+
+\subsection{Injective resolutions, derived functors and cohomology (once and for all?)}
+\begin{defn}
+	(\href{https://en.wikipedia.org/wiki/Injective_object#:~:text=9%20References-,Definition,can%20be%20extended%20to%20Y%20.}{wiki}) An object $Q$ is \textit{\textbf{injective}} if, given a monomorphism $f:X\to Y$, any $g:X\to Q$ can be extended to $Y$.
+\[\begin{tikzcd}
+X\arrow[r,"f",hook]\arrow[d,"g",swap]&Y\arrow[dl,"h",dashed]\\
+Q
+\end{tikzcd}\]
+\end{defn}
+
+(\href{https://en.wikipedia.org/wiki/Derived_functor#Construction_and_first_properties}{wiki}) The crucial assumption we need to make about our abelian category (=morphisms and objects can be added and kernels and cokernels exist and have desiarable properties) is that it has  \textit{\textbf{enough injectives}}, meaning that for every object $A$ in $\mathbf{A}$ there exists a monomorphism $A\to I$ where $I$ is an injective object in $\mathbf{A}$.
+
+The right derived functors of the covariant left-exact functor $F:A\to B$ are then defined as follows. Start with an object $X$ of $\mathbf{A}$. Because there are enough injectives, we can construct a long exact sequence of the form
+\[\begin{tikzcd}[column sep=small]
+	0\arrow[r]&X\arrow[r]&I^0\arrow[r]&I^1\arrow[r]&I^2\arrow[r]&\cdots
+\end{tikzcd}\]
+where $I^i$ are injective. (This is known as an \textit{\textbf{injective resolution}} of $X$). Applying the functor $F$ to this sequence, and choppingng off the first term, we obtain the chain complex
+\[\begin{tikzcd}[column sep=small]
+	0\arrow[r]&F(I^0)\arrow[r]&F(I^1)\arrow[r]&F(I^2)\arrow[r]&\cdots
+\end{tikzcd}\]
+This is in general not an exact sequence anymore. But we can compute its cohomology at the $i$-th spot (the kernel of the map from $F(I^i)$ modulo the image of the map to $F(I^i))$; we call the result $R^iF(X)$.
+
+Of course various things have to be checked: the result does not depend on the given injective resolution of $X$, and any morphism $X\to Y$ naturally yields a morphism $R^iF(X)\to R^iF(Y)$ so that we indeed obtain a functor. Note that left exactness means that
+\[\begin{tikzcd}
+	0\arrow[r]&F(X)\arrow[r]&F(I^0)\arrow[r]&F(I^1)\arrow[r]&0
+\end{tikzcd}\]
+is exact, so $R^0F(X)=F(X)$, so we only get something interesting for $i>0$. (In Hartshorn Thm 1.1A: $F\cong R^0F$.)
+
+\paragraph{Explanation} A \textit{\textbf{derived functor}} of a given functor maps an object to the $i$-th cohomology of the image of an injective resolution of the object.
+
+The above-mentioned (where?) property of turning short exact sequences into long exact sequences is a consequence of the snake lemma. In Hartshorne Thm 1.1A: For each short exact sequence
+\[\begin{tikzcd}
+	0\arrow[r]&A'\arrow[r]&A\arrow[r]&A''\arrow[r]&0
+\end{tikzcd}\]
+and for each $i\geq 0$ there is a natural morphism $\delta^i:R^iF(A'')\to R^{i+1}F(A')$ such that we obtain a long exact sequence
+\[\begin{tikzcd}[column sep=small]
+	\cdots\arrow[r]&R^iF(A')\arrow[r]&R^iF(A)\arrow[r]&R^iF(A'')\arrow[r,"\delta^i"]&R^{i+1}F(A')\arrow[r]&R^{i+1}F(A)\arrow[r]&\cdots
+\end{tikzcd}\]
+
+
+\begin{prop}[2.1A,  Cateogory of $A$-modules has enough injectives]
+	If $A$ is a ring, then every $A$-module is isomorphic to a sub-module of injective $A$-module.
+\end{prop}
+
+\begin{proof}
+	Hartshorne cites other resources.
+\end{proof}
+
+\begin{prop}
+	Let  $(X,\mathcal{O}_X)$ be a ringed space. Then the category $\mathfrak{Mod}(X)$ of sheaves of $\mathcal{O}_X$-modules has enough injectives.
+\end{prop}
+
+\begin{coro}
+	If $X$ is any topological space, then the category $\mathfrak{Ab}(X)$ of sheaves of abelian groups on $X$ has enough injectives.
+\end{coro}
+
+\begin{proof}
+	Just because abelian groups are $\mathbb{Z}$-modules so it's just a particular case of the last theorem.
+\end{proof}
+
+\begin{defn}
+	The \textit{\textbf{cohomology functors}} of a topological space $X$ are the derived functors of the global section functor $\Gamma(X,\cdot)$. {\color{magenta}(What is this global sections functor for any topological space?)} For any sheaf $\mathcal{F}$, the groups $H^{i}(X,\mathcal{F})$ are the \textit{\textbf{cohomology groups}} of  $\mathcal{F}$.
+\end{defn}
+
+\begin{remark}
+	This is equivalent to sheaf cohomology construction via \v Cech cohomology.
+\end{remark}
 
 \section{Chapter IV}
 
