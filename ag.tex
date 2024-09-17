@@ -387,6 +387,15 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 \end{enumerate}
 \end{proof}
 
+\addcontentsline{toc}{subsection}{Exercise 3.5}
+\begin{manualexercise}{3.5}[Alex, Sept 17]
+	By abuse of language, we will say that a variety \textit{\textbf{is affine}} it is isomorphic to an affine variety. If $H\subseteq \mathbb{P}^n$ is any hypersurface, show that $\mathbb{P}^n-H$ is affine.
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+	Suppose $H=V(f)$ with  $\operatorname{deg}f=d$. Consider the $d$-uple embedding $v_d:\mathbb{P}^n\to \mathbb{P}^N$
+\end{proof}
+
 
 \addcontentsline{toc}{subsection}{Exercise 3.16}
 \begin{manualexercise}{3.16}[Products of Quasi-Projective Varieties]
@@ -520,6 +529,38 @@ We define
 	\end{enumerate}
 \end{proof}
 
+\addcontentsline{toc}{subsection}{Exercise 7.1}
+\begin{manualexercise}{7.1}\leavevmode 
+	\begin{enumerate}[label=\alph*.]
+		\item Find the degree of the 2-uple embedding of $\mathbb{P}^n$ in $\mathbb{P}^N$.
+
+		\item Find the degree of the Segre embedding of $\mathbb{P}^r\times \mathbb{P}^s$ in $\mathbb{P}^N$.
+	\end{enumerate}
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+\begin{enumerate}[label=\alph*.]
+	\item Recall that the degree of a map the coefficient of greatest degree of the Hilbert polynomial times the degree factorial, i.e. if the Hilbert polynomial is
+	\[P_{X}(z)=a_nz^n+\ldots+a_0,\]
+	the degree of $X$ is
+	\[a_nn!\]
+	(So remember that the Hilbert polynomial is the unique polynomial in $\mathbb{Q}[t]$ that equals the Hilbert function (the Hilbert functions at $n$ is just the dimension of the degree-$n$ component of $S[X]=\bigoplus_{n} S_n $, so homogeneous polynomials of degree $n$) for sufficiently large numbers.)
+
+	\begin{claim}
+		\[S(X)_m \cong k[x_0,\ldots,x_n]_{md}\]
+		where $d$ is the $d$ in the $d$-uple embedding.
+	\end{claim}
+	If we show this, we can see that
+	\[P_{x}(m)=\binom{md+n}{n}=\prod_{i=1}^n\frac{(md+i)?}{n!}=\frac{d^nm^n}{n!}+\text{lower order terms}  \]
+	Now the pullback map is
+	\[\frac{k[x_0,x_1,\ldots,x_N}{I(X)}\overset{\cong }{\longrightarrow}?k[x_0,x_1,\ldots,x_n]\]
+
+	\item 
+	
+	\end{enumerate}
+
+\end{proof}
+
 \addcontentsline{toc}{subsection}{Exercise 7.2}
 
 \begin{defn}
@@ -594,7 +635,6 @@ We define
 		\[K[Y\times Z]_d\overset{?}{\cong}k[Y]_d \otimes_k k[Z]_d\]
 	Da\'i o Hilbert polynomial \'e o produto dos Hilbert polynomials e t\'a.
 	\end{enumerate}
-
 \end{proof}
 
 
