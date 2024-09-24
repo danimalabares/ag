@@ -103,101 +103,6 @@ If not explicity stated, exercises are from Hartshorne.
 	\end{enumerate}
 \end{proof}
 
-\subsection{Dimension of affine variety $\cap$ hyperplane (Alex+Arthur)}
-
-\begin{manualexercise}{1.8}
-	Let $Y$ be an affine variety of dimension $r$ in $\mathbb{A}^n$. Let $H$ be a hypersurface in $\mathbb{A}^n$ and assume that $ Y\not\subseteq H$. Then every irreducible component of $Y\cap H$ has dimension $r-1$.
-
-	So: intersection of variety of dimension $r$ and hypersurface is variety dimensin $r-1$.
-\end{manualexercise}
-
-\begin{proof}[Solution]\leavevmode
-	Suppose $H=\mathbb{V}(f)$ and $Y=\mathbb{V}(\mathfrak{q})$. Then $Y\cap H=\mathbb{V}(\mathfrak{q}+(f))$. Pick an irreducible component in $Y\cap H$ which is associated to a prime ideal $\mathfrak{p}$. Then we have that $\mathfrak{q}+(f)\subseteq \mathfrak{p}$. Passing to the quotient, we have that $(f)/\mathfrak{q}\subseteq \mathfrak{p}/\mathfrak{q}$. Now we use the result that
-
-	\begin{thm}[Krull's Hauptidealsatz]
-		Let $A$ be a noetherian ring. For an element $x\in A$ that is not a unit nor a zero divisor,
-		\[(x)\subseteq \mathfrak{p},\]
-		where $\mathfrak{p}$ is a minimal ideal, then $\mathfrak{p}$ has height 1.
-	\end{thm}
-and since $(f)/\mathfrak{q}$ is principal in the quotient, ie. $(f)/\mathfrak{q}=(f+\operatorname{mod}\mathfrak{q})$.
-\end{proof}
-
-\subsection{Carlos, September 13}
-
-$k$ n\~ao neces. algebricamente fechado, $\bar{k}$ algebraic closure, $V$ variedade afim, $V\subseteq \mathbb{A}^n=k^n$, $k[V]=k[c_1,\ldots,x_n]/I(V)$. $P\in V$, $\mathfrak{m}_p=\{g\in k[V]:g(p)=0\}$ \'e um ideal maximal.
-
-Para $g\in k[V]$,
-\[\operatorname{ord}_P(g)=\operatorname{sup}\{d\in\mathbb{Z}_{\geq 0}:g\in\mathfrak{m}_p^d\}.\]
-Uma \textit{\textbf{curva}} \'e uma variedade projetiva suave de dimens\~ao 1. \textit{\textbf{Curvas el\'ipticas}}:
-\[\begin{tikzcd}
-	E:x^2=x^3+ax+b\arrow[d,"\text{projetiza\c c\~ao}" ]\\
-	zy^2=x^3+axz^2+bz^3
-\end{tikzcd}\]
-
-\begin{exercise}
-	Seja $E/k$ uma curva eliptica suave:
-	\begin{align*}
-		y^2&=x^3+ax+b\\
-		&=(x-e_1)(x-e_2)(x-e_3)
-	\end{align*}
-	com $e_1,e_2,e_3\in\bar{k}$. Considere
-	\[f_1=(x-e_1),\quad f_2=(x-e_2),\quad f_3=(x-e_3)\]
-	\[p_1=(e_1,0),\quad p_2=(e_2,0),\quad p_3=(e_3,0)\]
-	O que \'e
-	\[\operatorname{ord}_{f_i}p_i=?\]
-\end{exercise}
-
-\begin{proof}[Solution] Lembre que $p$ \'e um ponto suave se e somente se $\dim \mathfrak{m}_p/\mathfrak{m}_p^\alpha=\dim V$.
-	\begin{enumerate}[label=\textbf{Step \arabic*}]
-		\item Considere a projetiza\c c\~ao de $E$ :
-			\[y^2z=(x-e_1z)(x-e_2z)(x-e_3z).\]
-			Da\'i,
-			\[p_1=[e_1:0:1],\quad p_2=[e_2:0:1],\quad p_3=[e_3:0:1]\]
-			
-	\end{enumerate}
-\end{proof}
-
-\subsection{Veronesse surface}
-
-\begin{manualexercise}{2.13}
-	Let $Y$ be the image of the 2-uple embedding of $\mathbb{P}^2$ in $\mathbb{P}^{5}$. This is the \textit{\textbf{Vernoses surface}}. If $Z\subseteq Y$ is a closed curve (a \textit{\textbf{curve}} is a variety of dimension 1), show that there exists a hypersurface $V\subseteq \mathbb{P}^5$ such that $V \cap Y=Z$.
-\end{manualexercise}
-
-\begin{proof}[Solution]\leavevmode
-	\begin{align*}
-		\rho_2: \mathbb{P}^2 &\overset{\text{Veronese} }{\longrightarrow}\mathbb{P}^5\\
-		[x_0:x_1:x_2]&\longmapsto [x_0^2:x_1^2:x_2^2:x_0x_1:x_1x_2:x_0x_2]
-	\end{align*}
-	And $Y:=\rho_2(\mathbb{P}^2)$. Notice that $Y=\mathbb{V}(\ker \theta)$ where
-	\begin{align*}
-		\theta: k[y_0,\ldots,y_5 &\longrightarrow k[x_0,\ldots,x_2] \\
-		y_i &\longmapsto M_i=\text{$i$-th monomial of degree $d$ in $x_0,\ldots,x_n$}\\ \\
-		y_0&\longmapsto x_0^2\\
-		y_1&\longmapsto x_1^2\\
-		y_2&\longmapsto x_2^2\\
-		y_3&\longmapsto x_0x_1\\
-		y_4&\longmapsto x_0x_2\\
-		y_5&\longmapsto x_1x_2
-	\end{align*}
- it is not immediate that kernel of this map is $Y$, but it is true.
-
- By exercise 2.8 there exists a homogeneous polynomial (which is irreducible) such that $V(f)=\rho^{-1}_2(Z)$. Recall that $Z$ is a curve in $Y$ so $\rho^{-1}(Z)$ is (probably) a curve in $\mathbb{P}^2$.
-
- So, we have
- \[Z=\rho_2(V(f))=\rho_2(V(f^2)),\]
- which follows from the fact that $\theta$ is surjective over the set of polynomials of even degree. How to prove this? It sufficies to prove for monomials. This is a combinatorial problem. Consider
- \[x_0^{a_0}x_1^{a_1}x_2^{a_2}\longmapsto(a_0,a_1,a_2)\in\mathbb{Z}^3\]
- Anyway… this means that there exists $g\in k[x_0,x_1,x_2]$ such that $f^2=\theta(g)$. And then
- \[Z=Y\cap V(g)\]
- which means that being the Veronese image of a zero of $f$ is the same as being a zero of $g$. (Some more thought on how $\theta$ is working?)
-\end{proof}
-
-\paragraph{Explanation} The Veronese map image is actually the symmetric matrices of rank 1:
-\begin{align*}
-	v&\longmapsto v^{\mathbf{T}}\cdot v\\
-	\begin{pmatrix} v_0\\v_1\\v_2 \end{pmatrix} \begin{pmatrix} v_0&v_1&v_2 \end{pmatrix} & =\begin{pmatrix} v_0v_0&v_0v_1\\v_1v_0&v_1v_1 \end{pmatrix} 
-\end{align*}
-
 \subsection{The Segre embedding}
 
 \begin{manualexercise}{2.14}[The Segre Embedding]
@@ -219,7 +124,7 @@ Uma \textit{\textbf{curva}} \'e uma variedade projetiva suave de dimens\~ao 1. \
 	So what are the equations of $\operatorname{img}\psi$? A polynomial $f(z_{00},\ldots,z_{rs})$ will vanish on $\operatorname{img}\psi$ if somehow it vanishes 
 \end{proof}
 
-\subsection{The quadric surface in $\mathbb{P}^3$}
+\subsection{The quadric surface in $\mathbb{P}^3$ (Bruno)}
 
 \begin{manualexercise}{2.15}[The Quadric Surface in $\mathbb{P}^3$]
 	Consider the surface $Q$ (a \textbf{\textit{surface}} is a variety of dimension 2) in $\mathbb{P}^3$ defined by the equation $xy-wz=0$.
@@ -454,7 +359,7 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 	If $X,Y\subseteq \mathbb{A}^{2} $
 \end{manualexercise}
 
-\subsection{Sept 10}
+\subsection{September 10}
 
 \subsubsection{Analitically isomorphic singularities, Arthur}
 Two curves $C_1,C_2$ with points $P \in C_1$ and $Q\in C_2$, and $\mathcal{O}_P\supset\mathfrak{m}_P$, $\mathcal{O}_Q\supset\mathfrak{m}_Q$. And
@@ -538,7 +443,7 @@ We define
 	\end{enumerate}
 \end{proof}
 
-\subsubsection{Degree and Hilbert polynomial, Bruno}
+\subsubsection{Degree and Hilbert polynomial (Bruno)}
 
 %\addcontentsline{toc}{subsubsection}{Exercise 7.2}
 
@@ -616,7 +521,50 @@ We define
 	\end{enumerate}
 \end{proof}
 
-\subsection{Degree of Veronese and Segre embeddings, Alex, Sept 13}
+\subsection{September 13}
+
+\subsubsection{Veronesse surface (Alex)}
+
+\begin{manualexercise}{2.13}
+	Let $Y$ be the image of the 2-uple embedding of $\mathbb{P}^2$ in $\mathbb{P}^{5}$. This is the \textit{\textbf{Vernoses surface}}. If $Z\subseteq Y$ is a closed curve (a \textit{\textbf{curve}} is a variety of dimension 1), show that there exists a hypersurface $V\subseteq \mathbb{P}^5$ such that $V \cap Y=Z$.
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+	\begin{align*}
+		\rho_2: \mathbb{P}^2 &\overset{\text{Veronese} }{\longrightarrow}\mathbb{P}^5\\
+		[x_0:x_1:x_2]&\longmapsto [x_0^2:x_1^2:x_2^2:x_0x_1:x_1x_2:x_0x_2]
+	\end{align*}
+	And $Y:=\rho_2(\mathbb{P}^2)$. Notice that $Y=\mathbb{V}(\ker \theta)$ where
+	\begin{align*}
+		\theta: k[y_0,\ldots,y_5 &\longrightarrow k[x_0,\ldots,x_2] \\
+		y_i &\longmapsto M_i=\text{$i$-th monomial of degree $d$ in $x_0,\ldots,x_n$}\\ \\
+		y_0&\longmapsto x_0^2\\
+		y_1&\longmapsto x_1^2\\
+		y_2&\longmapsto x_2^2\\
+		y_3&\longmapsto x_0x_1\\
+		y_4&\longmapsto x_0x_2\\
+		y_5&\longmapsto x_1x_2
+	\end{align*}
+ it is not immediate that kernel of this map is $Y$, but it is true.
+
+ By exercise 2.8 there exists a homogeneous polynomial (which is irreducible) such that $V(f)=\rho^{-1}_2(Z)$. Recall that $Z$ is a curve in $Y$ so $\rho^{-1}(Z)$ is (probably) a curve in $\mathbb{P}^2$.
+
+ So, we have
+ \[Z=\rho_2(V(f))=\rho_2(V(f^2)),\]
+ which follows from the fact that $\theta$ is surjective over the set of polynomials of even degree. How to prove this? It sufficies to prove for monomials. This is a combinatorial problem. Consider
+ \[x_0^{a_0}x_1^{a_1}x_2^{a_2}\longmapsto(a_0,a_1,a_2)\in\mathbb{Z}^3\]
+ Anyway… this means that there exists $g\in k[x_0,x_1,x_2]$ such that $f^2=\theta(g)$. And then
+ \[Z=Y\cap V(g)\]
+ which means that being the Veronese image of a zero of $f$ is the same as being a zero of $g$. (Some more thought on how $\theta$ is working?)
+\end{proof}
+
+\paragraph{Explanation} The Veronese map image is actually the symmetric matrices of rank 1:
+\begin{align*}
+	v&\longmapsto v^{\mathbf{T}}\cdot v\\
+	\begin{pmatrix} v_0\\v_1\\v_2 \end{pmatrix} \begin{pmatrix} v_0&v_1&v_2 \end{pmatrix} & =\begin{pmatrix} v_0v_0&v_0v_1\\v_1v_0&v_1v_1 \end{pmatrix} 
+\end{align*}
+
+\subsubsection{Degree of Veronese and Segre embeddings (Alex)}
 
 %\addcontentsline{toc}{subsection}{Exercise 7.1}
 \begin{manualexercise}{7.1}\leavevmode 
@@ -650,8 +598,65 @@ We define
 
 \end{proof}
 
+
+\subsubsection{Curvas elípticas (Carlos)}
+
+$k$ n\~ao neces. algebricamente fechado, $\bar{k}$ algebraic closure, $V$ variedade afim, $V\subseteq \mathbb{A}^n=k^n$, $k[V]=k[c_1,\ldots,x_n]/I(V)$. $P\in V$, $\mathfrak{m}_p=\{g\in k[V]:g(p)=0\}$ \'e um ideal maximal.
+
+Para $g\in k[V]$,
+\[\operatorname{ord}_P(g)=\operatorname{sup}\{d\in\mathbb{Z}_{\geq 0}:g\in\mathfrak{m}_p^d\}.\]
+Uma \textit{\textbf{curva}} \'e uma variedade projetiva suave de dimens\~ao 1. \textit{\textbf{Curvas el\'ipticas}}:
+\[\begin{tikzcd}
+	E:x^2=x^3+ax+b\arrow[d,"\text{projetiza\c c\~ao}" ]\\
+	zy^2=x^3+axz^2+bz^3
+\end{tikzcd}\]
+
+\begin{exercise}
+	Seja $E/k$ uma curva eliptica suave:
+	\begin{align*}
+		y^2&=x^3+ax+b\\
+		&=(x-e_1)(x-e_2)(x-e_3)
+	\end{align*}
+	com $e_1,e_2,e_3\in\bar{k}$. Considere
+	\[f_1=(x-e_1),\quad f_2=(x-e_2),\quad f_3=(x-e_3)\]
+	\[p_1=(e_1,0),\quad p_2=(e_2,0),\quad p_3=(e_3,0)\]
+	O que \'e
+	\[\operatorname{ord}_{f_i}p_i=?\]
+\end{exercise}
+
+\begin{proof}[Solution] Lembre que $p$ \'e um ponto suave se e somente se $\dim \mathfrak{m}_p/\mathfrak{m}_p^\alpha=\dim V$.
+	\begin{enumerate}[label=\textbf{Step \arabic*}]
+		\item Considere a projetiza\c c\~ao de $E$ :
+			\[y^2z=(x-e_1z)(x-e_2z)(x-e_3z).\]
+			Da\'i,
+			\[p_1=[e_1:0:1],\quad p_2=[e_2:0:1],\quad p_3=[e_3:0:1]\]
+			
+	\end{enumerate}
+\end{proof}
+
+\subsection{September 17}
+\subsubsection{Dimension of affine variety $\cap$ hyperplane (Alex+Arthur)}
+
+\begin{manualexercise}{1.8}
+	Let $Y$ be an affine variety of dimension $r$ in $\mathbb{A}^n$. Let $H$ be a hypersurface in $\mathbb{A}^n$ and assume that $ Y\not\subseteq H$. Then every irreducible component of $Y\cap H$ has dimension $r-1$.
+
+	So: intersection of variety of dimension $r$ and hypersurface is variety dimensin $r-1$.
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+	Suppose $H=\mathbb{V}(f)$ and $Y=\mathbb{V}(\mathfrak{q})$. Then $Y\cap H=\mathbb{V}(\mathfrak{q}+(f))$. Pick an irreducible component in $Y\cap H$ which is associated to a prime ideal $\mathfrak{p}$. Then we have that $\mathfrak{q}+(f)\subseteq \mathfrak{p}$. Passing to the quotient, we have that $(f)/\mathfrak{q}\subseteq \mathfrak{p}/\mathfrak{q}$. Now we use the result that
+
+	\begin{thm}[Krull's Hauptidealsatz]
+		Let $A$ be a noetherian ring. For an element $x\in A$ that is not a unit nor a zero divisor,
+		\[(x)\subseteq \mathfrak{p},\]
+		where $\mathfrak{p}$ is a minimal ideal, then $\mathfrak{p}$ has height 1.
+	\end{thm}
+and since $(f)/\mathfrak{q}$ is principal in the quotient, ie. $(f)/\mathfrak{q}=(f+\operatorname{mod}\mathfrak{q})$.
+\end{proof}
+
+
 \subsection{Sept 20}
-\subsubsection{Sergey}
+\subsubsection{Scroll (Sergey)}
 
 You can find this $\operatorname{Sec}^k$ on a book by Harris, name?
 
@@ -701,7 +706,7 @@ For today:
 	As abstract varieties, $\Sigma_{a,b}$ is isomorphic to $\Sigma_{a'b'}$ iff $b-a=b'-b'=n$ and either  $a=a'=0$ or  $a>0, a'>0$.
 \end{manualexercise}
 
-\subsubsection{Alex}
+\subsubsection{Elliptic curve is not rational (Alex)}
 %\addcontentsline{toc}{subsubsubsection}{Exercise 6.3, Elliptic curve is not rational}
 \begin{manualexercise}{6.3, Elliptic curve is not rational}
 	Let  $Y$ be the curve $y^2=x^3-x$ in $\mathbb{A}^2$, and assume that the characteristic of the base field $k$ is not 2. In this exercise we will show that $Y$ is not a rational curve, and hence $K(Y)$ is not a pure trascendental extension of $k$.
@@ -768,7 +773,7 @@ Let
 This means $X$ is irreducible, $Y$ is irreducible. Then a discussion on the invertibility of the norm, units on these rings…
 \end{enumerate}
 
- \subsubsection{Bruno}
+ \subsubsection{Tangent map (Bruno)}
 
 \begin{manualexercise}{5.10}
 $X$ afine variety and $p\in X$.
@@ -820,7 +825,7 @@ $X$ afine variety and $p\in X$.
 
 
 
-
+\iffalse
 \section{[Ot] Chapter I: Varieties}
 
 A friend from Cabo Frio just recommended me to have a look at \href{https://www.uio.no/studier/emner/matnat/math/MAT4215/data/masteragbook.pdf}{Ottem\&Ellinsburg, Introduction to Schemes}. Here are some exercises I liked from Chapter 1: Varieties.
@@ -873,7 +878,7 @@ A friend from Cabo Frio just recommended me to have a look at \href{https://www.
 	\end{align*}
 	is given by $V(y_1^{2}-y_0y_2)$. Show that $\phi$ is an isomorphism of projective varieties. Deduce that any projective conic is isomorphic to $\mathbb{P}^{1}(k)$.
 \end{manualexercise}
-
+\fi
 \section{Chapter  II}
 
 \subsection{September 24}
@@ -1013,7 +1018,7 @@ So in fact we have some map $f^\sharp_\mathfrak{p}:S_{(\varphi^{-1}(\mathfrak{p}
 
 \section{Chapter III}
 
-\subsection{Injective resolutions, derived functors and cohomology (once and for all?)}
+\subsection{Notes: injective resolutions, derived functors and cohomology}
 \begin{defn}
 	(\href{https://en.wikipedia.org/wiki/Injective_object#:~:text=9%20References-,Definition,can%20be%20extended%20to%20Y%20.}{wiki}) An object $Q$ is \textit{\textbf{injective}} if, given a monomorphism $f:X\to Y$, any $g:X\to Q$ can be extended to $Y$.
 \[\begin{tikzcd}
