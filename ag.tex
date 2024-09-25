@@ -1,4 +1,4 @@
-\input{/Users/daniel/github/config/preamble.sty}
+\input{/Users/daniel/github/config/preamble2.sty}
 
 \begin{document}
 
@@ -103,7 +103,7 @@ If not explicity stated, exercises are from Hartshorne.
 	\end{enumerate}
 \end{proof}
 
-\subsection{The Segre embedding}
+\subsection{The Segre embedding (extra)}
 
 \begin{manualexercise}{2.14}[The Segre Embedding]
 	Let $\psi:\mathbb{P}^r\times\mathbb{P}^s\to\mathbb{P}^N$ be the map defined by sending the order pair $(a_0,\ldots,a_r)\times(b_0,\ldots,b_s)$ to $(\ldots,a_ib_j,\ldots)$ in lexicographic order, where $N=rs+r+s$. Note that $\psi$ is well-defined and injective. It is called the \textbf{\textit{Segre embedding}}. Show that the image of $\psi$ is a subvariety of $\mathbb{P}^N$. [\textit{Hint}: Let the homogeneous coordinates of $\mathbb{P}^N$ be $\{z_{ij}:i=0,\ldots,r,j=0,\ldots,s\}$ and let $\mathfrak{a}$ be the kernel of the homomorphism $k[\{z_{ij}\}]\to k[x_0,\ldots,x_r,y_0,\ldots,y_s]$ which sends $z_{ij}$ to $x_iy_j$. Then show that $\operatorname{img}\psi=Z(\mathfrak{a})$.
@@ -309,8 +309,8 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 	Suppose $H=V(f)$ with  $\operatorname{deg}f=d$. Consider the $d$-uple embedding $v_d:\mathbb{P}^n\to \mathbb{P}^N$
 \end{proof}
 
+\subsection{Products of Quasi-Projective Varieties (extra)}
 
-\addcontentsline{toc}{subsection}{Exercise 3.16}
 \begin{manualexercise}{3.16}[Products of Quasi-Projective Varieties]
 	Use the Segre embedding (Ex. 2.14) to identify $\mathbb{P}^n\times\mathbb{P}^m$ with its image and hence give it a structure of projective variety. Now for any two quasi-projective varieties $X\subseteq\mathbb{P}^n$ and $Y\subseteq\mathbb{P}^m$ consider $X\times Y\subseteq\mathbb{P}^n\times\mathbb{P}^m$.
 	\begin{enumerate}[label*=(\alph*)]
@@ -324,17 +324,21 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 	content...
 \end{proof}
 
-\subsection{Normal varieties}
+\subsection{Normal varieties (Victor)}
 
-\begin{manualexercise}{3.17}
-	A variety $Y$ is \textit{\textbf{normal}} ar a point $P\in Y$ if $\mathcal{O}_{P}$ is an integrally closed ring. Y is \textit{\textbf{normal}} if it is normal at every point.
+\begin{manualexercise}{3.17}[Normal varieties]
+	\end{manualexercise}
+
+\begin{manualexercise}{3.18}[Projectively Normal Varieties]
 \end{manualexercise}
 
-\begin{manualexercise}{3.18, Projective Normal Varieties}
-	A projective variety $Y\subseteq \mathbb{P}^n$ is \textit{\textbf{projectively normal}} (with respect to the given embedding) if its homogeneous coordinate ring $S(Y)$ is integrally closed.
+	\begin{defn}\leavevmode 
+		\begin{itemize}
+		\item A variety $Y$ is \textit{\textbf{normal}} ar a point $P\in Y$ if $\mathcal{O}_{P}$ is an integrally closed ring. Y is \textit{\textbf{normal}} if it is normal at every point.
+		\item A projective variety $Y\subseteq \mathbb{P}^n$ is \textit{\textbf{projectively normal}} (with respect to the given embedding) if its homogeneous coordinate ring $S(Y)$ is integrally closed.
 
-	\begin{defn}
-		Let $A\subset B$ be a subring (or a morphism $A\to B$) $b\in B$ is \textit{\textbf{integrally closed}} if it is the root of a polynomial in $A[x]$. Here we mean that  $S(Y)$ equals the set of integrally closed elements with respect to its field of fractions.
+		\item 	Let $A\subset B$ be a subring (or a morphism $A\to B$) $b\in B$ is \textit{\textbf{integrally closed}} if it is the root of a polynomial in $A[x]$. Here we mean that  $S(Y)$ equals the set of integrally closed elements with respect to its field of fractions.
+\end{itemize}
 	\end{defn}
 
 	\begin{enumerate}[label=\alph*.]
@@ -342,7 +346,6 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 
 		\item There are normal varieties in projective space which are not projectively normal. For
 	\end{enumerate}
-\end{manualexercise}
 
 \begin{proof}[Solution]\leavevmode
 	\begin{enumerate}[label=\alph*.]
@@ -361,7 +364,7 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 
 \subsection{September 10}
 
-\subsubsection{Analitically isomorphic singularities, Arthur}
+\subsubsection{Analitically isomorphic singularities (Arthur)}
 Two curves $C_1,C_2$ with points $P \in C_1$ and $Q\in C_2$, and $\mathcal{O}_P\supset\mathfrak{m}_P$, $\mathcal{O}_Q\supset\mathfrak{m}_Q$. And
 \[C:f=0,\qquad f[x,y]/(f), \quad \mathfrak{m}=(x,y).\]
 We define
