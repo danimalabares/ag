@@ -1,4 +1,4 @@
-\input{/Users/daniel/github/config/preamble2.sty}
+\input{/Users/daniel/github/config/preamble.sty}
 
 \begin{document}
 
@@ -150,6 +150,8 @@ If not explicity stated, exercises are from Hartshorne.
 
 \subsection{Summary of section 3}
 
+\subsubsection{In Hartshorne}
+
 \begin{defn}[Regular function]
 	It is a function from a variety to the field such that at every point there is an open neighbourhood (with respect to the Zariski topology, I guess) such that the function equals the quotient of two polynomials. In the affine case the polynomials are thought as functions on the coordinates of $\mathbb{A}^n$, and in the projective case they must be homogeneous polynomials \textit{of the same degree} (which (apparently) makes the quotient be a well-defined function on $\mathbb{P}^n$, in contrast with general homogeneous polynomials that are not functions).
 \end{defn}
@@ -188,6 +190,16 @@ Here's a very nice reminder of how homogeneous coordinates work taken from \href
 	\begin{coro}[3.8]
 		The functor $X\mapsto A(X)$ induces an arrow-reversing equivalence of categories between athe category of affine varieties over $k$ and the category of finitely generated integral domains over  $k$.
 	\end{coro}
+
+\subsubsection{In da Silva, Symplectic Toric Manifolds}
+
+I found in this book a great crash-course in introductory (complex) algebraic geometry.
+
+A \textit{\textbf{Zariski closed set}} on  $\mathbb{C}^{n}$ is a set of common zeroes of a finite number of polynomials from $\mathbb{C}[z_1,\ldots,z_n]$. The fact that an infinite intersection of closed sets is a closed set follows from the stabilization property for zero sets of polynomials: any decreasing sequence of such sets $X_1\supset X_2\supset\ldots$ stabilizes (this is a restatement of Hilbert's basis theorem that any ideal in $\mathbb{C}[z_1,\ldots,z_n]$ is finitely generated). Notice any nonempty open set is dense so Zariski topology is not Hausdorff.
+
+\begin{defn}
+	An \textit{\textbf{affine variety}}
+\end{defn}
 
 \subsection{Conics in $\mathbb{A}^2$ and $\mathbb{P}^2$ (Dani)}
 
@@ -678,6 +690,35 @@ For today:
 	\end{enumerate}
 \end{manualexercise}
 
+\begin{proof}[Solution (Victor, September 27)]\leavevmode
+	\begin{enumerate}[label=\alph*.]
+		\item Consideremos os pontos da Grassmaniana $\operatorname{Gr}(m,N)$ como classes de equivalência de bases de vetores identificadas baixo a ação de $\operatorname{GL}(n)$. Considere uma base $(v_1,\ldots,v_m)$. Ela pode ser pensada como uma matriz de $N\times m$ de rango maximo, ie. ela tem posto $m$. Então, essa matriz tem uma submatriz de $m\times m$ não singular, e uma submatriz de $m(N-m)$ que  é singular. Variando as entradas dessa matriz singular, obtemos coordenadas para uma variedade de  dimensão $m(N-m)$. {\color{4}[Explicar mais]}
+
+\begin{defn}[Extra: mergulho de Pl\"ucker, Sept 27]
+	A Grassmaniana é uma variedade projetiva:
+	\begin{align*}
+		P_k: \operatorname{Gr}(m,V) &\longrightarrow \mathbb{P}\left( \Lambda^m(V) \right)  \\
+		W &\longmapsto [w_1\wedge \ldots \wedge w_n]
+	\end{align*}
+	onde $W$  está generado por $w_1,\ldots,w_n$. Aqui tem que mostrar que isso está bem definido.
+\end{defn}
+
+\item Lembre que
+	\begin{defn}
+		(Ver  \href{https://en.wikipedia.org/wiki/Secant_variety}{Wiki}) Dada uma variedade projetiva $V\subset \mathbb{P}^r$, \textit{\textbf{variedade secante}} de $V$ é
+		\[\operatorname{Sec}^k(V)=\overline{\{\overline{x_1,\ldots,x_k}:x_1,\ldots,x_k\in V\}}\]
+		Em palavras, o fecho de Zariski do conjunto de "espaços generados" por $k$-tuplas de pontos em $V$. Por exemplo,
+		\[\operatorname{Sec}^2(V)=\overline{\{\overline{xy}:x,y\in V\}}\]
+		é o fecho de Zariski do conjunto de todas as linhas secantes a $V$ em $\mathbb{P}^r$. Mais geralmente, a \textit{\textbf{$k$-ésima variedade secante}} é o fecho de Zariski da união de todos os espaços lineares generados por coleções  de $k$ (ou $k+1$?) pontos em  $V$. (Note que os espaços lineares numa variedade projetiva são as projetivizações dos espaços lineares correspondentes no espaço afim.)
+	\end{defn}
+Pegue dois elementos em $\operatorname{Gr}(2,N)$, digamos $W,W'$ e pegue bases delas  $\{w_1,w_2\}$ e $\{w_1',w_2'\}$. Daí considere
+\begin{align*}
+	 \left\{ \big(tw_1-(1-t)w_1', tw_2-(1-t)w_2'\big)\right\}
+\end{align*}
+
+	\end{enumerate}
+\end{proof}
+
 \begin{defn}
 	The \textit{\textbf{Segre embedding }} is 
 	 \begin{align*}
@@ -882,7 +923,63 @@ A friend from Cabo Frio just recommended me to have a look at \href{https://www.
 	is given by $V(y_1^{2}-y_0y_2)$. Show that $\phi$ is an isomorphism of projective varieties. Deduce that any projective conic is isomorphic to $\mathbb{P}^{1}(k)$.
 \end{manualexercise}
 \fi
-\section{Chapter  II}
+
+\section{Chapter II}
+
+\subsection{September 27}
+
+\subsection{Sheaves (Bruno)}
+
+\subsubsection{Background}
+Let $X$ be a topological space and $\mathcal{F}$ a sheaf of rings, which is a presheaf + gluing condition.
+
+\begin{idea2}{Sheafification}\leavevmode
+	 \begin{align*}
+	 	\text{Presheaf}  &\longrightarrow \text{Sheaf}  \\
+	 	\mathcal{F} &\longmapsto \mathcal{F}^+
+	 \end{align*}
+ This $\mathcal{F}^+$ has two properties:
+ \begin{enumerate}
+ 	\item Universal
+		\[\begin{tikzcd}
+			\mathcal{F}\arrow[r]\arrow[d]& G\\
+		\mathcal{F}^+\arrow[ur]
+		\end{tikzcd}\]
+		
+ \item For any $p\in X$, the stalks $\mathcal{F}_{p}=\mathcal{F}_{p}^+$.
+ \item (Extra)
+	 \[\begin{tikzcd}
+	 	\text{Sheafs}\arrow[r,"\text{forget}" ]&\text{Presheaf}\arrow[l,bend left,"\text{Sheafify}" ]  
+	 \end{tikzcd}\]
+
+\end{idea2}
+	 \begin{remark}
+	 Also kernel and image of sheafs. Must sheafify the image.	
+	 \end{remark}
+	 
+\subsubsection{Exercise 1.8}
+Let $U\subset X$ be an open subset of $X$. Consider
+\begin{align*}
+	\Gamma(U,\cdot): \operatorname{Sheafs} &\longrightarrow \operatorname{Rings} \\
+	\mathcal{F} &\longmapsto \Gamma(U,\mathcal{F})
+\end{align*}
+Show that $\Gamma(U,\cdot)$ is a left exact functor, that is,
+\[\begin{tikzcd}
+	0\arrow[r]&\mathcal{A}\arrow[r,"a"]&\mathcal{B}\arrow[r,"b"]&\mathcal{B}
+\end{tikzcd}\]
+exact implies
+\[\begin{tikzcd}
+	0\arrow[r]&\Gamma(U,\mathcal{A})\arrow[r,"a_U"]&\Gamma(U,\mathcal{B})\arrow[r,"b_U"]&\Gamma(U,C)
+\end{tikzcd}\]
+
+ \end{enumerate}
+
+ \begin{proof}[Solution]\leavevmode
+ 	\begin{itemize}
+ 	\item $a_V$ is injective is clear.
+	\item $ \operatorname{img}a_U=\ker b_U$. Suppose $s \in\Gamma(U,\mathcal{B})$, so that $s =$
+ 	\end{itemize}
+ \end{proof}
 
 \subsection{September 24}
 
@@ -943,19 +1040,27 @@ so $f(Z) \ne V$ and there is an open affine $V'$ such that $V' \cap f(Z) = \varn
 
 \subsubsection{Closed subschemes of $\operatorname{Proj}(S)$ (Dani)}
 
-\begin{remark}[Görtz \& Wedhorn, p. 375]
-	If $\varphi:A\to B$ is a homomorphism of graded $R$-algebras, the inverse image of a relevant prime ideal (not containing the homogeneous ideal of positive degree groups $\bigoplus_{d\geq 1} S_d $) of $B$ may not be a relevant prime ideal of $A$. Thus $\operatorname{Proj}(A)$ is not func torial in $A$ with respect to arbitrary homomorphisms of graded $R$-algebras. But there is a unique morphism of $R$-schemes
+\begin{idea6}{Review of $\operatorname{Proj}$}\leavevmode
+	\begin{itemize}
+	\item {\color{2}\bfseries Set.}\hspace{.5em}Let $S$ be a graded ring. $\operatorname{Proj}(S)$ is the set of homogeneous prime ideals $\mathfrak{p}$ that do not conatin $S_+=\bigoplus_{d>0}S_d$.
+	\item {\color{2}\bfseries Topology.}\hspace{.5em}The closed subsets of $\operatorname{Proj}(S)$ are $V(\mathfrak{a})=\{\mathfrak{p}\in\operatorname{Proj}(S):\mathfrak{p}\supseteq\mathfrak{a}\}$.
+	\item {\color{2}\bfseries Sheaf.}\hspace{.5em} For each $\mathfrak{p}\in\operatorname{Proj}(S)$ consider $S_{(\mathfrak{p})}$, the localized ring $T^{-1}S$ where $T$ is the multiplicative system of homogeneous elements of $S$ that are not in $\mathfrak{p}$. For any open subset $U \subseteq \operatorname{Proj}(S)$ define $\mathcal{O}(U)$ to be the set of functions ($s$ for section?) $s:U\to \coprod S_{(\mathfrak{p})}$ such that for $ p \in U$, $s(\mathfrak{p})\in S_{(\mathfrak{p})}$ (perhaps like a vector field: a point maps to a vector attached to the tangent space at that point), and $s$ is locally a quotient of elements of $S$, ie. $s(\mathfrak{q})=a/f$ in a neighbourhood of $\mathfrak{p}$.
+	\end{itemize}
+\end{idea6}
+
+\begin{idea1}{Motivation}[Görtz \& Wedhorn, p. 375]
+	If $\varphi:A\to B$ is a homomorphism of graded $R$-algebras, the inverse image of a relevant prime ideal (=an ideal not containing the homogeneous ideal of positive degree groups $\bigoplus_{d\geq 1} S_d $) of $B$ may not be a relevant prime ideal of $A$. Thus $\operatorname{Proj}(A)$ is not functorial in $A$ with respect to arbitrary homomorphisms of graded $R$-algebras. But there is a unique morphism of $R$-schemes
 	\[\operatorname{Proj}\varphi:G(\varphi)\longrightarrow \operatorname{Proj}A,\]
 	where $G(\varphi )\subseteq \operatorname{Proj}(B)$ is the open subscheme
 	\[G(\varphi )=\mathfrak{q}\in\operatorname{Proj}(B):\varphi^{-1}(\mathfrak{q})\not\supset A_+\}\]
 such that …
-\end{remark}
+\end{idea1}
 
 \begin{manualexercise}{2.14}\leavevmode 
 	\begin{enumerate}
-		\item[(b)] Let $\varphi:S\to T$ be agraded homomorphism of graded rings (preserving degrees). Let $U=\{\mathfrak{p}\in\operatorname{Proj}(T):\mathfrak{p}\not\supseteq\varphi(S_+)\}$. Show that $U$ is an open subset of $\operatorname{Proj}(T)$ and show that $\varphi$ determines a natural morphism $f: U\to \operatorname{Proj}(S)$.
+		\item[b.] Let $\varphi:S\to T$ be agraded homomorphism of graded rings (preserving degrees). Let $U=\{\mathfrak{p}\in\operatorname{Proj}(T):\mathfrak{p}\not\supseteq\varphi(S_+)\}$. Show that $U$ is an open subset of $\operatorname{Proj}(T)$ and show that $\varphi$ determines a natural morphism $f: U\to \operatorname{Proj}(S)$.
 	
-		\item[(c)] The morphism $f$ can be an isomorphism even quen $\varphi$ is not. For example, suppose that $\varphi_d:S_d\to T_d$ is an isomorphism for all $d\geq d_0$, where $d_0$ is an integer. Then show that $U=\operatorname{Proj}T$ and the induced morphism $f:\operatorname{Proj}T\to  \operatorname{Proj}S$ is an isomorphism.
+		\item[c.] The morphism $f$ can be an isomorphism even when $\varphi$ is not. For example, suppose that $\varphi_d:S_d\to T_d$ is an isomorphism for all $d\geq d_0$, where $d_0$ is an integer. Then show that $U=\operatorname{Proj}T$ and the induced morphism $f:\operatorname{Proj}T\to  \operatorname{Proj}S$ is an isomorphism.
 	\end{enumerate}
 \end{manualexercise}
 
@@ -982,9 +1087,11 @@ So basically the following exercise is about studying a case when this induced m
 		\end{align*}
 	Now let's see that $f$ is a closed immersion. 
 
-	\textbf{$f$ is injective.} Follows from surjectivity: if $\mathfrak{p},\mathfrak{q}\in\operatorname{Proj}T$ are such that $\varphi^{-1}(\mathfrak{p})=\varphi^{-1}(\mathfrak{q})$, then $\varphi(\varphi^{-1}(\mathfrak{p}))=\mathfrak{p}=\mathfrak{q}=\varphi(\varphi^{-1}(\mathfrak{q}))$.
+	{\color{6}\bfseries ($f$ is injective.)}\hspace{.5em} Follows from surjectivity: if $\mathfrak{p},\mathfrak{q}\in\operatorname{Proj}T$ are such that $\varphi^{-1}(\mathfrak{p})=\varphi^{-1}(\mathfrak{q})$, then $\varphi(\varphi^{-1}(\mathfrak{p}))=\mathfrak{p}=\mathfrak{q}=\varphi(\varphi^{-1}(\mathfrak{q}))$.
 
-	\textbf{$f(\operatorname{Proj}T)$ is closed} We claim that 
+	{\color{6}\bfseries ($f \left(\operatorname{Proj}(T)\right)$ is closed.)}\hspace{.5em} The easiest way is to notice that $S/\ker \varphi\cong T$, and that homogeneous prime ideals of $S/\ker \varphi$ (=elements of $\operatorname{Proj}(T)$) correspond to homogeneous ideals of $S$ which contain $\ker \varphi$, so $f(\operatorname{Proj}(T))=V(\ker \varphi)$. (But I should confirm this works…)
+
+	A more explicit computation is as follows:
 	\begin{align*}f(\operatorname{Proj}T)&=V\left(\bigcap_{\mathfrak{p}\in\operatorname{Proj}(T)}\varphi^{-1}(\mathfrak{p})\right)\\
 		&=\left\{ \mathfrak{q}\in\operatorname{Proj}S:\mathfrak{q}\supseteq\bigcap_{p\in\operatorname{Proj}T} \varphi^{-1}(\mathfrak{p}) \right\} 
 		\end{align*}
@@ -992,9 +1099,9 @@ The contention $\subseteq$ is clear since  $\varphi^{-1}(\mathfrak{q})\in f(\ope
 
 For $\supseteq$ we want to see that $\mathfrak{q}=\varphi^{-1}(\varphi(\mathfrak{q}))$. Suppose that there exists $x\in\varphi^{-1}(\varphi(\mathfrak{q}))\setminus \mathfrak{q}$. Then there exists $y\in\mathfrak{q}$ such that  $\varphi (x)=\varphi (y)\implies \varphi (x-y)=0$. But $0=(x-y)\subset \bigcap_{\mathfrak{p}\in\operatorname{Proj}T} \varphi(\mathfrak{p})$, meaning $x-y\in\mathfrak{q}$, but that is not possible since $ x\not\in\mathfrak{q}$.
 
-	\textbf{$f$ is a homeomorphism} It preserves inclusions of ideals?
+	{\color{6}\bfseries ($f$ is a homeomorphism.)}\hspace{.5em} It preserves inclusions of ideals?
 
-\textbf{Induced map on stalks is surjective} What is going on?
+{\color{6}\bfseries (Induced map on stalks is surjective.)}\hspace{.5em}What is going on?
 
 \begin{remark}[Gortz, p. 57]
 A morphism $(f,f ^\flat):X\to Y$ of ringed spaces induces morphisms on the stalks as follows. Let $x\in X$. Let $f^\sharp:f^{-1}\mathcal{O}_Y\to  \mathcal{O}_X$ be the morphism corresponding to $f ^\flat$ by adjointness. Using the identification $(f^{-1}\mathcal{O}_Y)_x=\mathcal{O}_{Y,f(x)}$ established in $(2.8.2)$ we get
