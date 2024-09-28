@@ -1,29 +1,24 @@
-\input{/Users/daniel/github/config/preamble.sty}
+\input{/Users/daniel/github/config/preamble-book.sty}
+
+\title{Exercieses and notes in Algebraic Geometry}
+
+\author{\href{https://github.com/danimalabares/ag}{github.com/danimalabares/ag}}
 
 \begin{document}
+	\maketitle
+	\phantomsection
+%	\addcontentsline{toc}{part}{\contentsname}
 
-\begin{minipage}{\textwidth}
-	\begin{minipage}{1\textwidth}
-		Geometry of Algebraic Varieties \hfill Daniel González Casanova Azuela
-		
-		{\small\hfill\href{https://github.com/danimalabares/ag}{github.com/danimalabares/ag}}
-	\end{minipage}
-\end{minipage}\vspace{.2cm}\hrule
-
-\vspace{10pt}
-
-{\Huge Exercises in algebraic geometry}
-
-If not explicity stated, exercises are from Hartshorne.
+%If not explicity stated, exercises are from Hartshorne.
 
 \tableofcontents
 
-\section{Chapter I}
+\chapter{Chapter I}
 
-\subsection{Definitions and results}
+\section{Definitions and results}
 
 
-\subsubsection{Lecture 1 by Lucas}
+\subsection{Lecture 1 by Lucas}
 
 \begin{itemize}
 	\item Ussando que $\mathbb{R}=k[x_1,\ldots,x_n]$ \'e Noetheriano (=todo ideal \'e finitamente generado), vimos que todo aberto de Zariski \'e uma uni\~ao finita de conjuntos da forma.
@@ -64,7 +59,7 @@ If not explicity stated, exercises are from Hartshorne.
 \[D_f=\mathbb{A}^{n} \setminus \mathbb{V}(f).\]
 
 
-\subsubsection{Summary of Hartshorne section 3}
+\subsection{Summary of Hartshorne section 3}
 
 \begin{defn}[Regular function]
 	It is a function from a variety to the field such that at every point there is an open neighbourhood (with respect to the Zariski topology, I guess) such that the function equals the quotient of two polynomials. In the affine case the polynomials are thought as functions on the coordinates of $\mathbb{A}^n$, and in the projective case they must be homogeneous polynomials \textit{of the same degree} (which (apparently) makes the quotient be a well-defined function on $\mathbb{P}^n$, in contrast with general homogeneous polynomials that are not functions).
@@ -105,7 +100,7 @@ Here's a very nice reminder of how homogeneous coordinates work taken from \href
 		The functor $X\mapsto A(X)$ induces an arrow-reversing equivalence of categories between athe category of affine varieties over $k$ and the category of finitely generated integral domains over  $k$.
 	\end{coro}
 
-\subsubsection{Summary from da Silva, Symplectic Toric Manifolds}
+\subsection{Summary from da Silva, Symplectic Toric Manifolds}
 
 I found in this book a great crash-course in introductory (complex) algebraic geometry.
 
@@ -143,11 +138,28 @@ Let $X\subset \mathbb{C}^{n}$ and $X'\subset \mathbb{C}^{m}$ be affine varieties
 	An \textit{\textbf{isomorphism}} from $X$ to $X'$ is a regular map $X\to X'$ which is invertible by a regular map.
 \end{defn}
 
+\begin{exercise}\leavevmode
+	$X$ and $X'$ are isomorphic if and only if the associated rings of regular functions,  $\mathbb{C}[X]$ and $\mathbb{C}[X']$ are isomorphic.
+\end{exercise}
+
+\begin{example}\leavevmode
+	Consider the variety $X$ in $\mathbb{C}^{2n}$ given by the zero-set of the polynomials $z_iz_{n+i}$ for $i=1,\ldots,n$. For $n=1$ it is just a hyperbola. Since the functions  $z_i$ are invertible in the quotient ring $\mathbb{C}[X]$, we see that $\mathbb{C}[X]=\mathbb{C}[z_1,z_1^{-1},\ldots,z_n,z_n^{-1}]$.
+
+	The projection $\mathbb{C}^{2n}\longrightarrow \mathbb{C}^n$ $(z_1,\ldots,z_{2n})\longmapsto(z_1,\ldots,z_n)$ maps $X$ isomorphically onto the \textit{\textbf{$n$-dimensional algebraic torus}} 
+	\[(C^* )^n:=(\mathbb{C}\setminus \{0\} )^n=\mathbb{C}^{n}\setminus \text{hyperplanes } z_i,\qquad i=1,\ldots,n.\]
+	So we see that this product of the multiplicative group of $\mathbb{C}$ has been endowed with the structure of an affine variety.
+
+	\begin{idea2}{Algebraic torus in \href{https://en.wikipedia.org/wiki/Algebraic_torus}{Wiki}}\leavevmode
+		Let $k$ be a field with algebraic closue  $\bar{k}$. A \textit{\textbf{$k$-torus}} is an algebraic group (=group that is a variety) defined over $k$ which is isomorphic over $\bar{k}$ to a finite product of copies of the multiplicative group. In other words, a $k$-group $\mathbb{T}$ is a torus iff $\mathbf{T}(\bar{k})\cong (\bar{j}^\times )^r$ for some $r\geq 1$.
+	\end{idea2}
+\end{example}
+
+If $X\subset \mathbb{C}^{n}$ and $X'\subset \mathbb{C}^{m}$ are affine varieties, the symbol $A-\!\! \rightarrow B$
 
 
 
 
-\subsection{My first algebraic variety}
+\section{My first algebraic variety}
 
 \begin{manualexercise}{1.1}[My first algebraic variety]
 	\begin{enumerate}[label*=(\alph*)]\leavevmode
@@ -190,7 +202,7 @@ Let $X\subset \mathbb{C}^{n}$ and $X'\subset \mathbb{C}^{m}$ be affine varieties
 	\end{enumerate}
 \end{proof}
 
-\subsection{The Segre embedding (extra)}
+\section{The Segre embedding (extra)}
 
 \begin{manualexercise}{2.14}[The Segre Embedding]
 	Let $\psi:\mathbb{P}^r\times\mathbb{P}^s\to\mathbb{P}^N$ be the map defined by sending the order pair $(a_0,\ldots,a_r)\times(b_0,\ldots,b_s)$ to $(\ldots,a_ib_j,\ldots)$ in lexicographic order, where $N=rs+r+s$. Note that $\psi$ is well-defined and injective. It is called the \textbf{\textit{Segre embedding}}. Show that the image of $\psi$ is a subvariety of $\mathbb{P}^N$. [\textit{Hint}: Let the homogeneous coordinates of $\mathbb{P}^N$ be $\{z_{ij}:i=0,\ldots,r,j=0,\ldots,s\}$ and let $\mathfrak{a}$ be the kernel of the homomorphism $k[\{z_{ij}\}]\to k[x_0,\ldots,x_r,y_0,\ldots,y_s]$ which sends $z_{ij}$ to $x_iy_j$. Then show that $\operatorname{img}\psi=Z(\mathfrak{a})$.
@@ -211,7 +223,7 @@ Let $X\subset \mathbb{C}^{n}$ and $X'\subset \mathbb{C}^{m}$ be affine varieties
 	So what are the equations of $\operatorname{img}\psi$? A polynomial $f(z_{00},\ldots,z_{rs})$ will vanish on $\operatorname{img}\psi$ if somehow it vanishes 
 \end{proof}
 
-\subsection{The quadric surface in $\mathbb{P}^3$ (Bruno)}
+\section{The quadric surface in $\mathbb{P}^3$ (Bruno)}
 
 \begin{manualexercise}{2.15}[The Quadric Surface in $\mathbb{P}^3$]
 	Consider the surface $Q$ (a \textbf{\textit{surface}} is a variety of dimension 2) in $\mathbb{P}^3$ defined by the equation $xy-wz=0$.
@@ -235,7 +247,7 @@ Let $X\subset \mathbb{C}^{n}$ and $X'\subset \mathbb{C}^{m}$ be affine varieties
 	\end{enumerate}
 \end{proof}
 
-\subsection{Conics in $\mathbb{A}^2$ and $\mathbb{P}^2$ (Dani)}
+\section{Conics in $\mathbb{A}^2$ and $\mathbb{P}^2$ (Dani)}
 
 \begin{manualexercise}{3.1}
 \begin{enumerate}[label=\alph*.]
@@ -277,7 +289,7 @@ Let $X\subset \mathbb{C}^{n}$ and $X'\subset \mathbb{C}^{m}$ be affine varieties
 
 \end{manualexercise}
 
-\subsection{Homeomorphisms that are not isomorphisms (Dani)}
+\section{Homeomorphisms that are not isomorphisms (Dani)}
 
 \begin{manualexercise}{3.2}
 	A morphism whose underlying map on the topological spaces is a homeomorphism need not be an isomorphism (of algebraic varieties). (Bicontinuous morphism need not be isomorphism.)
@@ -345,7 +357,7 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 \end{enumerate}
 \end{proof}
 
-\subsection{$\mathbb{P}^n$ minus a hyperplane (Alex)}
+\section{$\mathbb{P}^n$ minus a hyperplane (Alex)}
 
 \begin{manualexercise}{3.5}[Alex, Sept 17]
 	By abuse of language, we will say that a variety \textit{\textbf{is affine}} it is isomorphic to an affine variety. If $H\subseteq \mathbb{P}^n$ is any hypersurface, show that $\mathbb{P}^n-H$ is affine.
@@ -355,7 +367,7 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 	Suppose $H=V(f)$ with  $\operatorname{deg}f=d$. Consider the $d$-uple embedding $v_d:\mathbb{P}^n\to \mathbb{P}^N$
 \end{proof}
 
-\subsection{Products of Quasi-Projective Varieties (extra)}
+\section{Products of Quasi-Projective Varieties (extra)}
 
 \begin{manualexercise}{3.16}[Products of Quasi-Projective Varieties]
 	Use the Segre embedding (Ex. 2.14) to identify $\mathbb{P}^n\times\mathbb{P}^m$ with its image and hence give it a structure of projective variety. Now for any two quasi-projective varieties $X\subseteq\mathbb{P}^n$ and $Y\subseteq\mathbb{P}^m$ consider $X\times Y\subseteq\mathbb{P}^n\times\mathbb{P}^m$.
@@ -370,7 +382,7 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 	content...
 \end{proof}
 
-\subsection{Normal varieties (Victor)}
+\section{Normal varieties (Victor)}
 
 \begin{manualexercise}{3.17}[Normal varieties]
 	\end{manualexercise}
@@ -403,14 +415,14 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 	\end{enumerate}
 \end{proof}
 
-\addcontentsline{toc}{subsection}{5.4}
+\addcontentsline{toc}{section}{5.4}
 \begin{manualexercise}{5.4}[Intersection mulitplicity]
 	If $X,Y\subseteq \mathbb{A}^{2} $
 \end{manualexercise}
 
-\subsection{September 10}
+\section{September 10}
 
-\subsubsection{Analitically isomorphic singularities (Arthur)}
+\subsection{Analitically isomorphic singularities (Arthur)}
 Two curves $C_1,C_2$ with points $P \in C_1$ and $Q\in C_2$, and $\mathcal{O}_P\supset\mathfrak{m}_P$, $\mathcal{O}_Q\supset\mathfrak{m}_Q$. And
 \[C:f=0,\qquad f[x,y]/(f), \quad \mathfrak{m}=(x,y).\]
 We define
@@ -492,7 +504,7 @@ We define
 	\end{enumerate}
 \end{proof}
 
-\subsubsection{Degree and Hilbert polynomial (Bruno)}
+\subsection{Degree and Hilbert polynomial (Bruno)}
 
 %\addcontentsline{toc}{subsubsection}{Exercise 7.2}
 
@@ -570,9 +582,9 @@ We define
 	\end{enumerate}
 \end{proof}
 
-\subsection{September 13}
+\section{September 13}
 
-\subsubsection{Veronesse surface (Alex)}
+\subsection{Veronesse surface (Alex)}
 
 \begin{manualexercise}{2.13}
 	Let $Y$ be the image of the 2-uple embedding of $\mathbb{P}^2$ in $\mathbb{P}^{5}$. This is the \textit{\textbf{Vernoses surface}}. If $Z\subseteq Y$ is a closed curve (a \textit{\textbf{curve}} is a variety of dimension 1), show that there exists a hypersurface $V\subseteq \mathbb{P}^5$ such that $V \cap Y=Z$.
@@ -613,7 +625,7 @@ We define
 	\begin{pmatrix} v_0\\v_1\\v_2 \end{pmatrix} \begin{pmatrix} v_0&v_1&v_2 \end{pmatrix} & =\begin{pmatrix} v_0v_0&v_0v_1\\v_1v_0&v_1v_1 \end{pmatrix} 
 \end{align*}
 
-\subsubsection{Degree of Veronese and Segre embeddings (Alex)}
+\subsection{Degree of Veronese and Segre embeddings (Alex)}
 
 %\addcontentsline{toc}{subsection}{Exercise 7.1}
 \begin{manualexercise}{7.1}\leavevmode 
@@ -648,7 +660,7 @@ We define
 \end{proof}
 
 
-\subsubsection{Curvas elípticas (Carlos)}
+\subsection{Curvas elípticas (Carlos)}
 
 $k$ n\~ao neces. algebricamente fechado, $\bar{k}$ algebraic closure, $V$ variedade afim, $V\subseteq \mathbb{A}^n=k^n$, $k[V]=k[c_1,\ldots,x_n]/I(V)$. $P\in V$, $\mathfrak{m}_p=\{g\in k[V]:g(p)=0\}$ \'e um ideal maximal.
 
@@ -683,8 +695,8 @@ Uma \textit{\textbf{curva}} \'e uma variedade projetiva suave de dimens\~ao 1. \
 	\end{enumerate}
 \end{proof}
 
-\subsection{September 17}
-\subsubsection{Dimension of affine variety $\cap$ hyperplane (Alex+Arthur)}
+\section{September 17}
+\subsection{Dimension of affine variety $\cap$ hyperplane (Alex+Arthur)}
 
 \begin{manualexercise}{1.8}
 	Let $Y$ be an affine variety of dimension $r$ in $\mathbb{A}^n$. Let $H$ be a hypersurface in $\mathbb{A}^n$ and assume that $ Y\not\subseteq H$. Then every irreducible component of $Y\cap H$ has dimension $r-1$.
@@ -704,8 +716,8 @@ and since $(f)/\mathfrak{q}$ is principal in the quotient, ie. $(f)/\mathfrak{q}
 \end{proof}
 
 
-\subsection{Sept 20}
-\subsubsection{Scroll (Sergey)}
+\section{Sept 20}
+\subsection{Scroll (Sergey)}
 
 You can find this $\operatorname{Sec}^k$ on a book by Harris, name?
 
@@ -784,7 +796,7 @@ Pegue dois elementos em $\operatorname{Gr}(2,N)$, digamos $W,W'$ e pegue bases d
 	As abstract varieties, $\Sigma_{a,b}$ is isomorphic to $\Sigma_{a'b'}$ iff $b-a=b'-b'=n$ and either  $a=a'=0$ or  $a>0, a'>0$.
 \end{manualexercise}
 
-\subsubsection{Elliptic curve is not rational (Alex)}
+\subsection{Elliptic curve is not rational (Alex)}
 %\addcontentsline{toc}{subsubsubsection}{Exercise 6.3, Elliptic curve is not rational}
 \begin{manualexercise}{6.3, Elliptic curve is not rational}
 	Let  $Y$ be the curve $y^2=x^3-x$ in $\mathbb{A}^2$, and assume that the characteristic of the base field $k$ is not 2. In this exercise we will show that $Y$ is not a rational curve, and hence $K(Y)$ is not a pure trascendental extension of $k$.
@@ -851,7 +863,7 @@ Let
 This means $X$ is irreducible, $Y$ is irreducible. Then a discussion on the invertibility of the norm, units on these rings…
 \end{enumerate}
 
- \subsubsection{Tangent map (Bruno)}
+ \subsection{Tangent map (Bruno)}
 
 \begin{manualexercise}{5.10}
 $X$ afine variety and $p\in X$.
@@ -958,13 +970,13 @@ A friend from Cabo Frio just recommended me to have a look at \href{https://www.
 \end{manualexercise}
 \fi
 
-\section{Chapter II}
+\chapter{Chapter II}
 
-\subsection{September 27}
+\section{September 27}
 
-\subsection{Sheaves (Bruno)}
+\section{Sheaves (Bruno)}
 
-\subsubsection{Background}
+\subsection{Background}
 Let $X$ be a topological space and $\mathcal{F}$ a sheaf of rings, which is a presheaf + gluing condition.
 
 \begin{idea2}{Sheafification}\leavevmode
@@ -985,13 +997,13 @@ Let $X$ be a topological space and $\mathcal{F}$ a sheaf of rings, which is a pr
 	 \[\begin{tikzcd}
 	 	\text{Sheafs}\arrow[r,"\text{forget}" ]&\text{Presheaf}\arrow[l,bend left,"\text{Sheafify}" ]  
 	 \end{tikzcd}\]
-
+ \end{enumerate}
 \end{idea2}
 	 \begin{remark}
 	 Also kernel and image of sheafs. Must sheafify the image.	
 	 \end{remark}
 	 
-\subsubsection{Exercise 1.8}
+\subsection{Exercise 1.8}
 Let $U\subset X$ be an open subset of $X$. Consider
 \begin{align*}
 	\Gamma(U,\cdot): \operatorname{Sheafs} &\longrightarrow \operatorname{Rings} \\
@@ -1006,7 +1018,7 @@ exact implies
 	0\arrow[r]&\Gamma(U,\mathcal{A})\arrow[r,"a_U"]&\Gamma(U,\mathcal{B})\arrow[r,"b_U"]&\Gamma(U,C)
 \end{tikzcd}\]
 
- \end{enumerate}
+ %\end{enumerate}
 
  \begin{proof}[Solution]\leavevmode
  	\begin{itemize}
@@ -1015,9 +1027,9 @@ exact implies
  	\end{itemize}
  \end{proof}
 
-\subsection{September 24}
+\section{September 24}
 
-\subsubsection{Generically finite morphisms (Arthur)}
+\subsection{Generically finite morphisms (Arthur)}
 
 \begin{manualexercise}{2.37}
 	
@@ -1072,7 +1084,7 @@ Alternatively, let $Z = f^{-1}(V) \setminus U_1$. The same theorem shows that $f
 so $f(Z) \ne V$ and there is an open affine $V'$ such that $V' \cap f(Z) = \varnothing$.
 \end{proof}
 
-\subsubsection{Closed subschemes of $\operatorname{Proj}(S)$ (Dani)}
+\subsection{Closed subschemes of $\operatorname{Proj}(S)$ (Dani)}
 
 \begin{idea6}{Review of $\operatorname{Proj}$}\leavevmode
 	\begin{itemize}
@@ -1160,9 +1172,9 @@ So in fact we have some map $f^\sharp_\mathfrak{p}:S_{(\varphi^{-1}(\mathfrak{p}
 \end{proof}
 
 
-\section{Chapter III}
+\chapter{Chapter III}
 
-\subsection{Notes: injective resolutions, derived functors and cohomology}
+\section{Notes: injective resolutions, derived functors and cohomology}
 \begin{defn}
 	(\href{https://en.wikipedia.org/wiki/Injective_object#:~:text=9%20References-,Definition,can%20be%20extended%20to%20Y%20.}{wiki}) An object $Q$ is \textit{\textbf{injective}} if, given a monomorphism $f:X\to Y$, any $g:X\to Q$ can be extended to $Y$.
 \[\begin{tikzcd}
@@ -1229,54 +1241,54 @@ and for each $i\geq 0$ there is a natural morphism $\delta^i:R^iF(A'')\to R^{i+1
 	This is equivalent to sheaf cohomology construction via \v Cech cohomology.
 \end{remark}
 
-\section{Chapter IV}
+\chapter{Chapter IV}
 
-\addcontentsline{toc}{subsection}{Exercise 1.2}
+\addcontentsline{toc}{section}{Exercise 1.2}
 \begin{manualexercise}{1.2}[I like this one]
 	Again let $X$ be a curve, and let $P_1,\ldots,P_r$ be points. Then there is a rational  function $f\in K(X)$ having poles (of some order) at each of the $P_i$ and regular  elsewhere.  
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 1.7}
+\addcontentsline{toc}{section}{Exercise 1.7}
 \begin{manualexercise}{1.7}[no one]
 	A curve $X$ is called \textit{\textbf{hyperelliptic}}…
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 1.8}
+\addcontentsline{toc}{section}{Exercise 1.8}
 \begin{manualexercise}{1.8}[Alex]
 	Very useful to know, I think this is done in that book by Bosch of modules,
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 1.9}
+\addcontentsline{toc}{section}{Exercise 1.9}
 \begin{manualexercise}{1.9}[Victor]
 	Riemann-Roch for singular curves.
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 2.3(h)}
+\addcontentsline{toc}{section}{Exercise 2.3(h)}
 \begin{manualexercise}{2.3(h)}
 	28 bitangents. Remind Sergey.
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 2.5}
+\addcontentsline{toc}{section}{Exercise 2.5}
 \begin{manualexercise}{2.5}
 	Prove the theorem of Hurwitz that a curve $X$ of genus $g\geq 2$ over a field of characteristic 0 has at most $84(g-1)$.
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 3.1}
+\addcontentsline{toc}{section}{Exercise 3.1}
 \begin{manualexercise}{3.1}
 	If X is a curve of genus 2, show that a divisor D is very ample $\iff \operatorname{deg} D \geq 5$.  This strengthens (3,3.4).
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 3.12}
+\addcontentsline{toc}{section}{Exercise 3.12}
 \begin{manualexercise}{3.12}
 	For each value of $d = 2,3,4,5$ and $r$ satisfying $0\leq r\leq \frac{1}{2}(d-1)(d-2)$, show  that there exists an irreducible plane curve of degree d with r nodes and no other  singularities.
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 4.10}
+\addcontentsline{toc}{section}{Exercise 4.10}
 \begin{manualexercise}{4.10}
 	If $X$ is an elliptic curve (Sergey: for abelian varieties is also true), show that there is an exact sequence… Picard groups.
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 5.3}
+\addcontentsline{toc}{section}{Exercise 5.3}
 \begin{manualexercise}{5.3}
 	Moduli of Curves of Genus 4. The hyperelliptic curves of genus 4 form an irreducible family of dimension 7. The nonhyperelliptic ones form an irreducible  family of dimension 9. The subset of those having only one $g_3^{1}$ is an irreducible  family of dimension 8. [Hint: Use (5.2.2) to count how many complete intersections $Q\cap F_3$ there are.]  
 \end{manualexercise}
@@ -1286,49 +1298,49 @@ and for each $i\geq 0$ there is a natural morphism $\delta^i:R^iF(A'')\to R^{i+1
 	A rational curve of degree 5 in $\mathbb{P}^{3}$ is always contained in a cubic surface, but there  are such curves which are not contained in any quadric surface.  
 \end{manualexercise}
 
-\section{Chapter V}
+\chapter{Chapter V}
 
-\addcontentsline{toc}{subsection}{Exercise 1.8}
+\addcontentsline{toc}{section}{Exercise 1.8}
 \begin{manualexercise}{1.8}
 	Divisor cohomology, neron severi
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 2.8}
+\addcontentsline{toc}{section}{Exercise 2.8}
 \begin{manualexercise}{2.8}
 	Locally free sheaves.
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 3.5}
+\addcontentsline{toc}{section}{Exercise 3.5}
 \begin{manualexercise}{3.5}
 	5 points in the field, hyperelliptic curve, point at infinity is singular.
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 4.6}
+\addcontentsline{toc}{section}{Exercise 4.6}
 \begin{manualexercise}{4.5}
 	
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 4.16}
+\addcontentsline{toc}{section}{Exercise 4.16}
 \begin{manualexercise}{4.16}
 	27 lines on Fermat cubic
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 5.1}
+\addcontentsline{toc}{section}{Exercise 5.1}
 \begin{manualexercise}{5.1}
 	
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 5.4}
+\addcontentsline{toc}{section}{Exercise 5.4}
 \begin{manualexercise}{5.4}
 	
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 5.5}
+\addcontentsline{toc}{section}{Exercise 5.5}
 \begin{manualexercise}{5.5}
 	
 \end{manualexercise}
 
-\addcontentsline{toc}{subsection}{Exercise 6.2}
+\addcontentsline{toc}{section}{Exercise 6.2}
 \begin{manualexercise}{6.2}[Arthur]
 	Beautiful exercise.
 \end{manualexercise}
