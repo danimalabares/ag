@@ -1,4 +1,5 @@
 \input{/Users/daniel/github/config/preamble-book.sty}
+\input{/Users/daniel/github/config/color.sty}
 
 \title{Exercieses and notes in Algebraic Geometry}
 
@@ -323,9 +324,9 @@ And $k$ is closed so every polynomial $n$ roots, so algebraic sets are just fini
 	The \textit{\textbf{(Krull) dimension}} of a ring $A$ is the supremum of all \textit{\textbf{heights}} of all prime ideals, i.e. the largest proper chain of prime ideals $\mathfrak{p}_0\subset \mathfrak{p}_1\subset\ldots\subset \mathfrak{p}$.
 \end{defn}
 
-\begin{prop}[1.7]
+\begin{idea7}{Proposition 1.7}\leavevmode
 	If $Y$ is an affine algebraic set, then the dimension of $Y$ is equal to the dimension of its affine coordinate ring $A(Y)$.
-\end{prop}
+\end{idea7}
 
 			We only need to know that closed sets are finite points. This \href{https://math.stackexchange.com/questions/407693/polynomials-are-continuous-with-respect-to-the-zariski-topology}{means} that polynomials are continuous functions with respect to Zariski topology (because preimage of a closed set=finite set of points is closed because it is the root of $p-\alpha$). That makes $\varphi$ continuous.
 
@@ -833,16 +834,16 @@ Let
 \end{remark}
 
 \item 
-	\begin{thm}[5.1]\leavevmode
+	\begin{idea6}{Theorem 5.1}\leavevmode
 		$Y\subseteq \mathbb{A}^n$ affine variety and $P\in Y$. Then $Y$ is nonsingular at $P \iff $ local ring $\mathcal{O}_{P,Y}$ is a regular local ring
-	\end{thm}
-	\begin{thm}[6.2A]\leavevmode
+	\end{idea6}
+	\begin{idea6}{Theorem 6.2A}\leavevmode
 		$A$ noetherian local domain of sdimension one with maximal ideal $\mathfrak{m}$. Then the following are equivalent
 		\begin{enumerate}[label=(\roman*)]
 			\item $A$ is a regular local ring.
 			\item $A$ is integrally closed (over the fraction field).
 		\end{enumerate}
-	\end{thm}
+	\end{idea6}
 	In other words, normality in dimension 1 is the same as normality.
 
 	\item Here's the \textit{\textbf{hyperelliptic involution}}
@@ -1084,6 +1085,8 @@ Alternatively, let $Z = f^{-1}(V) \setminus U_1$. The same theorem shows that $f
 so $f(Z) \ne V$ and there is an open affine $V'$ such that $V' \cap f(Z) = \varnothing$.
 \end{proof}
 
+\section{October 1st}
+
 \subsection{Closed subschemes of $\operatorname{Proj}(S)$ (Dani)}
 
 \begin{idea6}{Review of $\operatorname{Proj}$}\leavevmode
@@ -1099,7 +1102,7 @@ so $f(Z) \ne V$ and there is an open affine $V'$ such that $V' \cap f(Z) = \varn
 	\[\operatorname{Proj}\varphi:G(\varphi)\longrightarrow \operatorname{Proj}A,\]
 	where $G(\varphi )\subseteq \operatorname{Proj}(B)$ is the open subscheme
 	\[G(\varphi )=\mathfrak{q}\in\operatorname{Proj}(B):\varphi^{-1}(\mathfrak{q})\not\supset A_+\}\]
-such that …
+	such that [some conditions, but let's proceed to our exercise]
 \end{idea1}
 
 \begin{manualexercise}{2.14}\leavevmode 
@@ -1157,20 +1160,48 @@ So I'm not really sure how this is defined but we are looking at a map
 \[f^\sharp _x:\mathcal{O}_{f(\operatorname{Proj}T)}\longrightarrow \mathcal{O}_{\operatorname{Proj}S}\]
 
 	Ah! Now I see:
-	\begin{prop}[2.5]\leavevmode 
+	\begin{idea4}{Proposition 2.5}\leavevmode
 	\begin{enumerate}[label=\alph*.]
 		\item For any $\mathfrak{p}\in\operatorname{Proj}S$, the stalk $\mathcal{O}_\mathfrak{p}$ is isomorphic to the local sing $S_{(\mathfrak{p})}$.
 	\end{enumerate}
-\end{prop}
+	\end{idea4}
 So in fact we have some map $f^\sharp_\mathfrak{p}:S_{(\varphi^{-1}(\mathfrak{p}))}\longrightarrow T_{(\mathfrak{p})}$. I don't really know how this is defined, but in a broad sense we know this is a map induced by $\varphi$, which was surjective, acting on the localizations of $S$ and $T$, which are really $S$ and $T$ made larger by adding some fractions.
 
-\item Let $d_0$ be an integer and define $I'=\bigoplus_{d\geq d_0}I_d$. Basically this is just exercise 2.14(c). We just notice that $I'$ just  $I$ taking away the first $d_0$ degrees, so we have a projection map
+\item Let $d_0$ be an integer and define $I'=\bigoplus_{d\geq d_0}I_d$. Basically this is just exercise 2.14(c). We just notice that $I'$ is really just  $I$ taking away the first $d_0$ degrees, so we have a projection map
 	\[\varphi:S/I'\to S/I\]
 	which is just the identity after degree $d_0$. That is the hypothesis of exercise 2.14(c), which yield an isomorphism $\operatorname{Proj}(S/I)\cong \operatorname{Proj}(S/I')$. And that clearly means that the induced subschemes of $\operatorname{Proj}S$ are isomorphic.
-	
 	\end{enumerate}
 \end{proof}
 
+\begin{idea4}{The open sets}\leavevmode
+	So, what are the open sets? Let $S$ be a graded ring. Define
+	\[D_{+}(f)=\{\mathfrak{p}\in\operatorname{Proj}(S)\not \in \mathfrak{p}\}\]
+	And very importantly, we can take problems about to $\operatorname{Proj}$ to the world of schemes noticing that
+	\[(D_+(f),\mathcal{O}|_{D_+(f)})\cong \operatorname{Spec}R_{f}.\]
+\end{idea4}
+
+We can even get another proof that the induced map $f$ on the exercise is a closed immersion as follows. Notice that $\varphi:S_{(f)}\twoheadrightarrow T_{(\varphi(f))}$ gives
+\[\begin{tikzcd}
+	\operatorname{Proj}(T)\arrow[r]&\operatorname{Proj}(S)\\
+	D_+(\varphi(f))\arrow[u,hook]\arrow[r]& D_+(f)\arrow[u,hook]
+\end{tikzcd}\]
+which is just the same as a surjection
+\[S_{(f)}\twoheadrightarrow R_{(\varphi(f))}\]
+
+\subsection{Skyscraper sheaves (Alex)}
+
+\begin{manualexercise}{1.17}
+	Let $X$ be a topological space, let $P$ be a point, and let $A$ be an abelian group. Define a sheaf $i_P(A)$ on $X$ as follows:
+	\[i_P(A)(U)=\begin{cases}
+		A\qquad &\text{if} P\in U \\
+		0\qquad &\text{otherwise} 
+	\end{cases}\]
+	Verify that the stalk of $i_P(A)$ is $A$ at every point $Q\in\overline{\{P\}}$ (closure of $\{P\}$) and 0 otherwise. {\color{5}Hence the name \textit{skyscraper sheaf.}} Show that this sheaf could also be described as $i_*(A)$ where $A$ denotes the constant sheaf $A$ on the closed subspace $\overline{\{P\}}$ and $i:\overline{\{P\}}\hookrightarrow  X$ is the inclusion.
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+	[Done in class]
+\end{proof}
 
 \chapter{Chapter III}
 
