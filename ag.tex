@@ -1,5 +1,5 @@
 \input{/Users/daniel/github/config/preamble-book.sty}
-\input{/Users/daniel/github/config/color.sty}
+\input{/Users/daniel/github/config/thms-eng.sty}
 
 \title{Exercieses and notes in Algebraic Geometry}
 
@@ -826,7 +826,7 @@ Let
 	Consider the local ring at the point and its maximal ideal. So $\mathfrak{m}_{p}/\mathfrak{m}^2_p$ is the \textit{\textbf{cotangent space}}. Then the  \textit{\textbf{tangent space}} is the dual  $\left(\frac{\mathfrak{m}}{\mathfrak{m}^2}\right)^*$. A point is \textit{\textbf{singular}} if the tangent space has more dimension than it should.
 \end{defn}
 
-\paragraph{Interpretation} Functions in $\mathfrak{m}_p$ are those which vanish at $p$. A function in $\mathfrak{m}_{p}$ is $\sum_{i}f_ig_i$ so its differential is $ d \left( \sum_{i}f_ig_i \right) =\sum_{i}f_idg_i+\sum_{i}g_ifd_i$ which you want to mod out because it is zero at $p$ because both $f_{i}$ and $g_{i}$.
+\paragraph{Interpretation} Functions in $\mathfrak{m}_p$ are those which vanish at $p$. A function in $\mathfrak{m}^2_{p}$ is $\sum_{i}f_ig_i$ so its differential is $ d \left( \sum_{i}f_ig_i \right) =\sum_{i}f_idg_i+\sum_{i}g_ifd_i$ which you want to mod out because it is zero at $p$ because both $f_{i}$ and $g_{i}$.
 
 \begin{remark}
 	For $X,Y\subset Z$, $T_pX,T_pY\subset T_pZ$
@@ -1173,13 +1173,11 @@ So in fact we have some map $f^\sharp_\mathfrak{p}:S_{(\varphi^{-1}(\mathfrak{p}
 	\end{enumerate}
 \end{proof}
 
-\begin{idea4}{The open sets}\leavevmode
+\begin{idea4}{The open sets: another proof for closed immersion}[Lucas]\leavevmode
 	So, what are the open sets? Let $S$ be a graded ring. Define
 	\[D_{+}(f)=\{\mathfrak{p}\in\operatorname{Proj}(S)\not \in \mathfrak{p}\}\]
 	And very importantly, we can take problems about to $\operatorname{Proj}$ to the world of schemes noticing that
 	\[(D_+(f),\mathcal{O}|_{D_+(f)})\cong \operatorname{Spec}R_{f}.\]
-\end{idea4}
-
 We can even get another proof that the induced map $f$ on the exercise is a closed immersion as follows. Notice that $\varphi:S_{(f)}\twoheadrightarrow T_{(\varphi(f))}$ gives
 \[\begin{tikzcd}
 	\operatorname{Proj}(T)\arrow[r]&\operatorname{Proj}(S)\\
@@ -1187,6 +1185,7 @@ We can even get another proof that the induced map $f$ on the exercise is a clos
 \end{tikzcd}\]
 which is just the same as a surjection
 \[S_{(f)}\twoheadrightarrow R_{(\varphi(f))}\]
+\end{idea4}
 
 \subsection{Skyscraper sheaves (Alex)}
 
