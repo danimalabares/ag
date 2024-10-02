@@ -1165,7 +1165,7 @@ So I'm not really sure how this is defined but we are looking at a map
 		\item For any $\mathfrak{p}\in\operatorname{Proj}S$, the stalk $\mathcal{O}_\mathfrak{p}$ is isomorphic to the local sing $S_{(\mathfrak{p})}$.
 	\end{enumerate}
 	\end{idea4}
-So in fact we have some map $f^\sharp_\mathfrak{p}:S_{(\varphi^{-1}(\mathfrak{p}))}\longrightarrow T_{(\mathfrak{p})}$. I don't really know how this is defined, but in a broad sense we know this is a map induced by $\varphi$, which was surjective, acting on the localizations of $S$ and $T$, which are really $S$ and $T$ made larger by adding some fractions.
+So in fact we have some map $f^\sharp_\mathfrak{p}:S_{(\varphi^{-1}(\mathfrak{p}))}\longrightarrow T_{(\mathfrak{p})}$. How is this is defined? but in a broad sense we know this is a map induced by $\varphi$, which was surjective, acting on the localizations of $S$ and $T$, which are really $S$ and $T$ made larger by adding some fractions.
 
 \item Let $d_0$ be an integer and define $I'=\bigoplus_{d\geq d_0}I_d$. Basically this is just exercise 2.14(c). We just notice that $I'$ is really just  $I$ taking away the first $d_0$ degrees, so we have a projection map
 	\[\varphi:S/I'\to S/I\]
@@ -1202,6 +1202,45 @@ which is just the same as a surjection
 \begin{proof}[Solution]\leavevmode
 	[Done in class]
 \end{proof}
+
+\subsection{Cremona involution (Bruno, Sergey)}
+
+It is an automorphism of rational functions in say two variables. $\sigma\in\operatorname{Aut}(\mathbb{C}(x,y))$.
+\[\sigma(x)=1/x\qquad \sigma(y)=1/y\]
+It has an extension to a map
+\begin{align*}*\sigma:\mathbb{P}^2 &\dashrightarrow \mathbb{P}^2\\
+	[x:y:z]&\longmapsto [yz:xz:xy]
+\end{align*}
+
+\begin{claim}\leavevmode
+	Let $S=\operatorname{Bl}_3\mathbb{P}^2$ be the blow up of $\mathbb{P}^{2}$ at $[1:0:0],[0:1:0]$ and  $[0:0:1]$. Then there exists a regular extension $\sigma:S \longrightarrow S$.
+\end{claim}
+
+\begin{idea4}{Explanation}[Sergey]\leavevmode
+	When you have a $\varphi:X\dashrightarrow Y$ you can consider the closure of its graph, $\overline{\Gamma_\varphi}\subset X\times Y$.
+
+	For our map $\varphi:\mathbb{P}^{2}_s\dashrightarrow \mathbb{P}^2_t$, {\color{6}What is $\overline{\Gamma_\varphi}$?}
+\end{idea4}
+
+\begin{exercise}\leavevmode
+	Prove Danilov's lemma that if $Y\subset E$ is codimension 1 and $X\subset Z$ is codimension 2 then $f:Y\longrightarrow X$is a blow-up.
+\end{exercise}
+
+\begin{exercise}\leavevmode
+	How many orbits are there in the $\operatorname{PGL}(3)^2\curvearrowright \operatorname{Gr}(9,2)$ action? Or is it the action of $\operatorname{PGL}(U)\times \operatorname{PGL}(V)$ on $\mathbb{P}(U\otimes V)$, where $\mathbb{P}(U)\times \mathbb{P}(V)\hookrightarrow \mathbb{P}(U\otimes V)$. Can you classify the orbits? This classification will be a problem of linear algebra.
+\end{exercise}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{Chapter III}
 
