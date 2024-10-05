@@ -248,6 +248,38 @@ If $X\subset \mathbb{C}^{n}$ and $X'\subset \mathbb{C}^{m}$ are affine varieties
 	\end{enumerate}
 \end{proof}
 
+\section{Blow-up of points in $\mathbb{A}^2$}
+
+Let $\pi : B \to \mathbb{A}^2$ denote the blow-up of $O = (0,0)$ in $\mathbb{A}^2$.
+One can show that 
+$$ B = \{ (x,y) \times (t : u) \in \mathbb{A}^2 \times \mathbb{P}^1 : ux=ty \}. $$
+
+The morphism $\pi$ is an isomorphism away from $O$.
+
+Let $Y \subseteq \mathbb{A}^2$ be a curve through $O$. Then $\pi^{-1}(Y)$ is an algebraic set which is isomorphic to $Y$ away from $O$, and which contains $E = \pi^{-1}(O)$. Indeed, $u/t = y/x$ means that, away from $E$, the $\mathbb{P}^1$-coordinate of a point $P$ in $B$ is the slope of the line from $O$ to $\pi(P)$. This allows us to construct an inverse morphism $\mathbb{A}^2 - \{O\} \to B - E$.
+
+\textbf{The exercise:}
+The pre-image $\pi^{-1}(Y)$ is cut out in $\mathbb{A}^2 \times \mathbb{P}^1$ by $y^2 = x^3$ and $xu=ty$. Let's look at $\pi^{-1}(Y) \cap D(t)$. We may put $t=1$ then, so $B \cap D(t)$ is cut out by $y=ux$. Hence $\pi^{-1}(Y) \cap D(t)$ is cut out by $u^2 x^2 = x^3$ in $B \cap D(t)$. Given that
+$$(u^2x^2 - x^3) = (u^2-x)(x)^2$$
+in the ring of $B \cap D(t)$, it follows that
+$$ \pi^{-1}(Y) \cap D(t) = \Big[V(u^2-x) \cup E \Big] \cap D(t). $$
+Now, $\pi^{-1}(Y) \cap V(t)$ is given by $y^2 = x^3$ and $ux=0$. Also, since $t=0$, we have $u \ne 0$. Hence $x=0$ and so $y=0$, i.e.,
+$$\pi^{-1}(Y) \cap V(t) = \{ O \times (0:1) \} = E \cap V(t).$$
+
+Let $\tilde{Y}$ be the curve cut out by $u^2 = t^2x$ in $B$. Then $\tilde{Y}$ is irreducible. Moreover, $\tilde{Y} \cap E = \{ O \times (1:0) \}$ because $x=y=0$ implies $u=0$.
+What we see is that $\pi^{-1}(Y)$ is the union of the irreducible curves $\tilde{Y}$ and $E$. Therefore $\tilde{Y}$ is the strict transform of $Y$.
+
+Consider the morphism
+$$ \varphi : \mathbb{A}^1 \longrightarrow \tilde{Y}, \quad u \longmapsto (u^2, u^3) \times (1:u). $$
+It's inverse is give by $(x,y) \times (1:u) \mapsto u$. Therefore $\tilde{Y} \cong \mathbb{A}^1$.
+
+Since $\pi : \tilde{Y} \to Y$ is an isomorphism away from $O$ and $\tilde{Y}$ meets $E$ at a single point, we deduce that $\pi$ is bijective.
+Since $\pi$ maps closed sets (finite sets) to closed sets (finite sets), we find that $\pi$ is bicontinuous.
+On the other hand, $\pi$ is not an isomorphism because $Y$ is not isomorphic to $\mathbb{A}^1$.
+
+\textbf{Hartshorne's example:}
+Take $Y = V(y^2 - x^2(x+1)) \subseteq \mathbb{A}^2$. We can do manipulations like above to find that $\pi^{-1}(Y)$ is the union of $\tilde{Y} = V(u^2 - t^2(x+1))$ and $E$. So, $\tilde{Y}$ meets $E$ at the points $u=\pm 1$, which correspond to the slopes of $y^2 = x^2(x+1)$ at $O$.
+
 \section{Conics in $\mathbb{A}^2$ and $\mathbb{P}^2$ (Dani)}
 
 \begin{manualexercise}{3.1}
@@ -423,7 +455,102 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 
 \section{September 10}
 
-\subsection{Analitically isomorphic singularities (Arthur)}
+\subsection{Analitycally isomorphic singularities (Arthur)}
+
+\subsubsection{Arthur's notes}
+
+\begin{idea5}{Exercise 5.14}\leavevmode
+	
+\end{idea5}
+
+\begin{enumerate}[label=(\alph*)]
+	\item
+	\textbf{Problem:} Show that if two points of two plane curves are analytically isomorphic then they have the same multiplicity.
+	
+	Let $A = k[x,y]/(f)$ and $\mathfrak{m} = (x,y)A$. Then $A/\mathfrak{m}^n \simeq \hat{A}/\mathfrak{m}^n\hat{A}$ for all $n \geq 0$. Setting $r = \mu(f)$, we have $(f) \subseteq \mathfrak{m}^r$ and $(f) \subsetneq \mathfrak{m}^{r+1}$. Hence
+	\begin{equation*}
+		\dim \hat{A}/\mathfrak{m}^n\hat{A} = \dim A/\mathfrak{m}^n = \dim \frac{k[x,y]}{(x,y)^n} \quad \text{for all } n \leq r.
+	\end{equation*}
+	[Dimensions of $k$-vector spaces.]
+	However
+	\begin{equation*}
+		\dim \hat{A}/\mathfrak{m}^{r+1}\hat{A} = \dim A/\mathfrak{m}^{r+1} = \dim \frac{k[x,y]}{(f)+(x,y)^{r+1}} < \dim \frac{k[x,y]}{(x,y)^{r+1}}.
+	\end{equation*}
+	Therefore we have a characterization of $r=\mu(f)$ as the first $n \geq 0$ such that $\dim \hat{A}/\mathfrak{m}^{n+1}\hat{A} \ne \dim k[x,y]/(x,y)^{n+1}$. Since this characterization depends only on the completion of $A$, we have obtained a solution to the the problem.
+	
+	\item Let $f,g \in k[[x,y]]$. Write $f = f_r + f_{r+1} + \cdots$,
+	where the $f_d \in k[x,y]$ are homogeneous of degree $d$.
+	Suppose
+	\[ f_r = g_sh_t, \]
+	where $g_s$ and $h_t$ homogeneous of degrees $s$ and $t$, and have no common linear factor.
+	
+	\textbf{Problem:} Find power series
+	\begin{align*}
+		g &= g_s + g_{s+1} + \cdots, \\
+		h &= h_t + h_{t+1} + \cdots
+	\end{align*}
+	such that $f=gh$.
+	
+	Expand the product to find
+	\begin{equation*}
+		f = \sum_{d=0}^\infty \left( \sum_{i+j=d} g_{s+j}h_{t+i} \right).
+	\end{equation*}
+	Looking at homogeneous parts of degree $r+d$, we see that our problem is solved as soon as we have
+	\begin{equation} \label{eq:frd}
+		f_{r+d} = \sum_{i+j=d} g_{s+j}h_{t+i} = (g_{s+d}h_t + g_sh_{t+d}) + \sum_{\substack{i+j=d\\ i,j \ne 0}} g_{s+j}h_{t+i}.
+	\end{equation}
+	Hence, one way of solving the problem is to inductively find the polynomials $g_{s+d}, h_{t+d}$.
+	
+	Since $g_s$ and $h_t$ don't have linear factors in common in $k[x,y]$, the polynomials $g_s(t,1)$ and $h_t(t,1)$ don't have common linear factors in $k[t]$ and so generate they $k[t]$.
+	Given a homogeneous $a(x,y) \in k[x,y]$, we can therefore find $p(t), q(t) \in k[t]$ such that
+	\[ g_s(t,1)p(t) + h_t(t,1)q(t) = a(t,1). \]
+	Taking $t = x/y$ and multiplying the expression above by $y^{\deg a}$, we obtain
+	\[ g_s(x,y)\tilde{p}(x,y) + h_t(x,y)\tilde{q}(x,y) = a(x,y), \]
+	where $\tilde{p}(x,y) = y^{\deg a -s}p(x/y), \tilde{q}(x,y) = y^{\deg a - t}q(x/y)  \in k[x,y]$ are homogeneous.
+	
+	In particular, we can find $g_{s+1}, h_{t+1} \in k[x,y]$ homogeneous such that
+	\[ g_sh_{t+1} + g_{s+1}h_t = f_{r+1}; \]
+	and homogeneous polynomials $g_{s+2}, h_{t+2}$ such that
+	\[ g_sh_{t+2} + g_{s+2}h_t = f_{r+2} - g_{s+1}h_{s+1}. \]
+	More generally, we can find $g_{s+i}, h_{t+i} \in k[x,y]$ such that
+	\[ g_sh_{t+i} + g_{s+i}h_t = f_{r+i} - \sum_{\substack{i+j=d\\ i,j \ne 0}} g_{s+j}h_{t+i} \]
+	
+	Then equation \eqref{eq:frd} is satisfied and the problem is solved.
+	
+	%\textbf{Consequence:} The number of irreducible components of $\operatorname{Spec} \widehat{\oh_P}$ is equal to the number of distinct tangents of the curve at the origin (i.e., not counting multiplicities).
+	
+	\item Coming soon.
+	
+	\item Write $f(x,y) = f_2(x,y) + f_3(x,y) + \cdots + f_n(x,y)$.
+	Using the change of coordinates $x \mapsto x+y$, we have that $f_2(x,y) = ay^2 + bxy + cx^2$ with $a \ne 0$.
+	Then $f(x,y) = y^2 g(y)$ for some $g(y) \in k[y]$ such that $g(0) \ne 0$.
+	
+	The Weierstrass preparation theorem says that we may write
+	\[ f(x,y) = U(x,y)(y^2 + a(x)y + b(x)) \]
+	for \emph{unique} $U(x,y) \in k[[x,y]]$ and $a(x), b(x) \in k[[x]]$ such that $U$ is invertible and $a(0)=b(0)=0$. [We won't use this last condition.]
+	Since $U$ is a unit,
+	\[ \widehat{\mathcal{O}_P} \simeq \frac{k[[x,y]]}{(f(x,y))} = \frac{k[[x,y]]}{(y^2 + a(x)y + b(x))}, \]
+	i.e., the curve is given near the origin by $y^2 + a(x)y + b(x) = 0$.
+	
+	Because $\operatorname{char} k \ne 2$, we can eliminate the linear term by completing the square and changing $y \mapsto y - a(x)/2$:
+	\[ y^2 + a(x)y + b(x) = \left( y + \frac{a(x)}{2} \right)^2 - c(x) \]
+	
+	Now the equation is $y^2 - c(x) = 0$.
+	But $c(x) = x^r V(x)$ for some $V(x) \in k[[x]]$ such that $V(0) \ne 0$.
+	Since $\operatorname{char} k \ne 2$, we can then find a power series $U(x)$ such that $U(x)^2 = V(x)$. This is just solving the linear equations arising from
+	\[ \sum a_nx^n = \left( \sum b_n x^n \right)^2 = \sum ( \sum_{\substack{i+j=n\\ i,j \ne n}} b_i b_j + b_0b_n ) x^n. \]
+	
+	Now we substitute $y \mapsto yU(x)$ to transform the ideal $(y^2 - x^rU(x)^2)$ into $(y^2 - x^r)$.
+	
+	Finally, uniqueness of $r$ follows from the uniqueness part of the Weierstrass preparation theorem:
+	Given $f(x,y) \in k[x,y]$, we did $x \mapsto x + y$ and considered the polynomial $y^2 + a(x)y + b(x)$ given by the preparation theorem. There was no choice involved in these steps.
+	After completing the square we saw that $r$ is the largest integer such that $x^r$ divides $c(x) = -b(x) + a(x)^2/4$; hence $r$ is uniquely determined by $f(x,y)$.
+\end{enumerate}
+
+
+
+\subsubsection{Notes from class}
+
 Two curves $C_1,C_2$ with points $P \in C_1$ and $Q\in C_2$, and $\mathcal{O}_P\supset\mathfrak{m}_P$, $\mathcal{O}_Q\supset\mathfrak{m}_Q$. And
 \[C:f=0,\qquad f[x,y]/(f), \quad \mathfrak{m}=(x,y).\]
 We define
@@ -1032,7 +1159,7 @@ exact implies
 
 \subsection{Generically finite morphisms (Arthur)}
 
-\begin{manualexercise}{2.37}
+\begin{manualexercise}{3.7}
 	
 \end{manualexercise}
 
@@ -1229,14 +1356,103 @@ It has an extension to a map
 	How many orbits are there in the $\operatorname{PGL}(3)^2\curvearrowright \operatorname{Gr}(9,2)$ action? Or is it the action of $\operatorname{PGL}(U)\times \operatorname{PGL}(V)$ on $\mathbb{P}(U\otimes V)$, where $\mathbb{P}(U)\times \mathbb{P}(V)\hookrightarrow \mathbb{P}(U\otimes V)$. Can you classify the orbits? This classification will be a problem of linear algebra.
 \end{exercise}
 
+\section{October 4}
+
+\subsection{Locally ringed spaces (Victor)}
+
+\begin{idea4}{Exercise 2.1}\leavevmode
+	Let $A$ be a ring, let $X= \operatorname{Spec}(A)$, let $f\in A$ and let $D(f)\subseteq X$ be the open complement of $V((f))$. Show that the locally ringed space  $(D(f),\mathcal{O}_X|_{D(f)})$ is isomorphic to $\operatorname{Spec}(A_f)$.
+\end{idea4}
+
+\begin{idea1}{Review of Spec}\leavevmode
+	{\color{2}As a set} it's just the prime ideals of a ring.
+
+	{\color{2}\bfseries Topology.}\hspace{.5em}The closed sets are, for an ideal $I\subseteq A$, $V(I)=\{\mathfrak{p}\in\operatorname{Spec}(A) :I\subseteq \mathfrak{p}\}$.
+\end{idea1}
+
+\begin{idea1}{Review of ringed spaces}\leavevmode
+	A \textit{\textbf{ringed space}} is a pair  $(X,\mathcal{O}_X)$ where $X$ is a topological space and $\mathcal{O}_X$ is a sheaf of rings.
+
+	This is a category, so we have \textit{\textbf{ringed spaces maps}}, which are maps  $f:(X,\mathcal{O}_X)\longrightarrow (Y,\mathcal{O}_Y)$ where $f:X\longrightarrow Y$ is a continuos map and $f^\sharp:\mathcal{O}_Y\longrightarrow f_*\mathcal{O}_X$ is a sheaf morphism (a ring homomorphism for every open set) that is also natural in the sense that
+	\[\begin{tikzcd}
+		f^*(U):\mathcal{O}_Y(U)\arrow[r]\arrow[d]&\mathcal{O}_X(f^{-1}(U))\arrow[d]\\
+		f^\sharp(V):\mathcal{O}_Y(V)\arrow[r]&\mathcal{O}_X(f^{-1}(V))
+	\end{tikzcd}\]
+	commutes.
+
+	A \textit{\textbf{locally ringed space}} is a ringed space where  $\mathcal{O}_P$ is a local ring for all $P\in\mathcal{O}_X$, and $X$ is locally a  $\operatorname{Spec}$.
+\end{idea1}
+
+\begin{remark}\leavevmode
+	$D(f)$ is open since
+	 \begin{align*}
+		V((f))&=\{\mathfrak{p}\in\operatorname{Spec}(A):(f) \subseteq \mathfrak{p}\} = \{\mathfrak{p}\in\operatorname{Spec}(A) :t\in\mathfrak{p}\}
+	\end{align*}
+	so $D(f)=\operatorname{Spec}(A) \setminus V(f)$.
+\end{remark}
+
+\begin{proof}[Solution]\leavevmode
+	Recall that $D(f)=\{\mathfrak{p}\in\operatorname{Spec}(A) : f\not\in\mathfrak{p}\}$. Consider the inclusion
+	\begin{align*}
+		\varphi: A &\longrightarrow A_f \\
+		a &\longmapsto \frac{a}{1}
+	\end{align*}
+	and its induced
+	\begin{align*}
+		\varphi^*: \operatorname{Spec}(A_f) &\longrightarrow \operatorname{Spec}(A) \\
+		\mathfrak{p} &\longmapsto \varphi^{-1}(\mathfrak{p})=\mathfrak{p}\cap A\in D(f)
+	\end{align*}
+	But such a function is in fact a bijection with inverse given by $D(f)\ni \mathfrak{p}\mapsto S^{-1}\mathfrak{p}$. In fact it is also an homeomorphism since it is an open map, since
+	\[\varphi^* (D(g))=D(g)\cap D(f).\]
+	
+\end{proof}
+
+\subsection{Locally free sheaves (Arthur)}
+
+\begin{idea4}{Exercise 8.2}\leavevmode
+	Let $X$ be a variety of dimension $n$ over $k$. Let $\mathcal{E}$ be a locally free sheaf of rank $r>n$ on  $X$ and let $V\subseteq \Gamma(X,\mathcal{E})$ be a vector space of global sections which generate $\mathcal{E}$. Show that there is a section $s\in V$ such that $s_p \not\in \mathfrak{m}_p\mathcal{E}_p$ for all $p\in X$.
+\end{idea4}
+
+\begin{defn}\leavevmode
+	Let $E$ be an  $\mathcal{O}_x$-module. A vector space $V\subseteq \Gamma(X,\mathcal{E})$ generates $\mathcal{E}$ at $p\in X$ if $\{s_p:s\in V\}$ generates de the stalk $\mathcal{E}_p$ as an $\mathcal{O}_{X,p}$-module. We say $V$ is a \textit{\textbf{generator}} if it generates at all points of $X$.
+\end{defn}
+
+\begin{defn}\leavevmode
+	A sheaf $\mathcal{E}$ on $X$ is \textit{\textbf{locally free}} when there is a covering $\{U\}$ of $X$ such that
+	\[\mathcal{E}|_{U}\cong \bigoplus_{=1}^n \mathcal{O}_X|_{U}\]
+	for some $n$ and all $U$. (Recall that the restriction sheaf is taking open sets in $U$.)
+\end{defn}
 
 
+\section{October 8}
 
+\subsection{The Grothendieck Group (Dani)}
 
+\begin{idea4}{Intuition}[See \href{https://en.wikipedia.org/wiki/Grothendieck_group#Explicit_constructions}{wiki} or Hatcher  VBKT] The idea behind Grothendieck group is very much like introducing fractions to $\mathbb{Z}$ to construct $\mathbb{Q}$. Starting from a monoid (which is a structure similar to a group but lacking inverses) we consider formal substractions of the elements and quotient by the appropiate equivalence relation.
 
+	The construction in this exercise introduces a group structure to the set of coherent sheaves (which are $\mathcal{O}_X$-modules) by making the direct sum of modules into a group operation. This is because there is a 
+\end{idea4}
 
+\begin{idea2}{Exercise 6.10}[The Grothendieck Group $K(X)$]\leavevmode
+	Let $X$ be a noetherian scheme. We define $K(X)$ to be the quotient of the free abelian group generated by all the coherent sheaves on $X$, by the subgroup generated by all expressions $\mathcal{F}$---$\mathcal{F}'$---$\mathcal{F}''$ whenever there is an exact sequence $\begin{tikzcd}
+		0\arrow[r]&\mathcal{F}'\arrow[r]&\mathcal{F}\arrow[r]&\mathcal{F}''\arrow[r]&0
+	\end{tikzcd}$ of coherent sheaves on $X$. If $\mathcal{F}$ is a coherent sheaf, we denote by $\gamma(\mathcal{F})$ its image in $K(X)$.
+	 \begin{enumerate}[label=\alph*.]
+		\item If $X=\mathbb{A}^1_k$, then $K(X)\cong \mathbb{Z}$.
+		\item If $X$ is any integral scheme, and $\mathcal{F}$ a coherent sheaf, we define the \textit{\textbf{rank}} of $\mathcal{F}$ to be $\dim_k\mathcal{F}_\xi$, where $\xi$ is the generic point of $X$, and $K=\mathcal{O}_\xi$ if the function field of $X$. Show that the rank function defined a surjective homomorphism rank: $K(X)\longrightarrow \mathbb{Z}$.
+		\item If $Y$ is a closed subscheme of  $X$, there is an exact sequence
+			\[\begin{tikzcd}
+				K(Y)\arrow[r]&K(X)\arrow[r]&K(X-Y)\arrow[r]&0
+			\end{tikzcd}\]
+		where the first map is extension by zero, and the second map is restriction. [\textit{Hint}: For exactness in the middle, show that if $\mathcal{F}$ is a coherent sheaf on $X$ whose support is contained in $Y$, then there is a finite filtration $\mathcal{F}=\mathcal{F}_0\supseteq \mathcal{F}_1\supseteq\ldots \supseteq\mathcal{F}_n=0$, such that each $\mathcal{F}_i/\mathcal{F}_{i+1}$ is an $\mathcal{O}_Y$-module. To show surjectivity on the right, use Exercise 5.15.
 
+		For further information about $K(X)$, and its applications to the generalized Riemann-Roch theorem, see …
+	\end{enumerate}
+\end{idea2}
 
+\begin{idea1}{Reminder on coherent sheaves}\leavevmode
+	A \textit{\textbf{coherent sheaf}} on a ringed space $X$ is a sheaf that is locally finitely generated and locally finitely presented. These two conditions are expressible with exact sequences.
+\end{idea1}
 
 
 
