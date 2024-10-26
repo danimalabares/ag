@@ -1,7 +1,7 @@
 \input{/Users/daniel/github/config/preamble-book.sty}
 \input{/Users/daniel/github/config/thms-eng.sty}
 
-\title{Exercieses and notes in Algebraic Geometry}
+\title{Exercises and notes in Algebraic Geometry}
 
 \author{\href{https://github.com/danimalabares/ag}{github.com/danimalabares/ag}}
 
@@ -27,7 +27,7 @@ If not explicity stated, exercises are from Hartshorne. For Dani's exercises I h
 	\item Se $X\subseteq \mathbb{A}^{n} $ \'e uma variedade afim (=existe $\mathfrak{a}\subset R$ tal que $X=\mathbb{V}(\mathfrak{a})$), os conjuntos fechados de $X$ s\~ao $\mathbb{V}(\mathfrak{b})\cap \mathbb{V}(\mathfrak{a})=\mathbb{V}(\mathfrak{a}+\mathfrak{b})$
 	
 	\item Nullstellenstz fraco:
-		\[\operatorname{Spm }(R):=\{\text{ideais maximais de $R$} \} =\{\left<x_1-a_1,\ldots,x_n-a_n\right> :a_i\in k\}\]
+		\[\operatorname{Spm }(R):=\{\text{thingis maximais de $R$} \} =\{\left<x_1-a_1,\ldots,x_n-a_n\right> :a_i\in k\}\]
 
 	\item Nullstellensatz:
 		\[\mathbb{I}(\mathbb{V}(\mathfrak{a}))=\sqrt{\mathbb{a}} \qquad \mathbb{V}(\mathbb{I}(S))=\overline{S}\]
@@ -36,7 +36,7 @@ If not explicity stated, exercises are from Hartshorne. For Dani's exercises I h
 
 		\[\begin{tikzcd}
 			\{\text{affine varieties of $\mathbb{A}^{n} $} \} \arrow[r,"1-1"]&\{\text{radical ideals of $R$} \} \\
-			\{\text{irreducible varieties of $\mathbb{A}^{n} $} \}\arrow[r]&\arrow[l]\operatorname{Spec}(R)=\{\text{ideais primos} \} \\
+			\{\text{irreducible varieties of $\mathbb{A}^{n} $} \}\arrow[r]&\arrow[l]\operatorname{Spec}(R)=\{\text{thingis primos} \} \\
 			\{\text{pontos de $\mathbb{A}^{n} $} \} \arrow[r]&\arrow[l]\operatorname{Spm}(R)
 		\end{tikzcd}\]
 	
@@ -150,9 +150,9 @@ Let $X\subset \mathbb{C}^{n}$ and $X'\subset \mathbb{C}^{m}$ be affine varieties
 	\[(C^* )^n:=(\mathbb{C}\setminus \{0\} )^n=\mathbb{C}^{n}\setminus \text{hyperplanes } z_i,\qquad i=1,\ldots,n.\]
 	So we see that this product of the multiplicative group of $\mathbb{C}$ has been endowed with the structure of an affine variety.
 
-	\begin{idea2}{Algebraic torus in \href{https://en.wikipedia.org/wiki/Algebraic_torus}{Wiki}}\leavevmode
+	\begin{thing2}{Algebraic torus in \href{https://en.wikipedia.org/wiki/Algebraic_torus}{Wiki}}\leavevmode
 		Let $k$ be a field with algebraic closue  $\bar{k}$. A \textit{\textbf{$k$-torus}} is an algebraic group (=group that is a variety) defined over $k$ which is isomorphic over $\bar{k}$ to a finite product of copies of the multiplicative group. In other words, a $k$-group $\mathbb{T}$ is a torus iff $\mathbf{T}(\bar{k})\cong (\bar{j}^\times )^r$ for some $r\geq 1$.
-	\end{idea2}
+	\end{thing2}
 \end{example}
 
 If $X\subset \mathbb{C}^{n}$ and $X'\subset \mathbb{C}^{m}$ are affine varieties, the symbol $A-\!\! \rightarrow B$
@@ -356,9 +356,9 @@ And $k$ is closed so every polynomial $n$ roots, so algebraic sets are just fini
 	The \textit{\textbf{(Krull) dimension}} of a ring $A$ is the supremum of all \textit{\textbf{heights}} of all prime ideals, i.e. the largest proper chain of prime ideals $\mathfrak{p}_0\subset \mathfrak{p}_1\subset\ldots\subset \mathfrak{p}$.
 \end{defn}
 
-\begin{idea7}{Proposition 1.7}\leavevmode
+\begin{thing7}{Proposition 1.7}\leavevmode
 	If $Y$ is an affine algebraic set, then the dimension of $Y$ is equal to the dimension of its affine coordinate ring $A(Y)$.
-\end{idea7}
+\end{thing7}
 
 			We only need to know that closed sets are finite points. This \href{https://math.stackexchange.com/questions/407693/polynomials-are-continuous-with-respect-to-the-zariski-topology}{means} that polynomials are continuous functions with respect to Zariski topology (because preimage of a closed set=finite set of points is closed because it is the root of $p-\alpha$). That makes $\varphi$ continuous.
 
@@ -459,9 +459,9 @@ so basically $\varphi^{-1}$ must be $(x,y)\mapsto \frac{x}{y}$ but this is not d
 
 \subsubsection{Arthur's notes}
 
-\begin{idea5}{Exercise 5.14}\leavevmode
+\begin{thing5}{Exercise 5.14}\leavevmode
 	
-\end{idea5}
+\end{thing5}
 
 \begin{enumerate}[label=(\alph*)]
 	\item
@@ -961,16 +961,16 @@ Let
 \end{remark}
 
 \item 
-	\begin{idea6}{Theorem 5.1}\leavevmode
+	\begin{thing6}{Theorem 5.1}\leavevmode
 		$Y\subseteq \mathbb{A}^n$ affine variety and $P\in Y$. Then $Y$ is nonsingular at $P \iff $ local ring $\mathcal{O}_{P,Y}$ is a regular local ring
-	\end{idea6}
-	\begin{idea6}{Theorem 6.2A}\leavevmode
+	\end{thing6}
+	\begin{thing6}{Theorem 6.2A}\leavevmode
 		$A$ noetherian local domain of sdimension one with maximal ideal $\mathfrak{m}$. Then the following are equivalent
 		\begin{enumerate}[label=(\roman*)]
 			\item $A$ is a regular local ring.
 			\item $A$ is integrally closed (over the fraction field).
 		\end{enumerate}
-	\end{idea6}
+	\end{thing6}
 	In other words, normality in dimension 1 is the same as normality.
 
 	\item Here's the \textit{\textbf{hyperelliptic involution}}
@@ -1107,7 +1107,7 @@ A friend from Cabo Frio just recommended me to have a look at \href{https://www.
 \subsection{Background}
 Let $X$ be a topological space and $\mathcal{F}$ a sheaf of rings, which is a presheaf + gluing condition.
 
-\begin{idea2}{Sheafification}\leavevmode
+\begin{thing2}{Sheafification}\leavevmode
 	 \begin{align*}
 	 	\text{Presheaf}  &\longrightarrow \text{Sheaf}  \\
 	 	\mathcal{F} &\longmapsto \mathcal{F}^+
@@ -1126,7 +1126,7 @@ Let $X$ be a topological space and $\mathcal{F}$ a sheaf of rings, which is a pr
 	 	\text{Sheafs}\arrow[r,"\text{forget}" ]&\text{Presheaf}\arrow[l,bend left,"\text{Sheafify}" ]  
 	 \end{tikzcd}\]
  \end{enumerate}
-\end{idea2}
+\end{thing2}
 	 \begin{remark}
 	 Also kernel and image of sheafs. Must sheafify the image.	
 	 \end{remark}
@@ -1216,21 +1216,21 @@ so $f(Z) \ne V$ and there is an open affine $V'$ such that $V' \cap f(Z) = \varn
 
 \subsection{Closed subschemes of $\operatorname{Proj}(S)$ (Dani)}
 
-\begin{idea6}{Review of $\operatorname{Proj}$}\leavevmode
+\begin{thing6}{Review of $\operatorname{Proj}$}\leavevmode
 	\begin{itemize}
 	\item {\color{2}\bfseries Set.}\hspace{.5em}Let $S$ be a graded ring. $\operatorname{Proj}(S)$ is the set of homogeneous prime ideals $\mathfrak{p}$ that do not conatin $S_+=\bigoplus_{d>0}S_d$.
 	\item {\color{2}\bfseries Topology.}\hspace{.5em}The closed subsets of $\operatorname{Proj}(S)$ are $V(\mathfrak{a})=\{\mathfrak{p}\in\operatorname{Proj}(S):\mathfrak{p}\supseteq\mathfrak{a}\}$.
 	\item {\color{2}\bfseries Sheaf.}\hspace{.5em} For each $\mathfrak{p}\in\operatorname{Proj}(S)$ consider $S_{(\mathfrak{p})}$, the localized ring $T^{-1}S$ where $T$ is the multiplicative system of homogeneous elements of $S$ that are not in $\mathfrak{p}$. For any open subset $U \subseteq \operatorname{Proj}(S)$ define $\mathcal{O}(U)$ to be the set of functions ($s$ for section?) $s:U\to \coprod S_{(\mathfrak{p})}$ such that for $ p \in U$, $s(\mathfrak{p})\in S_{(\mathfrak{p})}$ (perhaps like a vector field: a point maps to a vector attached to the tangent space at that point), and $s$ is locally a quotient of elements of $S$, ie. $s(\mathfrak{q})=a/f$ in a neighbourhood of $\mathfrak{p}$.
 	\end{itemize}
-\end{idea6}
+\end{thing6}
 
-\begin{idea1}{Motivation}[Görtz \& Wedhorn, p. 375]
+\begin{thing1}{Motivation}[Görtz \& Wedhorn, p. 375]
 	If $\varphi:A\to B$ is a homomorphism of graded $R$-algebras, the inverse image of a relevant prime ideal (=an ideal not containing the homogeneous ideal of positive degree groups $\bigoplus_{d\geq 1} S_d $) of $B$ may not be a relevant prime ideal of $A$. Thus $\operatorname{Proj}(A)$ is not functorial in $A$ with respect to arbitrary homomorphisms of graded $R$-algebras. But there is a unique morphism of $R$-schemes
 	\[\operatorname{Proj}\varphi:G(\varphi)\longrightarrow \operatorname{Proj}A,\]
 	where $G(\varphi )\subseteq \operatorname{Proj}(B)$ is the open subscheme
 	\[G(\varphi )=\mathfrak{q}\in\operatorname{Proj}(B):\varphi^{-1}(\mathfrak{q})\not\supset A_+\}\]
 	such that [some conditions, but let's proceed to our exercise]
-\end{idea1}
+\end{thing1}
 
 \begin{manualexercise}{2.14}\leavevmode 
 	\begin{enumerate}
@@ -1287,11 +1287,11 @@ So I'm not really sure how this is defined but we are looking at a map
 \[f^\sharp _x:\mathcal{O}_{f(\operatorname{Proj}T)}\longrightarrow \mathcal{O}_{\operatorname{Proj}S}\]
 
 	Ah! Now I see:
-	\begin{idea4}{Proposition 2.5}\leavevmode
+	\begin{thing4}{Proposition 2.5}\leavevmode
 	\begin{enumerate}[label=\alph*.]
 		\item For any $\mathfrak{p}\in\operatorname{Proj}S$, the stalk $\mathcal{O}_\mathfrak{p}$ is isomorphic to the local sing $S_{(\mathfrak{p})}$.
 	\end{enumerate}
-	\end{idea4}
+	\end{thing4}
 So in fact we have some map $f^\sharp_\mathfrak{p}:S_{(\varphi^{-1}(\mathfrak{p}))}\longrightarrow T_{(\mathfrak{p})}$. How is this is defined? but in a broad sense we know this is a map induced by $\varphi$, which was surjective, acting on the localizations of $S$ and $T$, which are really $S$ and $T$ made larger by adding some fractions.
 
 \item Let $d_0$ be an integer and define $I'=\bigoplus_{d\geq d_0}I_d$. Basically this is just exercise 2.14(c). We just notice that $I'$ is really just  $I$ taking away the first $d_0$ degrees, so we have a projection map
@@ -1300,7 +1300,7 @@ So in fact we have some map $f^\sharp_\mathfrak{p}:S_{(\varphi^{-1}(\mathfrak{p}
 	\end{enumerate}
 \end{proof}
 
-\begin{idea4}{The open sets: another proof for closed immersion}[Lucas]\leavevmode
+\begin{thing4}{The open sets: another proof for closed immersion}[Lucas]\leavevmode
 	So, what are the open sets? Let $S$ be a graded ring. Define
 	\[D_{+}(f)=\{\mathfrak{p}\in\operatorname{Proj}(S):f\not \in \mathfrak{p}\}\]
 	And very importantly, we can take problems about $\operatorname{Proj}$ to the world of schemes noticing that
@@ -1312,7 +1312,7 @@ We can even get another proof that the induced map $f$ on the exercise is a clos
 \end{tikzcd}\]
 which is just the same as a surjection
 \[S_{(f)}\twoheadrightarrow R_{(\varphi(f))}\]
-\end{idea4}
+\end{thing4}
 
 \subsection{Skyscraper sheaves (Alex)}
 
@@ -1342,11 +1342,11 @@ It has an extension to a map
 	Let $S=\operatorname{Bl}_3\mathbb{P}^2$ be the blow up of $\mathbb{P}^{2}$ at $[1:0:0],[0:1:0]$ and  $[0:0:1]$. Then there exists a regular extension $\sigma:S \longrightarrow S$.
 \end{claim}
 
-\begin{idea4}{Explanation}[Sergey]\leavevmode
+\begin{thing4}{Explanation}[Sergey]\leavevmode
 	When you have a $\varphi:X\dashrightarrow Y$ you can consider the closure of its graph, $\overline{\Gamma_\varphi}\subset X\times Y$.
 
 	For our map $\varphi:\mathbb{P}^{2}_s\dashrightarrow \mathbb{P}^2_t$, {\color{6}What is $\overline{\Gamma_\varphi}$?}
-\end{idea4}
+\end{thing4}
 
 \begin{exercise}\leavevmode
 	Prove Danilov's lemma that if $Y\subset E$ is codimension 1 and $X\subset Z$ is codimension 2 then $f:Y\longrightarrow X$is a blow-up.
@@ -1360,19 +1360,19 @@ It has an extension to a map
 
 \subsection{Schemes and locally ringed spaces (Victor)}
 
-\begin{idea4}{Exercise 2.1}\leavevmode
+\begin{thing4}{Exercise 2.1}\leavevmode
 	Let $A$ be a ring, let $X= \operatorname{Spec}(A)$, let $f\in A$ and let $D(f)\subseteq X$ be the open complement of $V((f))$. Show that the locally ringed space  $(D(f),\mathcal{O}_X|_{D(f)})$ is isomorphic to $\operatorname{Spec}(A_f)$.
-\end{idea4}
+\end{thing4}
 
-\begin{idea1}{Review of Spec}\leavevmode
+\begin{thing1}{Review of Spec}\leavevmode
 	{\color{2}\bfseries As a set.}\hspace{.5em} It's just the prime ideals of a ring $A$.
 
 	{\color{2}\bfseries Topology.}\hspace{.5em}The closed sets are, for an ideal $I\subseteq A$, $V(\mathfrak{a})=\{\mathfrak{p}\in\operatorname{Spec}(A) :\mathfrak{a}\subseteq \mathfrak{p}\}$. A basis for the open sets is given by $D(f)$, the complement of  $V((f))$ for $f\in A$.
 
 {\color{2}\bfseries Sheaf.}\hspace{.5em} {\color{5}(Note the similarity with the definition of the regular functions on a variety. The difference is that we consider functions into the various local rings, instead of to a field.)} For each prime ideal $\mathfrak{p}\subseteq A$ let $A_{\mathfrak{p}}$ be the localization of $A$ at $ \mathfrak{p}$. For an open set $U\subseteq \operatorname{Spec}(A)$ degine $\mathcal{O}(U)$ to be the set of functions $s:U\longrightarrow \coprod_{\mathfrak{p}\in U}A_{\mathfrak{p}}$ such that $s(\mathfrak{p})\in A_{\mathfrak{p}}$ for each $\mathfrak{p}\in U$, and such that $s$ is locally a quotient of elements of $A$ : to be precise (…)
-\end{idea1}
+\end{thing1}
 
-\begin{idea1}{Review of ringed spaces}\leavevmode
+\begin{thing1}{Review of ringed spaces}\leavevmode
 	A \textit{\textbf{ringed space}} is a pair  $(X,\mathcal{O}_X)$ where $X$ is a topological space and $\mathcal{O}_X$ is a sheaf of rings.
 
 	This is a category, so we have \textit{\textbf{ringed spaces maps}}, which are maps  $f:(X,\mathcal{O}_X)\longrightarrow (Y,\mathcal{O}_Y)$ where $f:X\longrightarrow Y$ is a continuos map and $f^\sharp:\mathcal{O}_Y\longrightarrow f_*\mathcal{O}_X$ is a sheaf morphism (a ring homomorphism for every open set) that is also natural in the sense that
@@ -1383,7 +1383,7 @@ It has an extension to a map
 	commutes.
 
 	A \textit{\textbf{locally ringed space}} is a ringed space where  $\mathcal{O}_P$ is a local ring for all $P\in\mathcal{O}_X$, and $X$ is locally a  $\operatorname{Spec}$.
-\end{idea1}
+\end{thing1}
 
 \begin{remark}\leavevmode
 	$D(f)$ is open since
@@ -1411,9 +1411,9 @@ It has an extension to a map
 
 \subsection{Locally free sheaves (Arthur)}
 
-\begin{idea4}{Exercise 8.2}\leavevmode
+\begin{thing4}{Exercise 8.2}\leavevmode
 	Let $X$ be a variety of dimension $n$ over $k$. Let $\mathcal{E}$ be a locally free sheaf of rank $r>n$ on  $X$ and let $V\subseteq \Gamma(X,\mathcal{E})$ be a vector space of global sections which generate $\mathcal{E}$. Show that there is a section $s\in V$ such that $s_p \not\in \mathfrak{m}_p\mathcal{E}_p$ for all $p\in X$.
-\end{idea4}
+\end{thing4}
 
 \begin{defn}\leavevmode
 	Let $E$ be an  $\mathcal{O}_x$-module. A vector space $V\subseteq \Gamma(X,\mathcal{E})$ generates $\mathcal{E}$ at $p\in X$ if $\{s_p:s\in V\}$ generates de the stalk $\mathcal{E}_p$ as an $\mathcal{O}_{X,p}$-module. We say $V$ is a \textit{\textbf{generator}} if it generates at all points of $X$.
@@ -1430,7 +1430,7 @@ It has an extension to a map
 
 \subsection{The Grothendieck Group (Dani)}
 
-\begin{idea4}{Intuition}[See \href{https://en.wikipedia.org/wiki/Grothendieck_group#Explicit_constructions}{wiki} or Hatcher  VBKT] The idea behind Grothendieck group is very much like introducing fractions to $\mathbb{Z}$ to construct $\mathbb{Q}$. Starting from a monoid (which is a structure similar to a group but lacking inverses) we consider the free abelian group generated by the monoid and quotient by an appropiate equivalence relation.
+\begin{thing4}{Intuition}(See \href{https://en.wikipedia.org/wiki/Grothendieck_group#Explicit_constructions}{wiki} or Hatcher  VBKT.)\hspace{.5em} The idea behind Grothendieck group is very much like introducing fractions to $\mathbb{Z}$ to construct $\mathbb{Q}$. Starting from a monoid (which is a structure similar to a group but lacking inverses) we consider the free abelian group generated by the monoid and quotient by an appropiate equivalence relation.
 
 	The construction in this exercise of Hartshorne introduces a group structure to the set of coherent sheaves (which are $\mathcal{O}_X$-modules) by making the direct sum of modules into a group operation. Recall that for every two modules $F_1$ and $F_3$ there is a (split) short exact sequence 
 	\[\begin{tikzcd}
@@ -1439,9 +1439,9 @@ It has an extension to a map
 	So we will take the free module (generated by the coherent sheaves), which is equipped with an operation $+$, and take take the quotient identifiying for every short exact sequence  $\begin{tikzcd}
 		0\arrow[r]&F_1\arrow[r]&F_2\arrow[r]&F_3\arrow[r]&0
 	\end{tikzcd}$ by the relation $F_2=F_1 + F_3$. So for the case of the trivial split sequence we see that $F_1\oplus F_3=F_1+F_3$, but now we have inverses!
-\end{idea4}
+\end{thing4}
 
-\begin{idea2}{Exercise 6.10}[The Grothendieck Group $K(X)$]\leavevmode
+\begin{thing2}{Exercise 6.10}[The Grothendieck Group $K(X)$]\leavevmode
 	Let $X$ be a noetherian scheme. We define $K(X)$ to be the quotient of the free abelian group generated by all the coherent sheaves on $X$, by the subgroup generated by all expressions $\mathcal{F}-\mathcal{F}'-\mathcal{F}''$ whenever there is an exact sequence $\begin{tikzcd}
 		0\arrow[r]&\mathcal{F}'\arrow[r]&\mathcal{F}\arrow[r]&\mathcal{F}''\arrow[r]&0
 	\end{tikzcd}$ of coherent sheaves on $X$. If $\mathcal{F}$ is a coherent sheaf, we denote by $\gamma(\mathcal{F})$ its image in $K(X)$.
@@ -1456,10 +1456,10 @@ It has an extension to a map
 
 		For further information about $K(X)$, and its applications to the generalized Riemann-Roch theorem, see …
 	\end{enumerate}
-\end{idea2}
+\end{thing2}
 
-\begin{idea0}{Reminder on coherent sheaves}\leavevmode
-	A \textit{\textbf{coherent sheaf}} on a ringed space $X$ is an $\mathcal{O}_X$-module that is locally finitely generated and locally finitely presented. These two conditions are expressible with exact sequences.\end{idea0}
+\begin{thing0}{Reminder on coherent sheaves}\leavevmode
+	A \textit{\textbf{coherent sheaf}} on a ringed space $X$ is an $\mathcal{O}_X$-module that is locally finitely generated and locally finitely presented. These two conditions are expressible with exact sequences.\end{thing0}
 
 Here's the definition of coherent sheaves from Complex Geometry 2024-1:
 
@@ -1497,13 +1497,17 @@ Here's the definition of coherent sheaves from Complex Geometry 2024-1:
 
 		\begin{proof}[Proof 1, \href{https://math.stackexchange.com/questions/3358770/proof-check-calculating-the-grothendieck-group-of-kx-where-k-is-a-field}{StEx}]\leavevmode
 			Use invariant factors theorem:
-				 \begin{idea4}{Invariant Factors Theorem}\leavevmode
+				 \begin{thing4}{Invariant Factors Theorem}\leavevmode
 		Let $R$ be a principal ideal domain and let $M$ be a finitely generated $R$-module. Then 
 		\[M\cong  R^r\oplus R/(a_1)\oplus R/(a_2)\oplus \ldots\oplus R/(a_m)\]
 		for some integer $r\geq 0$ and nonzero elements $a_1,a_2,\ldots,a_m$ of $R$ which are not units in $R$ and which satisfy the divisibility relation $a_1|a_2|\ldots|a_m$.
-		 \end{idea4}
+		 \end{thing4}
 
-		 Another way to write this is just $M\cong \bigoplus_{i} R/(a_i)$ allowing some  $a_i$ to be zero accounting for the free part. The elements $a_i$ are called \textit{\textbf{invariant factors}}. "Any two modules sharing the same set of invariants are isomorphic" ( \href{https://en.wikipedia.org/wiki/Structure_theorem_for_finitely_generated_modules_over_a_principal_ideal_domain#Invariant_factor_decomposition}{wiki}).  {\color{2}This should mean that the module is determined by its rank… but to me it looks like it is not only its rank (=number of invariant factors) but also the choice of invariant factors themselves.} This gives a $(\mathbb{N},+)$ monoid structure on the set of isomorphism classes of $\mathcal{O}_{\mathbb{A}^1}$- modules, whose completion must be isomorphic to $(\mathbb{Z},+)$.
+		 Another way to write this is just $M\cong \bigoplus_{i} R/(a_i)$ allowing some  $a_i$ to be zero accounting for the free part. The elements $a_i$ are called \textit{\textbf{invariant factors}}. "Any two modules sharing the same set of invariants are isomorphic" ( \href{https://en.wikipedia.org/wiki/Structure_theorem_for_finitely_generated_modules_over_a_principal_ideal_domain#Invariant_factor_decomposition}{wiki}).  {\color{2}So a module is determined by the choice of invariant factors… but this is not exactly an integer… so how to construct the map to $\mathbb{Z}$ (or $\mathbb{N}$)?}
+
+			 In StackExchange we see the alternative:
+
+				 {\color{4}\bfseries Via Quillen-Sulsin.}\hspace{.5em}Show that a coherent sheaf is locally a finitely generated \textit{projective} module. Then use \href{https://en.wikipedia.org/wiki/Quillen%E2%80%93Suslin_theorem}{Quillen-Sulsin theorem} that \textit{every finitely generated projective module is free}. Map a module to its rank. This gives an homomorphism to $(\mathbb{N},+)$. Its "group closure" (=Grothendieck group) is $(\mathbb{Z},+)$. {\color{2}But how do we get projective module?}
 		\end{proof}
 
 \begin{proof}[Proof 2, Solution manual]	Notice $\mathcal{O}_X\cong k[t]$. Locally finitely presentedness means locally there is an exact sequence $k[t]^{\oplus n}\to k[t]^{\oplus m}\to M\to 0$. But since {\color{6}$k[t]$ is a PID, the first morphism is injective}.
@@ -1515,9 +1519,156 @@ Here's the definition of coherent sheaves from Complex Geometry 2024-1:
 			Finally, we need to use part (b).
 \end{proof}
 
-		\item Looks like this is the same: these are vector spaces, how many copies of the field in each of them?
+		\item Here we need a few definitions:
+
+			\begin{defn}\leavevmode
+				\begin{enumerate}
+					\item A scheme $ X$ is \textit{\textbf{integral}} if for every open set $U\subset X$, the ring $\mathcal{O}_X(U)$ is an integral domain.
+				
+					\item (\href{https://en.wikipedia.org/wiki/Generic_point}{Wiki} or exericse 2.9) A  \textit{\textbf{generic point}} of a topological space $X$ is a point whose closure is all of $X$. If $X$ is a scheme, show that every non-empty irreducible closed subset has a unique generic point.
+
+					\item (Exercise 3.6) Let $X$ be an integral scheme. Show that the local ring $\mathcal{O}_{\xi}$ of the generic point of $X$ is a field called the \textit{\textbf{function field}} of  $X$ denoted $K(X)$.
+				\end{enumerate}
+			\end{defn}
+			Now we check that the rank map $\mathcal{F}\mapsto \dim_K\mathcal{F}_\xi$ where $K=\mathcal{O}_\xi$ is well defined as a map $K(X)\longrightarrow \mathbb{Z}$.
+
+			This just means that the rank of equivalent coherent sheaves is the same. So suppose that $0\to \mathcal{F}'\to \mathcal{F}\to \mathcal{F}''\to 0$ is an exact so that $\mathcal{F}$ is equivalent to $\mathcal{F}'+\mathcal{F}''$. Since talking stalks preserves exactness, the sequence $0\to \mathcal{F}'_\xi\to \mathcal{F}_\xi\to \mathcal{F}_\xi''\to 0$ is also exact. These stalks \href{https://math.stackexchange.com/questions/918443/abstract-nonsense-proof-that-stalks-of-mathcalo-x-modules-are-modules-over}{are} $\mathcal{O}_\xi$-modules, i.e. vector spaces over $K$. Then the sequence splits, we get that  $\mathcal{F}_\xi=\mathcal{F}'_\xi\oplus \mathcal{F}''_\xi$ and finally that $\dim_K\mathcal{F}_\xi=\dim_K\mathcal{F}'_\xi+\dim_K\mathcal{F}''_\xi$.
+
+			For surjectivity simply note that $[\mathcal{O}_X]$ has rank 1, that is, $\dim_{\mathcal{O}_{X,\xi}}\mathcal{O}_{X,\xi}=1$.
+
+
+			\item Surjectivity on the right is immediate from exercise 5.15 since every sheaf can be extended.
+
+				For exactness in the middle I can't provide many details since I'm out of time. A sketch is as follows:
+				\begin{enumerate}[label=\textbf{Step \arabic*}]
+					\item Let $\mathcal{F}$ be a sheaf with support in $Y$. We want to see that it is in the image of sheaves extended by zero from  $Y$ to $X$. {\color{2}(Why isn't $\mathcal{F}$ not already an extension by zero of a sheaf in $Y$? It is zero outside $Y$. I think the problem is related to its equivalence class…)} Construct a filtration $\mathcal{F}=\mathcal{F}_0\supseteq\mathcal{F}_1\supseteq\ldots \supseteq\mathcal{F}_n=0$ such that each $\mathcal{F}_i/\mathcal{F}_{i+1}$ is an extension by zero. Looking at their representatives in Grothendieck Group, we see that $[\mathcal{F}]=\sum_{i=0}^{n-1}[\mathcal{F}_i/\mathcal{F}_{i+1}]$ which makes $\mathcal{F}$ be an extension by zero. We need to construct such a filtration.
+
+					\item Let $i:Y\hookrightarrow X$. Pullback and pushforward functors are adjoint (meaning that $\operatorname{Hom}(i^*\mathcal{F},\mathcal{G})=\operatorname{Hom}(\mathcal{F},\mathcal{G})$), which gives us a map $\eta:\mathcal{F}\longrightarrow i_* i^*\mathcal{F}$. Next step is confusing, but the idea is that $\eta$ is surjective.
+
+					\item See Prop. 5.4: an $\mathcal{O}_X$-module $\mathcal{F}$ is quasi-coherent iff for every affine open subset $U=\operatorname{Spec}(A)$ of $X$ there is an $A$-module $M$ such that $\mathcal{F}|_{U}=\tilde{M}$. And Coro. 5.10: there is a 1-1 correspondence between ideals in $A$ and closed subschemes of $\operatorname{Spec}(A)$ given by $\mathfrak{a}\mapsto \operatorname{Spec}(A) /\mathfrak{a}$.
+
+						So there is an open set $U\subset X$ that $U=\operatorname{Spec}(A)$ and also $\mathcal{F}|_{U}=\tilde{M}$. ({\color{3}Perhaps this means that $F|_{U}=\tilde{M}(U)=M$.)} Then restrict the above map $\eta$ to  $U$: we get a map  $\eta|_{U}:\operatorname{Spec}(A) \longrightarrow Y\cap \operatorname{Spec}(A) \cong \operatorname{Spec}(A) /I$ for some ideal $I$. That means that $\eta$ is given (locally?) by $M\to M/M I$, which makes it surjective.
+
+						\item Define $\mathcal{F}=\mathcal{F}_0$ and $\mathcal{F}_j$ as the kernel of $\mathcal{F}_{j-1}\longrightarrow i_* i^*\mathcal{F}_j$. By definition, I guess of $i_*i^*$ we see that each quotient is an extension. For example,  $\mathcal{F}_1$ is the kernel of $\mathcal{F}_0\longrightarrow i_* i^*\mathcal{F}_0$, so  $\mathcal{F}_0/\mathcal{F}_1=i_* i^*\mathcal{F}_0$.
+
+						\item Finiteness of the sequence uses noetherianess of $A$ and at least another exercise.
+				\end{enumerate}
 	\end{enumerate}
 \end{proof}
+
+\begin{thing4}{Comment from Sergey}\leavevmode
+	So, yesterday (Oct 8) we mostly discussed 3 points on the exercise on Grothendieck group with Daniel leading, and others helping him.
+
+Some topics discussed or to consider (for simlper understanding):
+
+\begin{itemize}
+\item definition of a Grothendieck group K(A) of an abelian category A
+\item definition of a Grothendieck group K(T) of a triangulated category T
+\item  there is a natural isomorphism from K(A) to K(D(A)), here D is bounded derived category of T
+ \item This simplifies study of K(A) — class of an object [M] can be easier to compute if M is replaced by some quasi-isomorphic complex N.
+\end{itemize}
+
+E.g. if a sheaf has a resolution by vector bundles (on smooth projective varieties such resolutions can be constructed with help of Theorems A,B of Serre), then its class is a linear combination in a subgroup of K, generated by vector bundles. {\color{3}Then given some invariant I (e.g. rank, degree) of a vector bundle, it can be extended to K as follows}:
+ — first check that invariant is additive for vector bundles, i.e.
+      I(B) = I(A) + I(C) for any short exact sequence of vector bundles $0 \to A\to B\to C\to 0$
+E.g. for rank you can do it by localizing to sufficiently small open where A,B,C trivialize, then localizing further to field of fractions, so the statement becomes additivity of dimension of finitely dimensional vector spaces.
+For degree (first Chern class) that would be Whittney-Grothendieck formula, for Chern character it is also true (can be part of definition, depending on formalism).
+
+Then to define I for any coherent sheaf do the following:
+\begin{itemize}
+\item  replace M by quasi-equivalent complex of vector bundles N
+\item define I(M) as sum $(-1)^i$ $I(N_i)$ --
+\item prove it does not depend on a choice — i.e. for any pair of quasi-equivalent complexes of v.b. these numbers agree. (this is just the general K(A) = K(D(A)) above)
+
+\end{itemize}
+In Daniel's exercise (a) he has Coh Spec A where A is a PID (A=k[x]), and we saw that in this case any f.g. module is a quotient of a free module $A^n$ by free submodule $A^m$ (in fact any submodule of f.g. torsion-free is torsion-free and over PID is free), so its class is (n-m)[A], and moreover there is a surjective homomorphism from K(A) to Z given by rank, so this homomorphism for PIDs is an isomorphism. So in this situation classes of all torsion sheaves are zero (unlike the case of a projective curve).
+
+Decomposition of a coherent sheaf on a curve into direct sum of torsion and torsion-free holds for all smooth curves, see e.g. answer \href{https://math.stackexchange.com/questions/4183774/coherent-sheaves-on-smooth-curves}{there} (in mo).
+\end{thing4}
+
+\begin{exercise}[Sergey]\leavevmode
+	Consider the map  $F:X\subset \mathbb{P}^2\longrightarrow \mathbb{P}^2$ $x,y\mapsto x^d,y^d$. This map puts a curve $X$ such as $x^2+y^2=1$ (circle) or $x+y=1$ (line) in $ \mathbb{P}^2$. What is the degree of the image? Is it singular?
+\end{exercise}
+
+\begin{claim}[Sergey]\leavevmode
+	If $f$ algebraic then $f(X)$ algebrraic.
+
+	How to find equations?
+\end{claim}
+
+\section{October 11}
+
+\subsection{$k$-structure, $S$-points, adjoint functors (Sergey)}
+
+\begin{defn}\leavevmode
+	A \textit{\textbf{$k$-structure,}} on … is a pair $(V,L)$ with
+	 \begin{enumerate}
+		\item $V'L$
+	
+		\item An isomorphism $V\cong V'\times_?\operatorname{Spec}(?)$
+	\end{enumerate}
+	\[\begin{tikzcd}
+		V\arrow[r]\arrow[d]&V'\arrow[d]\\
+		\operatorname{Spec}(L)\arrow[r]&\operatorname{Spec}(k)
+	\end{tikzcd}\]
+\end{defn}
+
+\begin{defn}\leavevmode
+	 \textit{\textbf{$S$-points}} of $V$ are 
+\end{defn}
+
+\begin{exercise}\leavevmode
+	Look at any points on the curve $(t,t^2,t^3,\ldots,t^d)$. Then their convex hull is a convex polytope called the \textit{\textbf{cyclic polytope}}.
+\end{exercise}
+
+\begin{exercise}\leavevmode
+	For any complex algebraic variety construct a real algebraic variety such that the real points of the real algebraic variety are the complex points of the complex algebraic variety.
+
+	For $X/\mathbb{C}$ construct $Y/\mathbb{R}$ such that $X(\mathbb{C})=Y(\mathbb{R})$.
+\end{exercise}
+
+\subsection{Reduced schemes (Bruno)}
+
+
+\begin{defn}\leavevmode
+	Ring is \textit{\textbf{reduced}} if there's no nilpotents.  Scheme is reduced if  $\mathcal{O}_X(U)$ is reduced for any open $U\subset X$.
+\end{defn}
+
+\begin{thing5}{Exercise 2.3}\leavevmode
+\begin{enumerate}[label=\alph*.]
+	\item $X$ reduced iff $\mathcal{O}_{X,P}$ reduced for all $P\in X$.
+	\item If $X$ is a locally ringed space then also $X_{\operatorname{red}}$ is.
+\end{enumerate}	
+\end{thing5}
+
+\begin{proof}[Solution]\leavevmode
+	\begin{enumerate}
+		\item Pretty straighforward.
+
+		\item First check that the reduction of the structure sheaf is a sheaf  so that $X_{\operatorname{red}}$ is a ringed space. Now to make it a scheme check that (it is locally a spec) if  $X=\operatorname{Spec}(A)$ then $X_{\operatorname{red}}\cong \operatorname{Spec}(A_{\operatorname{red}})$. So a homeomorphism from topological spaces and isomorphism of sheaves. For homeomorphism use that $\bigcap_{\mathfrak{a}\in\operatorname{Spec}(A)} \mathfrak{a}=\operatorname{nil}_A$ (fact from homological algebra). Then check isomorphism
+	
+		\item 
+	\end{enumerate}
+\end{proof}
+
+See \href{https://math.stackexchange.com/questions/4158529/computing-the-image-of-a-projective-variety}{StackExchange} for an answer on that question by Sergey.
+
+\section{October 18}
+
+\subsection{(Victor)}
+
+\begin{thing3}{II 3.12}\leavevmode
+	\begin{enumerate}[label=\alph*.]
+		\item Let $\varphi:S\to T$ be a surjection homomorphism of graded rings (preserving degrees). Show that the open 
+	\end{enumerate}
+\end{thing3}
+
+\section{October 22}
+
+\begin{thing5}{Exercise}[Sergey]\leavevmode
+	\[\operatorname{deg}X\geq \operatorname{codim}X+1\]
+	if $X$ is not degenerate (not contained in hyperplane)
+\end{thing5}
 
 
 \chapter{Chapter III}
@@ -1590,6 +1741,140 @@ and for each $i\geq 0$ there is a natural morphism $\delta^i:R^iF(A'')\to R^{i+1
 \end{remark}
 
 \chapter{Chapter IV}
+
+\section{October 25: $f_*$ for divisors (Arthur)}
+
+\begin{thing4}{Exercise 2.6}\leavevmode
+	Let $f: X \to Y $ a non-contstant map of curves (projective, smooth, over $k=\bar{k}$. Then from Chpt II $f$ is finite and from Chpt III $f$ is flat. Then by Stacks Project 00NX  $f$ is finite locally free.
+\end{thing4}
+
+\begin{defn}[Finite locally free]\leavevmode
+	For any $ U\subset Y$ affine, $f^{-1}(U)$ is affine and $\mathcal{O}_X(f^{-1}(U))\cong \bigoplus_{i=1} ^n\mathcal{O}_Y(Y) $ where $n=\operatorname{deg}f:=[K(X):f^\# K(Y)]$
+\end{defn}
+
+Let $\Sigma$ be a locally free sheaf on $Y$ of rank $r$. Then $\Lambda^{i}E$ is rank 1.
+		\[f_\#:\operatorname{Div}(X)\longrightarrow \operatorname{Div}(Y)\]
+	\[f_* D=f_* \left( \sum_{p\in X}n_pp \right) =\sum n_pf(p)\]
+
+\begin{enumerate}[label=\alph*.]
+	\item $f_*$ only depends on the equivalence class of 
+		\[f_*(\operatorname{div}(\varphi))=\operatorname{div}(N_{K(X)/K(Y)})\]
+		\[\det(f_* \mathcal{L}(D))\cong (\det f_* \mathcal{O}_X)\otimes \mathcal{L}(f_* D)\qquad \forall D\in\operatorname{Div}(X)\]
+		$M\in\operatorname{Pic}(Y)$, $f_* M$ locally free on $Y$.
+
+		Then $\Lambda^{n}(f_* M)=\det  f_* M$
+\end{enumerate}
+
+\begin{proof}\leavevmode
+	Let $D\geq 0$ be an effective divisor on $X$.
+	\[\begin{tikzcd}0\arrow[r]&\mathcal{L}(-D)\arrow[r]&\mathcal{O}_X\arrow[r]&\mathcal{O}_D\arrow[r]&0\end{tikzcd}\]
+	\[\begin{tikzcd}0\arrow[r]&f_* \mathcal{L}(-D)\arrow[r]&\mathcal{L}\mathcal{O}_X\arrow[r]&f_* \mathcal{O}_D\arrow[r]&0\end{tikzcd}\]
+so that second one is exact because the first ones are quasi-coherent sheaves. There is an isomorphism
+\[\det (f_* \mathcal{O}_X)\cong \det (f_* \mathcal{L}(-D))\otimes \det(f_* \mathcal{O}_D)\]
+\[\mathcal{O}_D=\bigoplus_{j=1}^m k( P_j)^{\oplus n_j} \]
+skyscaper.
+\[f_* \mathcal{O}_P=\bigoplus_{j=1}^mk(f( P_j))^{\oplus n_j}=\mathcal{O}_{f_* D}\]
+
+Now
+\[\det f_* \mathcal{O}_X\cong (\det f_* \mathcal{L}(-D))\otimes(\det \mathcal{O}_{f_* D}\]
+Then
+\[\det \mathcal{O}_{f_* D}\cong \mathcal{L}(f_* D)\]
+\[\det f_* \mathcal{O}_X\cong \det f_*\mathcal{L}(-D))\otimes\mathcal{L}(f_* D)\]
+\[\det f_* \mathcal{L}(-D)\cong (\det f_* \mathcal{O}_X)\otimes\mathcal{L}(-f_* D)\]
+Let $D=\underbrace{D_1}_{\geq 0}-\underbrace{D_2}_{\geq 0}$ arbitrary.
+\[\begin{tikzcd}
+	0\arrow[r]&\mathcal{L}(-D_1)\arrow[r]&\mathcal{O}_X\arrow[r]&\mathcal{O}_{D_1}\arrow[r]&0
+\end{tikzcd}\]
+\[\otimes\mathcal{L}(D)\]
+\[\begin{tikzcd}
+	0\arrow[r]&\mathcal{L}(-D_2)\arrow[r]&\mathcal{L}(D)\arrow[r]&\mathcal{O}_{D_1}\arrow[r]&0
+\end{tikzcd}\]
+\[k(P)\otimes\mathbb{L}(D)\cong k(P)\otimes\mathcal{L}(D)_P\cong k(P)\]
+\[\det f_* \mathcal{L}(D)\cong (\det f_* \mathcal{L}(-D_2))\otimes\underbrace{\det \mathcal{O}_{f_* D}}_{\mathcal{L}(f_* D_1)}\]
+\[\det f_* \mathcal{L}(D)\cong \det f_* \mathcal{O}_X\otimes\mathcal{L}(-f_* D_2)\otimes\mathcal{L}(f_* D_1)=(\det f_* \mathcal{O}_X)\otimes\mathcal{L}(f_* D)\]
+\end{proof}
+
+\begin{enumerate}
+	\item[b.] Conclude that $f_* D$ depends only on the linear equivalence class of $D$, so there is an induced homomorphism
+		\[f_* :\operatorname{Pic}(X) \longrightarrow \operatorname{Pic}(Y).\]
+		Show that
+		\[f_* \circ f^* :\operatorname{Pic}(Y) \longrightarrow \operatorname{Pic}(Y)\]
+		is just bultiplication by $n=\operatorname{deg}f$.
+\end{enumerate}
+\begin{proof}\leavevmode
+	\[f^* Q=\sum_{p\in p^{-1}(Q)}e_p(f)P\]
+	\[f_* f^* Q=\sum_{p\in f^{-1}(Q)}e_p(f)\underbrace{f(p)}_{Q}=\left( \sum_{p\in f^{-1}(Q)}e_p(f) \right) Q=nQ\]
+
+	recall
+	\begin{thing4}{Projection formula}[Lucas]\leavevmode
+		 \[f_*(L\otimes f^*L')=f_* L\otimes L'.\]
+		 and this gives
+		 \begin{align*}
+		 	Nm_*(L)&=\det (f_* L)\otimes\det (f_* \mathcal{O})^{-1}\\
+			Nm( f^*L)&=\det (f_* f^*L)\otimes \det (f_* \mathcal{O})^{-1}\\
+			&=L^n\otimes\det (f_* \mathcal{O})\otimes \det(f_* \mathcal{O})\\
+			&=L^n.
+		 \end{align*}
+	\end{thing4}
+\end{proof}
+
+\begin{enumerate}
+	\item[c.] Use duality for a finite flat morphism (III 6.10) and III.7.2 to show that
+		 \[\det f_* \Omega_X\cong (\det f_* \mathcal{O}_X)^{-1}\otimes\Omega_Y^{\otimes n}\]
+\end{enumerate}
+
+\begin{proof}\leavevmode
+	\begin{align*}
+		f_* \Omega_X&\cong f_* \operatorname{Hom}_X(\mathcal{O}_X,f^!\Omega_Y)\\
+			    &\cong \operatorname{Hom}_Y(f_* \mathcal{O}_X,\Omega_Y)
+	\end{align*}
+	\begin{remark}[Lucas]\leavevmode
+		finite and flat $\implies $\[f_* \operatorname{Hom}(\mathcal{F},f^!\mathcal{G})\cong \operatorname{Hom}(f_* \mathcal{F},\mathcal{G})\]
+		(But looks like that's not so relevant.)
+	\end{remark}
+	(But we can take it as a blackbox.
+
+	\[\varphi:(f_* \mathcal{O}_X)^{-1}\overset{\cong }{\longrightarrow}\mathcal{O}_Y^{\oplus n}\]
+	\[\varphi\otimes\operatorname{id}:(f_* \mathcal{O}_X)^{\vee}\otimes\Omega_Y\overset{\cong }{\longrightarrow}\mathcal{O}^{\oplus n}_Y\]
+	\[\det(\varphi\otimes\operatorname{id}):\det(f_* \mathcal{O}_X)^{-1}\otimes\Omega_Y)\overset{\sim}{\longrightarrow}\]
+	\[\det(f_* \Omega_X)\cong \Omega_Y^{\otimes n}\]
+	\[\det f_* \Omega_X\cong \underbrace{\det(\operatorname{Hom}(f_* \mathcal{O}_X,\mathcal{O}_Y))}_{=(\det f_* \mathcal{O}_X)^{-1}}\otimes\Omega_Y^{\otimes n}\]
+\end{proof}
+
+\begin{enumerate}
+	\item[d.] Now assuma that $f$ is separable, so we have the ramification divisor $R$, which is
+\[R=\sum_{p\in X}\operatorname{len}\left( \Omega_{X/Y} \right)_pP\]
+		We define the \textit{\textbf{branch divisor}} to be divisor $f_* R$ on $ Y$. Show that
+		\[(\det f_* \mathcal{O}_X)^2\cong \mathcal{L}(-B)\]
+		\textbf{On the board:}
+		\[K_X\sim f^*K_Y+R\]
+\end{enumerate}
+
+\begin{proof}\leavevmode
+	Start with
+	\[f_* K_X\sim  \underbrace{f_* f^* K_Y}_{=nK_Y} +\underbrace{f_* R}_{:=B}\]
+	By a.,
+	\[\det f_*\Omega_X\cong (\det f_*\mathcal{O}_X)\otimes \mathcal{L}(nK_Y+B)\]
+	\[\cong (\det f_*\mathcal{O}_X)\otimes(\Omega_Y^{\otimes n}\otimes \mathcal{L}(B)\]
+By c.,	\[\det f_*\mathcal{O}_X\cong (\det f_*\mathcal{O}_X)^{-1}\otimes \Omega_Y^{\otimes n}\]
+and the terms on the left and right cancel.
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \addcontentsline{toc}{section}{Exercise 1.2}
 \begin{manualexercise}{1.2}[I like this one]
