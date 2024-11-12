@@ -1607,6 +1607,68 @@ Decomposition of a coherent sheaf on a curve into direct sum of torsion and tors
 	How to find equations?
 \end{claim}
 
+
+\section{November 12: finding equations for $f(X)$ (Dani)}
+My search shows that \href{https://math.stackexchange.com/questions/4158529/computing-the-image-of-a-projective-variety}{here} might be the answer.
+
+\begin{exercise}[Sergey]\leavevmode
+	Consider the map  $F:X\subset \mathbb{P}^2\longrightarrow \mathbb{P}^2$ $x,y\mapsto x^d,y^d$. This map puts a curve $X$ such as $x^2+y^2=1$ (circle) or $x+y=1$ (line) in $ \mathbb{P}^2$. What is the degree of the image? Is it singular?
+\end{exercise}
+\begin{proof}[Solution]\leavevmode
+Consider the case when $d=3$. Define
+ \begin{align*}
+	f: \mathbb{P}^2 &\longrightarrow \mathbb{P}^2 \\
+	(x:y:z) &\longmapsto (x^3:y^3:z^3)
+\end{align*}
+Let $X=V(x^2+y^2=z^2)$. We claim that $f(X)=V\Big((x^2+y^2-z^2)^3-27(xyz)^2\Big)$. One contention is immediate: if $(x:y:z)\in X$ then $f(x:y:z)=(x^2:y^2:z^2)$ satisfies
+\end{proof}
+$\mathsf{OK}$ since that is very hard I will proceed to the abstract proof for schemes.
+
+\begin{proof}[Proof by]\leavevmode
+
+\end{proof}
+
+
+
+
+
+\begin{claim}[Sergey]\leavevmode
+	If $f$ algebraic then $f(X)$ algebrraic.
+
+	How to find equations?
+\end{claim}
+
+Recall that in a past exercise by Dani we studied the case of how a homomorphism of rings $\varphi:A\to B$ may or may not induce a map $Proj(B)\to Proj(A)$---we saw that the natural definition taking a prime homogeneous ideal $\mathfrak{p}\subset B$ to $\varphi^{-1}(\mathfrak{p})$ doesn't always work because such a preimage may not be a relevant ideal.
+
+We proved that there is a certain open set where the induced map may be defined, which coincides with $\operatorname{Proj}(B)$ if the ring homomorphism is surjective. Also in the case when $\varphi$ is surjective, we showed that the induced map in $\operatorname{Proj}$ is a closed immersion. The following proposition states the analogue result for $\operatorname{Spec}$:
+\begin{thing4}{Proposition II.2.3 }\leavevmode
+\begin{enumerate}
+	\item [(b)] If $\varphi:A\to B$ is a homomorphism of rings, then $\varphi$ induces a natural morphism of locally ringed spaces
+		\[(f,f^\#):\Big(\operatorname{Spec}(B),\mathcal{O}_{\operatorname{Spec}(B)}\Big)\longrightarrow\Big(\operatorname{Spec}(A),\mathcal{O}_{\operatorname{Spec}(A)}\Big).\]
+	\item [(c)] If $A$ and $B$ are rings, then any morphism of locally ringed spaces from $\operatorname{Spec}(B)$ to $\operatorname{Spec}(A)$ is induced by a homomorphism of rings $\varphi:A \to B$ as in (b).
+	\item [(d)] Prove the converse to (c), namely, if  $f:Y\to X$ is a homeomorphism onto a closed subset, and $f^\#:\mathcal{O}_X\to f_*\mathcal{O}_Y$ is surjective, then $\varphi$ is surjective.
+\end{enumerate}
+\end{thing4}
+
+Right, so we consider a map of schemes locally, that is, a map $f:Y:=\operatorname{Spec}(B) \to X:=\operatorname{Spec}(A)$, so that we have a map
+\[\phi:A \to B.\]
+This gives a well-defined map
+\[A \longrightarrow A/\ker \phi\longrightarrow B\]
+which in turn induces a morphism from $Y=\operatorname{Spec}(B)$ to a subset of $X=\operatorname{Spec}(A)$, $\operatorname{Spec}(A/I)$. In fact,  $\operatorname{Spec}(A/I) =V(I)$ since the prime ideals of $A/I$ are the ideals of $A$ that contain $I$.
+
+Now if we suppose $f$ is algebraic we get that $f(X)$ is closed and onto, so that by item (d) we get that and that the map of rings is surjective.  This shows that it is enough to compute $I$.
+
+\begin{thing4}{Remarks}\leavevmode
+	\begin{itemize}
+	\item Looks like the construction may be taken to $\operatorname{Proj}$, I only didn't find the statement that a map of $\operatorname{Proj}$ induces a map of rings. Indeed,
+	\item how is the map of rings defined? And,
+	\item how to take this to the practical difficulty of finding the equations for the above projective map? In StackExchange we are suggested to compute the ideal \textit{locally}. All we have to do is find the generators! So take the affine chart $\{z=1\}$, what is $B$ if  $\operatorname{Spec}(B) =X=V(x^2+y^2-1)$? Is it now just $k[x,y]/(x^2+y^2-1)$
+	\item Another question is how to compute the degree of the image. This remains rather mysterious.
+	\end{itemize}
+\end{thing4}
+
+
+
 \section{October 11}
 
 \subsection{$k$-structure, $S$-points, adjoint functors (Sergey)}
@@ -1673,6 +1735,12 @@ See \href{https://math.stackexchange.com/questions/4158529/computing-the-image-o
 		\item Let $\varphi:S\to T$ be a surjection homomorphism of graded rings (preserving degrees). Show that the open 
 	\end{enumerate}
 \end{thing3}
+
+\section{November 8: extension of coherent sheaves (Victor)}
+
+\begin{thing4}{Exercise II 5.15}\leavevmode
+	Let $X$ be a Noetherian scheme (has an open affine cover $U_i$ such that $\mathcal{O}_X(U_i)$ is Noetherian).  Let $U$ be an open subset and $\mathcal{F}$ a coherent sheaf on $U$. Then there is a coherent sheaf $\mathcal{F}'$ on $X$ such that  $\mathcal{F}'|_{U}\cong\mathcal{F}$.
+\end{thing4}
 
 \chapter{Chapter III}
 
@@ -2219,7 +2287,23 @@ And while Dani Paiva has already given a solution let me put the spoiler that Se
 consider a general elliptic K3 surface with a section. It has $\operatorname{Pic} = \mathbb{Z}^2$ with generators F - fiber and S - section. Describe intersection matrix/lattice of Pic and find in it a vector of squared length 4, show that linear system associated to any such vector in this lattice does not give an isomorphism to quadric.
 \end{thing4}
 
+\begin{thing4}{Idea}\leavevmode
+	Looks like the K3 surface should contain an elliptic curve (genus 1). There must be a theorem saying that this cannot happen when the surface is diffeomorphic to a quartic (this has to do with non-very ampleness of a line bundle (prop. 1.1 \cite{huyk3}). Showing that there exists an elliptic curve is probably equivalent to showing that there is a vector $E\in\operatorname{Pic}$ with $E^2=0$ and $L.E=1$.
+\end{thing4}
 
+We start considering a general elliptic K3 surface.
+
+\begin{thing3}{Definition 1.1}[\cite{huyk3}, ch. 11]\leavevmode
+	An \textit{\textbf{elliptic K3 surface}} is a K3 surface $X$ together with a surjective morphism $\pi:X\to \mathbb{P}^1$ such that geometric generic fibre is a smooth integral curve of genus one or, equivalently, if there exists a closed point $t \in \mathbb{P}^1$ such that $X_t $ is a smooth integral curve of genus one.
+\end{thing3}
+
+\begin{thing4}{Proposition 1.3}[\cite{huyk3}, ch. 11]\leavevmode
+	Let $X$ be a K3 surface over an algebraically closed field $k$ with $\operatorname{char}(k)\neq 2,3$. Then $X$ admits an elliptic fibration if and only if there exists a non-trivial line bundle $E$ with $E^2=0$.
+\end{thing4}
+
+This gives me $E^2$ for free. Now I should find $L$ with  $L^2=4$.
+
+That $E.L=0$ may be prop. 10.1.6  \cite{huyk3}.
 
 \addcontentsline{toc}{section}{Exercise 1.8}
 \begin{manualexercise}{1.8}
