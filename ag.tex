@@ -1629,6 +1629,10 @@ $\mathsf{OK}$ since that is very hard I will proceed to the abstract proof for s
 	\[\prod_{a=0}^{d-1}\prod_{b=0}^{d-1}\Big(\rho^az^{2/d}+\rho^bw^{2/d}-1\Big)=0\]
 Compute this in a computer. Looks like for $d=3$ we get
 \[w^6 + 3 w^4 (z^2 - 1) + 3 w^2 (z^4 + 7 z^2 + 1) + (z^2 - 1)^3.\]
+This was computed with the following line on WolframAlpha:
+\begin{quotation}
+	\texttt{Product[Product[e\^{}(a * 2 * pi * i / 3) * z\^{}(2/3) + e\^{}(b * 2 * pi * i / 3) * w\^{}(2/3) - 1, {b, 0, 2}], {a, 0, 2}]}
+\end{quotation}
 
 \end{proof}
 
