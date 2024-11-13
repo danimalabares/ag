@@ -1624,11 +1624,13 @@ Let $X=V(x^2+y^2=z^2)$. We claim that $f(X)=V\Big((x^2+y^2-z^2)^3-27(xyz)^2\Big)
 \end{proof}
 $\mathsf{OK}$ since that is very hard I will proceed to the abstract proof for schemes.
 
-\begin{proof}[Proof by]\leavevmode
+\begin{proof}[Solution by Sergey]\leavevmode
+	Consider roots of unity $\rho^d$. Let $z=x^d$ and $w=y^d$. Then we have that $z^{2/d}+w^{2/d}-1=0$. The solution reads
+	\[\prod_{a=0}^{d-1}\prod_{b=0}^{d-1}\Big(\rho^az^{2/d}+\rho^bw^{2/d}-1\Big)=0\]
+Compute this in a computer. Looks like for $d=3$ we get
+\[w^6 + 3 w^4 (z^2 - 1) + 3 w^2 (z^4 + 7 z^2 + 1) + (z^2 - 1)^3.\]
 
 \end{proof}
-
-
 
 
 
@@ -1638,7 +1640,7 @@ $\mathsf{OK}$ since that is very hard I will proceed to the abstract proof for s
 	How to find equations?
 \end{claim}
 
-Recall that in a past exercise by Dani we studied the case of how a homomorphism of rings $\varphi:A\to B$ may or may not induce a map $Proj(B)\to Proj(A)$---we saw that the natural definition taking a prime homogeneous ideal $\mathfrak{p}\subset B$ to $\varphi^{-1}(\mathfrak{p})$ doesn't always work because such a preimage may not be a relevant ideal.
+Recall that in a past exercise by Dani (later also done by Victor) we studied the case of how a homomorphism of rings $\varphi:A\to B$ may or may not induce a map $Proj(B)\to Proj(A)$---we saw that the natural definition taking a prime homogeneous ideal $\mathfrak{p}\subset B$ to $\varphi^{-1}(\mathfrak{p})$ doesn't always work because such a preimage may not be a relevant ideal.
 
 We proved that there is a certain open set where the induced map may be defined, which coincides with $\operatorname{Proj}(B)$ if the ring homomorphism is surjective. Also in the case when $\varphi$ is surjective, we showed that the induced map in $\operatorname{Proj}$ is a closed immersion. The following proposition states the analogue result for $\operatorname{Spec}$:
 \begin{thing4}{Proposition II.2.3 }\leavevmode
@@ -1666,8 +1668,6 @@ Now if we suppose $f$ is algebraic we get that $f(X)$ is closed and onto, so tha
 	\item Another question is how to compute the degree of the image. This remains rather mysterious.
 	\end{itemize}
 \end{thing4}
-
-
 
 \section{October 11}
 
@@ -1945,6 +1945,27 @@ Let $f:X\to Y$ be an affine morphism of Noetherian schemes. Let $G$ be a quasi-c
 
  It will be easier to work on the affine sets of $Y$.
 
+
+\section{An exercise on divisors by Lucas}
+
+\begin{exercise}\leavevmode
+Let $C$ be a complete smooth curve over $k=\bar{k}$ of genus $g$.
+\begin{enumerate}[label=(\alph*)]
+\item If $D \in \operatorname{Div}(C)$ is effective, show that $\operatorname{div}|D|\leq d=\operatorname{deg}D$ and equality iff $D=0$ or $g=0$.
+\item If $C$ has $g=2$, show that $D$ is very ample iff $d \geq 5$. 
+\item If $C\hookrightarrow \mathbb{P}^n$ with degree $D \leq n$ nondegenerate, show that $D=n$, $g=0$ and $C$ differs from the rational normal curve of degree $D$ by an automorphism of $\mathbb{P}^n$. 
+\item Chacterize curves of degrees 2, 3 and 4 in $\mathbb{P}^n$. 
+\end{enumerate}
+\end{exercise}
+
+\begin{proof}[Solution]\leavevmode
+\begin{enumerate}[label=(\alph*)]
+\item  by Riemann Roch we have that
+	\[h^0(D)-h^1(D)=d-g+1\]
+	We know that $\dim|D|=h^0(D)-1$ because $|D|=\mathbb{P}(C,\mathcal{O}_X(D))$ so $\dim|D|=h^1(D)+d-g$. $h^1(D)=h^0(-D+K)\leq h^0(K)=g$ using Serre duality. This gives $\dim|D|\leq d$.
+	
+\end{enumerate}
+\end{proof}
 
 \addcontentsline{toc}{section}{Exercise 1.2}
 \begin{manualexercise}{1.2}[I like this one]
